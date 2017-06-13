@@ -30,6 +30,15 @@ class AddItemView(CreateView):
   form_class = ItemForm
   template_name = 'beercounter/item_form.html'
 
+  def get_context_data(self,**kwargs):
+    data = super(AddItemView, self).get_context_data(**kwargs)
+    data['pubId'] = self.kwargs['pk']
+    return data
+
+  def get_form_kwargs(self,**kwargs):
+    kwargs = super(AddItemView, self).get_form_kwargs(**kwargs)
+    kwargs['initial']['pub'] = self.kwargs['pk']
+    return kwargs
 
 class DeletePubView(DeleteView):
   model = Pub
@@ -45,8 +54,6 @@ class AddBillView(CreateView):
     return data
 
   def get_form_kwargs(self,**kwargs):
-   kwargs = super(AddBillView, self).get_form_kwargs(**kwargs)
-   kwargs['data']['pub'] = pub.id
-   return kwargs
-
-
+    kwargs = super(AddBillView, self).get_form_kwargs(**kwargs)
+    kwargs['initial']['pub'] = self.kwargs['pk']
+    return kwargs

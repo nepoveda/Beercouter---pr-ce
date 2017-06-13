@@ -2,7 +2,6 @@
 {% load bootstrap3 %}
 
 <html>
-
   <head>
     <meta http-enquiv="Content-language" content="cs">
     <meta name="description" content="Beercounter">
@@ -16,20 +15,17 @@
   </head>
 
   <body>
-
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-
+    <div class="container">
+      <nav class="navbar navbar-default">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#"> Beercounter </a>
+          <a class="navbar-brand" href="#">Beercounter</a>
         </div>
+      </nav>
 
+      <div id="content">
+        {% block content %}
+        {% endblock %}
       </div>
-    </nav>
-
-    <div id="content">
-      {% block content %}
-      {% endblock %}
     </div>
   </body>
 </html>
