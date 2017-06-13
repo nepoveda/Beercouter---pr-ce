@@ -1,0 +1,16 @@
+{% extends "beercounter/base.html" %}
+
+{% block content %}
+<div class="panel panel-default">
+  <div class="panel-heading"> <h1>Dostupné hospody</h1> </div>
+    <div class="list-group">
+      {% for pub in pub_list %}
+       <a href="{% url 'beercounter:pub' pub.id %}" class="list-group-item list-group-item-action"> {{ pub.name }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<br/>
+<a href="{% url 'beercounter:addpub' %}" class="btn btn-success" role="button"> Přidat hospodu </a>
+{% endblock %}

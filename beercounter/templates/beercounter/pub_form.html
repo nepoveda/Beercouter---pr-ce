@@ -1,0 +1,9 @@
+<h1> Nová hospoda </h1>
+<form action="" method="POST">
+  {% csrf_token %}
+  {{ form }}
+  <input type="submit" value="Potvrdit" />
+</form>
+<form action="{% url 'beercounter:index' %}">
+  <input type="submit" value="Zpět" />
+</form>

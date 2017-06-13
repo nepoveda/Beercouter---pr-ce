@@ -1,0 +1,35 @@
+{% load staticfiles %}
+{% load bootstrap3 %}
+
+<html>
+
+  <head>
+    <meta http-enquiv="Content-language" content="cs">
+    <meta name="description" content="Beercounter">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet"
+    href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'beercounter/style.css' %}">
+
+    <title> Beercounter </title>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"> Beercounter </a>
+        </div>
+
+      </div>
+    </nav>
+
+    <div id="content">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
+</html>
