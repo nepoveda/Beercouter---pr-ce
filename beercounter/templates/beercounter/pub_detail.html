@@ -5,7 +5,6 @@
 <a href="{% url 'beercounter:deletepub' pk=pub.id %}" class="btn btn-danger" role="button"> Odebrat
   hospodu </a>
 
-{{ pub.id }}
 
 <h2> Menu: </h2>
 
@@ -16,6 +15,7 @@
     <tr>
       <th> Název: </th>
       <th> Cena: </th>
+      <th> Kategorie: </th>
       <th> Odebrat: </th>
     </tr>
   </thead>
@@ -23,6 +23,7 @@
   <tr>
     <th> {{ item.name }} </th>
     <th> {{ item.price }} </th>
+    <th> {{ item.category }} </th>
     <th> <a href="#" class="btn btn-danger" role="button"><span class="glyphicon glyphicon
     glyphicon-remove"></span> </a> </th>
   </tr>

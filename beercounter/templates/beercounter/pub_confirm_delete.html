@@ -1,6 +1,10 @@
-<form action="" method="post">
-  {% csrf_token %}
-  <p> Opravdu chcete smazat tuto hospodu? {{ object.name }} </p>
-  <input type="submit" value="Potvrdit" />
-</form>
-<a href="{% url 'beercounter:pub' object.id %}" > Zpět </a>
+{% extends "beercounter/base.html" %}
+
+{% block content %}
+  <form action="" method="post" class="form">
+    {% csrf_token %}
+    <p> Opravdu chcete odstratin tuto položku? </p>
+      <input value="Potvrdit" type="submit" class="btn btn-danger">
+      <a class="btn btn-primary" role="button" href="{% url 'beercounter:pub' object.id %}" > Zpět </a>
+  </form>
+{% endblock %}
