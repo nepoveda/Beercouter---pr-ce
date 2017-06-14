@@ -1,0 +1,10 @@
+{% extends "beercounter/base.html" %}
+
+{% block content %}
+
+  {{ bill.pub.id }}
+  {{ bill.name }}
+
+  <a href="{% url 'beercounter:pub' bill.pub.id %}" class="btn btn-default" role="button"> Zpět </a>
+
+{% endblock%}

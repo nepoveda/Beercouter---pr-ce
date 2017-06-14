@@ -12,7 +12,7 @@ class Item(Model):
       )
   name = CharField(max_length=51, unique=True, verbose_name="Název")
   price = PositiveSmallIntegerField(default=0, verbose_name="Cena")
-  category = CharField(max_length=1, choices=ITEM_CATEGORY, default='J', verbose_name="Kategorie")
+  category = CharField(max_length=1, choices=ITEM_CATEGORY, default='N', verbose_name="Kategorie")
   pub = ForeignKey('Pub', on_delete=CASCADE, related_name="items", verbose_name="Hospoda")
 
   def __unicode__(self):

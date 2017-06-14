@@ -1,44 +1,44 @@
 {% extends "beercounter/base.html" %}
 
 {% block content %}
-<h1> {{ pub.name }} </h1>
-<a href="{% url 'beercounter:deletepub' pk=pub.id %}" class="btn btn-danger" role="button"> Odebrat
-  hospodu </a>
+  <h1> {{ pub.name }}
+  <a href="{% url 'beercounter:deletepub' pk=pub.id %}" class="btn btn-danger" role="button"> Odebrat
+    hospodu </a> </h1>
 
+  <h2> Lístky: </h2>
 
-<h2> Menu: </h2>
+  <a href="{% url 'beercounter:addbill' pub.id %}" class="btn btn-success" role="button"> Přidat
+    účet </a>
+  <div class="list-group">
+    {% for bill in pub.bills.all %}
+    <a href="{% url 'beercounter:bill' bill.id %}" class="list-group-item list-group-item-action"> {{ bill.name }} </a>
+    {% endfor %}
+  </div>
 
-<a href="{% url 'beercounter:additem' pk=pub.id %}" class="btn btn-success" role="button"> Přidat položku </a>
+  <h2> Menu: </h2>
 
-<table class="table table-hover">
-  <thead>
+  <a href="{% url 'beercounter:additem' pub.id %}" class="btn btn-success" role="button"> Přidat položku </a>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th> Název: </th>
+        <th> Cena: </th>
+        <th> Kategorie: </th>
+        <th> Odebrat: </th>
+      </tr>
+    </thead>
+    {% for item in pub.items.all %}
     <tr>
-      <th> Název: </th>
-      <th> Cena: </th>
-      <th> Kategorie: </th>
-      <th> Odebrat: </th>
+      <th> {{ item.name }} </th>
+      <th> {{ item.price }} </th>
+      <th> {{ item.category }} </th>
+      <th> <a href="{% url 'beercounter:deleteitem' item.id %}" class="btn btn-danger" role="button">
+          <span class="glyphicon glyphicon glyphicon-remove"></span> </a> </th>
     </tr>
-  </thead>
-  {% for item in pub.items.all %}
-  <tr>
-    <th> {{ item.name }} </th>
-    <th> {{ item.price }} </th>
-    <th> {{ item.category }} </th>
-    <th> <a href="#" class="btn btn-danger" role="button"><span class="glyphicon glyphicon
-    glyphicon-remove"></span> </a> </th>
-  </tr>
-  {% endfor %}
-</table>
+    {% endfor %}
+  </table>
 
-<h2> Objednávky: </h2>
 
-<a href="{% url 'beercounter:addbill' pub.id %}" class="btn btn-success" role="button"> Přidat
-  účet </a>
-<div class="list-group">
-  {% for bill in pub.bills.all %}
-  <a href="#" class="list-group-item list-group-item-action"> {{ bill.name }} </a>
-  {% endfor %}
-</div>
-
-<a href="{% url 'beercounter:index' %}" class="btn btn-default" role="button"> Zpět </a>
+  <a href="{% url 'beercounter:index' %}" class="btn btn-default" role="button"> Zpět </a>
 {% endblock %}

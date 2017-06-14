@@ -20,6 +20,8 @@ class IndexView(ListView):
 class PubView(DetailView):
   model = Pub
 
+class BillView(DetailView):
+  model = Bill
 
 class AddPubView(CreateView):
   model = Pub
@@ -40,12 +42,6 @@ class AddItemView(CreateView):
     kwargs['initial']['pub'] = self.kwargs['pk']
     return kwargs
 
-
-
-class DeletePubView(DeleteView):
-  model = Pub
-  success_url = reverse_lazy('beercounter:index')
-
 class AddBillView(CreateView):
   form_class = BillForm
   template_name = 'beercounter/bill_form.html'
@@ -59,3 +55,11 @@ class AddBillView(CreateView):
    kwargs = super(AddBillView, self).get_form_kwargs(**kwargs)
    kwargs['initial']['pub'] = self.kwargs['pk']
    return kwargs
+
+class DeletePubView(DeleteView):
+  model = Pub
+  success_url = reverse_lazy('beercounter:index')
+
+def deleteItem(request, id):
+  item = get_object_or_404(Item, pk=id).delete()
+  return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
