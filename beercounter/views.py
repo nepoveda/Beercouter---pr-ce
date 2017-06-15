@@ -9,7 +9,7 @@ from django.urls import reverse, reverse_lazy
 from django.http import HttpResponseRedirect, HttpRequest
 
 from .models import Pub, Bill, Order, Item
-from .forms import ItemForm, BillForm
+from .forms import ItemForm, BillForm, OrderForm
 
 class IndexView(ListView):
   template_name = 'beercounter/index.html'
@@ -56,10 +56,28 @@ class AddBillView(CreateView):
    kwargs['initial']['pub'] = self.kwargs['pk']
    return kwargs
 
+class AddOrderView(CreateView):
+  form_class = OrderForm
+  template_name = 'beercounter/order_form.html'
+
+  def get_context_data(self,**kwargs):
+    data = super(AddOrderView, self).get_context_data(**kwargs)
+    data['bill'] = self.kwargs['pk']
+    return data
+
+  def get_form_kwargs(self,**kwargs):
+   kwargs = super(AddOrderView, self).get_form_kwargs(**kwargs)
+   kwargs['initial']['bill'] = self.kwargs['pk']
+   return kwargs
+
 class DeletePubView(DeleteView):
   model = Pub
   success_url = reverse_lazy('beercounter:index')
 
 def deleteItem(request, id):
-  item = get_object_or_404(Item, pk=id).delete()
+  get_object_or_404(Item, pk=id).delete()
+  return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+def deleteBill(request, id):
+  get_object_or_404(Bill, pk=id).delete()
   return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

@@ -1,0 +1,15 @@
+{% extends "beercounter/base.html" %}
+{% load bootstrap3 %}
+
+{% block content %}
+
+<!-- tady bych chtěl mít název toho účtu, pod kterým provádím objednávku -->
+
+  <form action="" method="post" class="form">
+    {%csrf_token%}
+    {% bootstrap_form form %}
+    {% buttons submit="Přidat" %}
+    {% endbuttons %}
+  </form>
+
+{% endblock %}

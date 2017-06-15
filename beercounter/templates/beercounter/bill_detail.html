@@ -1,10 +1,34 @@
 {% extends "beercounter/base.html" %}
 
 {% block content %}
+  <h1> Účet jménem: {{ bill.name }} </h1>
+  <a href="{% url 'beercounter:addorder' bill.id %}" class="btn btn-success" role="button"> Přidat
+    objednávku </a>
 
-  {{ bill.pub.id }}
-  {{ bill.name }}
+  {% for order in bill.bills.all %}
+    {{order.item}} {{order.count}}
+    {% endfor %}
 
+  <h2> V Hospodě:{{ bill.pub.name }} </h2>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th> Název: </th>
+        <th> Cena: </th>
+        <th> Kategorie: </th>
+      </tr>
+    </thead>
+
+  {% for item in bill.pub.items.all %}
+    <tr>
+      <th> {{ item.name }} </th>
+      <th> {{ item.price }} </th>
+      <th> {{ item.get_category_display }} </th>
+
+    </tr>
+    {% endfor %}
+  </table>
   <a href="{% url 'beercounter:pub' bill.pub.id %}" class="btn btn-default" role="button"> Zpět </a>
 
 {% endblock%}

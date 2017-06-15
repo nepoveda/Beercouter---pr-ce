@@ -2,7 +2,7 @@
 
 {% block content %}
   <h1> {{ pub.name }}
-  <a href="{% url 'beercounter:deletepub' pk=pub.id %}" class="btn btn-danger" role="button"> Odebrat
+  <a href="{% url 'beercounter:deletepub' pub.id %}" class="btn btn-danger" role="button"> Odebrat
     hospodu </a> </h1>
 
   <h2> Lístky: </h2>
@@ -11,7 +11,12 @@
     účet </a>
   <div class="list-group">
     {% for bill in pub.bills.all %}
-    <a href="{% url 'beercounter:bill' bill.id %}" class="list-group-item list-group-item-action"> {{ bill.name }} </a>
+      <a href="{% url 'beercounter:bill' bill.id %}" class="list-group-item list-group-item-action"> {{ bill.name }} </a>
+      <form method="DELETE" action="{% url 'beercounter:deletebill' bill.id %}">
+        <button type="submit" class="btn btn-danger">
+         <span class="glyphicon glyphicon glyphicon-remove"></span>
+        </button>
+      </form>
     {% endfor %}
   </div>
 
@@ -32,9 +37,14 @@
     <tr>
       <th> {{ item.name }} </th>
       <th> {{ item.price }} </th>
-      <th> {{ item.category }} </th>
-      <th> <a href="{% url 'beercounter:deleteitem' item.id %}" class="btn btn-danger" role="button">
-          <span class="glyphicon glyphicon glyphicon-remove"></span> </a> </th>
+      <th> {{ item.get_category_display }} </th>
+      <th>
+        <form method="DELETE" action="{% url 'beercounter:deleteitem' item.id %}">
+          <button type="submit" class="btn btn-danger">
+           <span class="glyphicon glyphicon glyphicon-remove"></span>
+          </button>
+        </form>
+      </th>
     </tr>
     {% endfor %}
   </table>
