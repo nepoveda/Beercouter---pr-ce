@@ -1,5 +1,4 @@
 from django.forms import ModelForm, CharField, HiddenInput
-from django import forms
 
 from .models import Item, Bill, Order
 
@@ -8,7 +7,7 @@ class ItemForm(ModelForm):
     model = Item
     fields = '__all__'
     widgets = {
-        'pub': forms.HiddenInput,
+        'pub': HiddenInput,
         }
 
 class BillForm(ModelForm):
@@ -16,7 +15,7 @@ class BillForm(ModelForm):
     model = Bill
     fields = '__all__'
     widgets = {
-        'pub': forms.HiddenInput,
+        'pub': HiddenInput,
         }
 
 class OrderForm(ModelForm):
@@ -29,8 +28,11 @@ class OrderForm(ModelForm):
 
   def __init__(self, *args, **kwargs):
     super(OrderForm,self).__init__(*args, **kwargs)
-    data = kwargs.get('initial', kwargs.get('data'))
-    bill = Bill.objects.get(pk = data['bill'])
+    if kwargs:
+      bill = kwargs.get('instance', kwargs.get('bill'))
+      print self.fields['bill']
+      self.fields['bill'] = bill
+      print self.fields['bill']
 
     self.fields['item'].queryset = \
       self.fields['item'].queryset.filter(pub_id = bill.pub_id)

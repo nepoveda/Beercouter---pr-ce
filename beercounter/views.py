@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import get_object_or_404
-from django.views.generic import ListView, DetailView
-from django.views.generic.edit import CreateView, DeleteView
+from django.shortcuts import get_object_or_404, render, render_to_response
+from django.views.generic import ListView, DetailView, TemplateView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView, FormView
 from django.db.models.functions import Lower
 from django.urls import reverse, reverse_lazy
 from django.http import HttpResponseRedirect, HttpRequest
@@ -20,8 +20,18 @@ class IndexView(ListView):
 class PubView(DetailView):
   model = Pub
 
-class BillView(DetailView):
+class BillView(UpdateView):
+  template_name = 'beercounter/bill_update_form.html'
   model = Bill
+  form_class = OrderForm
+
+  def get_context_data(self, **kwargs):
+    data = super(BillView, self).get_context_data(**kwargs)
+    return data
+
+  def get_form_kwargs(self,**kwargs):
+    kwargs = super(BillView, self).get_form_kwargs(**kwargs)
+    return kwargs
 
 class AddPubView(CreateView):
   model = Pub
@@ -56,17 +66,26 @@ class AddBillView(CreateView):
    kwargs['initial']['pub'] = self.kwargs['pk']
    return kwargs
 
-class AddOrderView(CreateView):
+class OrderFormView(FormView):
   form_class = OrderForm
-  template_name = 'beercounter/order_form.html'
+  template_name = 'beercounter/bill_update_form.html'
+  success_url = 'beercounter:order'
+
+  def post(self, request, *args, **kwargs):
+    order_form = self.form_class(request.POST)
+    if order_form.is_valid():
+      print('proslo to')
+      order_form.save()
+      return self.render_to_response(
+          self.get_context_data())
 
   def get_context_data(self,**kwargs):
-    data = super(AddOrderView, self).get_context_data(**kwargs)
-    data['bill'] = self.kwargs['pk']
+    data = super(OrderFormView, self).get_context_data(**kwargs)
+    data['bill'] = Bill.objects.get(pk=self.kwargs['pk'])
     return data
 
   def get_form_kwargs(self,**kwargs):
-   kwargs = super(AddOrderView, self).get_form_kwargs(**kwargs)
+   kwargs = super(OrderFormView,self).get_form_kwargs(**kwargs)
    kwargs['initial']['bill'] = self.kwargs['pk']
    return kwargs
 
@@ -75,9 +94,11 @@ class DeletePubView(DeleteView):
   success_url = reverse_lazy('beercounter:index')
 
 def deleteItem(request, id):
-  get_object_or_404(Item, pk=id).delete()
+  if request.method == 'POST':
+    get_object_or_404(Item, pk=id).delete()
   return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 def deleteBill(request, id):
-  get_object_or_404(Bill, pk=id).delete()
+  if request.method == 'POST':
+    get_object_or_404(Bill, pk=id).delete()
   return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

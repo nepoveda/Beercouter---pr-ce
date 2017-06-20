@@ -53,9 +53,19 @@ class Pub(Model):
     self.name = self.name.capitalize()
 
 class Order(Model):
+  class Meta:
+    unique_together = ('bill','item')
   bill = ForeignKey('Bill', on_delete=CASCADE, related_name="bills")
   item = ForeignKey('Item', on_delete=CASCADE, related_name="items")
-  count = PositiveSmallIntegerField(default=0)
+  count = PositiveSmallIntegerField(default=1)
+
+  @property
+  def total_cost(self):
+    return self.item.price * self.count
+
+  def __unicode__(self):
+    return ('%s' % self.item.name).encode('ascii', errors='replace')
 
   def get_absolute_url(self):
     return reverse('beercounter:bill', kwargs={'pk': self.bill.pk})
+

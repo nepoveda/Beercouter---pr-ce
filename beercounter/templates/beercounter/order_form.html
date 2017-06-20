@@ -4,11 +4,13 @@
 {% block content %}
 
 <!-- tady bych chtěl mít název toho účtu, pod kterým provádím objednávku -->
+<h1> {{ bill.name }} </h1>
 
   <form action="" method="post" class="form">
     {%csrf_token%}
-    {% bootstrap_form form %}
+    {% bootstrap_form form layout='inline' %}
     {% buttons submit="Přidat" %}
+    <a class="btn btn-default" role="button" role="button" href="{% url 'beercounter:bill' bill.id %}" > Zpět </a>
     {% endbuttons %}
   </form>
 
