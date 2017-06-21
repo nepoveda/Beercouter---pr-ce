@@ -30,9 +30,7 @@ class OrderForm(ModelForm):
     super(OrderForm,self).__init__(*args, **kwargs)
     if kwargs:
       bill = kwargs.get('instance', kwargs.get('bill'))
-      print self.fields['bill']
-      self.fields['bill'] = bill
-      print self.fields['bill']
-
+    else:
+      bill=Bill.objects.get(pk=args[0]['bill'])
     self.fields['item'].queryset = \
-      self.fields['item'].queryset.filter(pub_id = bill.pub_id)
+        self.fields['item'].queryset.filter(pub_id = bill.pub_id)

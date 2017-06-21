@@ -3,6 +3,7 @@
 
 {% block content %}
   <h1> Účet jménem: {{ bill.name }} </h1>
+  <p> A ID: {{ bill.id }} </p>
 
   <table class="table table-hover">
     <thead>
@@ -28,15 +29,13 @@
 
   <h2> V Hospodě:{{ bill.pub.name }} </h2>
 
-  <form action="{% url 'beercounter:order' bill.id %}" method="POST" >
+  <form action="{% url 'beercounter:bill' bill.id %}" method="POST" >
     {% csrf_token %}
-    {{form.as_table}}
+    {% bootstrap_form form %}
     {% buttons %}
-      <button type="submit" class="btn btn-primary">
-        Přidat
-      </button>
-      <a class="btn btn-default" role="button" href="{% url 'beercounter:pub' bill.pub_id %}" > Zpět </a>
+      <input value="Přidat" name="addOrder" type="submit" class="btn btn-primary">
     {% endbuttons %}
   </form>
 
+      <a class="btn btn-default" role="button" href="{% url 'beercounter:pub' bill.pub_id %}" > Zpět </a>
 {% endblock%}

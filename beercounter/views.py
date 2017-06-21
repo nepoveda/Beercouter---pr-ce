@@ -25,13 +25,25 @@ class BillView(UpdateView):
   model = Bill
   form_class = OrderForm
 
-  def get_context_data(self, **kwargs):
+
+  def get_context_data(self,**kwargs):
     data = super(BillView, self).get_context_data(**kwargs)
     return data
 
+
   def get_form_kwargs(self,**kwargs):
-    kwargs = super(BillView, self).get_form_kwargs(**kwargs)
+    kwargs = super(BillView,self).get_form_kwargs(**kwargs)
+    kwargs['initial']['bill'] = self.kwargs['pk']
     return kwargs
+
+  def post(self, request, *args, **kwargs):
+    self.object = self.get_object()
+    form = self.form_class(request.POST)
+    if form.is_valid():
+      form.save()
+      return self.form_valid(form)
+    else:
+      return self.form_invalid(form)
 
 class AddPubView(CreateView):
   model = Pub
@@ -62,32 +74,18 @@ class AddBillView(CreateView):
     return data
 
   def get_form_kwargs(self,**kwargs):
-   kwargs = super(AddBillView, self).get_form_kwargs(**kwargs)
-   kwargs['initial']['pub'] = self.kwargs['pk']
-   return kwargs
+    kwargs = super(AddBillView, self).get_form_kwargs(**kwargs)
+    kwargs['initial']['pub'] = self.kwargs['pk']
+    return kwargs
 
-class OrderFormView(FormView):
-  form_class = OrderForm
-  template_name = 'beercounter/bill_update_form.html'
-  success_url = 'beercounter:order'
+# class OrderFormView(FormView):
+#   form_class = OrderForm
+#   template_name = 'beercounter/bill_update_form.html'
+#   success_url = 'beercounter:order'
 
-  def post(self, request, *args, **kwargs):
-    order_form = self.form_class(request.POST)
-    if order_form.is_valid():
-      print('proslo to')
-      order_form.save()
-      return self.render_to_response(
-          self.get_context_data())
-
-  def get_context_data(self,**kwargs):
-    data = super(OrderFormView, self).get_context_data(**kwargs)
-    data['bill'] = Bill.objects.get(pk=self.kwargs['pk'])
-    return data
-
-  def get_form_kwargs(self,**kwargs):
-   kwargs = super(OrderFormView,self).get_form_kwargs(**kwargs)
-   kwargs['initial']['bill'] = self.kwargs['pk']
-   return kwargs
+#   def post(self, request, *args, **kwargs):
+#     form = self.get_form(form_class)
+#     print ('tisknu form',form)
 
 class DeletePubView(DeleteView):
   model = Pub
