@@ -1,4 +1,5 @@
 {% extends "beercounter/base.html" %}
+{% load bootstrap3 %}
 
 {% block content %}
 <div>
@@ -13,6 +14,15 @@
   </div>
 
   <br/>
-  <a href="{% url 'beercounter:addpub' %}" class="btn btn-success" role="button"> Přidat hospodu </a>
+  <div class="panel-heading"> <h1> Nová hospoda: </h1> </div>
+    <form method="POST">
+      {% csrf_token %}
+      <div class="input-group">
+      {{form.as_p}}
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-success"> Přidat </button>
+      </span>
+    </form>
+  </div>
 </div>
 {% endblock %}

@@ -2,59 +2,61 @@
 {% load staticfiles %}
 
 {% block content %}
-  <h1> {{ pub.name }}
+<h1> {{ pub.name }}
   <a href="{% url 'beercounter:deletepub' pub.id %}" class="btn btn-danger" role="button"> Odebrat
     hospodu </a> </h1>
 
-  <h2> Lístky: </h2>
+<h2> Lístky: </h2>
 
-  <a href="{% url 'beercounter:addbill' pub.id %}" class="btn btn-success" role="button"> Přidat
-    účet </a>
+<a href="{% url 'beercounter:addbill' pub.id %}" class="btn btn-success" role="button"> Přidat
+  účet </a>
 
-  <div class="container-fluid">
-        {% for bill in pub.bills.all %}
-        <div class="list-group row">
-          <a href="{% url 'beercounter:bill' bill.id %}" class="list-group-item col-sm-9" > {{ bill.name }} </a>
-          <div class="list-group-item col-sm-3" >
-            <form method="POST" action="{% url 'beercounter:deletebill' bill.id %}"
-                                onsubmit="return confirm('Opravdu?')">
-              {% csrf_token %}
+<div class="container-fluid">
+  {% for bill in pub.bills.all %}
+  <div class="list-group row">
+    <a href="{% url 'beercounter:bill' bill.id %}" class="list-group-item col-sm-9" > {{ bill.name }} </a>
+    <div class="list-group-item col-sm-3" >
+      <form method="POST" action=""
+                          onsubmit="return confirm('Opravdu?')">
+        {% csrf_token %}
+        <input type="hidden" value="{{bill.id}}" name="bill">
 
-            <button class="btn btn-danger " > <span class="glyphicon glyphicon-remove"> </span>
-              </button> </div>
-        </div>
-            </form>
-        {% endfor %}
+        <button type="submit" name="deleteBill" class="btn btn-danger " > <span class="glyphicon glyphicon-remove"> </span>
+        </button> </div>
   </div>
+      </form>
+      {% endfor %}
+</div>
 
-  <h2> Menu: </h2>
+<h2> Menu: </h2>
 
-  <a href="{% url 'beercounter:additem' pub.id %}" class="btn btn-success" role="button"> Přidat položku </a>
+<a href="{% url 'beercounter:additem' pub.id %}" class="btn btn-success" role="button"> Přidat položku </a>
 
-  <table class="table ">
-    <thead>
-      <tr>
-        <th> Název: </th>
-        <th> Cena: </th>
-        <th> Kategorie: </th>
-        <th> Odebrat: </th>
-      </tr>
-    </thead>
-    {% for item in pub.items.all %}
+<table class="table ">
+  <thead>
     <tr>
-      <td> {{ item.name }} </td>
-      <td> {{ item.price }} </td>
-      <td> {{ item.get_category_display }} </td>
-      <td>
-        <form method="POST" action="{% url 'beercounter:deleteitem' item.id %}"
-                               onsubmit="return confirm('Opravdu?')">
-          {% csrf_token %}
-        <button  class="btn btn-danger"> <span class="glyphicon glyphicon-remove"></span> </button> </td>
-        </form>
+      <th> Název: </th>
+      <th> Cena: </th>
+      <th> Kategorie: </th>
+      <th> Odebrat: </th>
     </tr>
-    {% endfor %}
-  </table>
+  </thead>
+  {% for item in pub.items.all %}
+  <tr>
+    <td> {{ item.name }} </td>
+    <td> {{ item.price }} </td>
+    <td> {{ item.get_category_display }} </td>
+    <td>
+      <form method="POST" action=""
+                          onsubmit="return confirm('Opravdu?')">
+        {% csrf_token %}
+        <input type="hidden" value="{{item.id}}" name="item">
+        <button type="submit" name="deleteItem" class="btn btn-danger"> <span class="glyphicon glyphicon-remove"></span> </button> </td>
+      </form>
+  </tr>
+  {% endfor %}
+</table>
 
 
-  <a href="{% url 'beercounter:index' %}" class="btn btn-default" role="button"> Zpět </a>
+<a href="{% url 'beercounter:index' %}" class="btn btn-default" role="button"> Zpět </a>
 {% endblock %}
