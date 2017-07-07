@@ -1,18 +1,15 @@
 {% extends "beercounter/base.html" %}
 {% load bootstrap3 %}
-{% bootstrap_messages %}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
 
 {% block content %}
   <form action="" method="post" class="form">
     {%csrf_token%}
     {% bootstrap_form form %}
     {% buttons %}
-      <button type="submit" class="btn btn-primary">
-        Přidat
+      <button type="submit" class="btn btn-success">
+        Potvrdit
       </button>
+      <a class="btn btn-default" href="{% url 'beercounter:pub' pubId %}" > Zpět </a>
     {% endbuttons %}
   </form>
-  <a class="btn btn-default" role="button" href="{% url 'beercounter:pub' pubId %}" > Zpět </a>
 {% endblock %}

@@ -25,12 +25,13 @@ SECRET_KEY = '+w4$q%h#%&c(%$9vr)4wqt#xsu_1^jaeuantd0^@6n9_zxtl0-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','testserver']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'django_nose',
     'bootstrap3',
     'beercounter.apps.BeercounterConfig',
     'django.contrib.admin',
@@ -128,3 +129,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+NOSE_ARGS = [
+    '--with-coverage',
+    '--cover-package=beercounter',
+    '--cover-html',
+    ]

@@ -1,6 +1,6 @@
 from django.forms import ModelForm, CharField, HiddenInput
 
-from .models import Item, Bill, Order
+from .models import Item, Bill, Order, Pub, Pub
 
 class ItemForm(ModelForm):
   class Meta:
@@ -34,3 +34,12 @@ class OrderForm(ModelForm):
       bill=Bill.objects.get(pk=args[0]['bill'])
     self.fields['item'].queryset = \
         self.fields['item'].queryset.filter(pub_id = bill.pub_id)
+
+class PubForm(ModelForm):
+  class Meta:
+    model = Pub
+    fields = '__all__'
+
+  def __init__(self, *args, **kwargs):
+    super(PubForm, self).__init__(*args, **kwargs)
+    self.fields['name'].widget.attrs.update({'class': "form-control"})

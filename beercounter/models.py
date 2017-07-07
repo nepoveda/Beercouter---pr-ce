@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.db.models import Model, CharField, PositiveSmallIntegerField, ForeignKey, CASCADE
+from django.db.models import Model, CharField, PositiveSmallIntegerField, ForeignKey, CASCADE, Sum, F
 from django.urls import reverse
 
 class Item(Model):
@@ -17,7 +17,7 @@ class Item(Model):
       )
 
   name = CharField(max_length=51, unique=True, verbose_name="Název")
-  price = PositiveSmallIntegerField(default=0, verbose_name="Cena")
+  price = PositiveSmallIntegerField(default=1, verbose_name="Cena")
   category = CharField(max_length=1, choices=ITEM_CATEGORY, default='N', verbose_name="Kategorie")
   pub = ForeignKey('Pub', on_delete=CASCADE, verbose_name="Hospoda")
 
@@ -25,7 +25,7 @@ class Item(Model):
     return '%s' % self.name
 
   def get_absolute_url(self):
-    return reverse('beercounter:pub', kwargs={'pk': self.pub.pk})
+    return reverse('beercounter:pub', kwargs={'pk': self.pub_id})
 
   def clean(self):
     self.name = self.name.capitalize()
@@ -41,8 +41,8 @@ class Bill(Model):
 
   @property
   def spending(self):
-    orders = self.orders.all()
-    return sum([order.total_cost for order in orders])
+    # vrací celkový součet účtu
+    return self.orders.aggregate(spending=Sum(F('count')*F('item__price')))['spending']
 
   def __unicode__(self):
     return '%s' % self.name

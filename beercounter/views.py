@@ -11,18 +11,12 @@ from django.http import HttpResponseRedirect, HttpRequest
 from django.db.models import F
 
 from .models import Pub, Bill, Order, Item
-from .forms import ItemForm, BillForm, OrderForm
-
-# class IndexView(ListView):
-#   template_name = 'beercounter/index.html'
-#   context_object_name = 'pub_list'
-#   model = Pub
-#   queryset = Pub.objects.order_by(Lower('name'))
+from .forms import ItemForm, BillForm, OrderForm, PubForm
 
 class IndexView(CreateView):
   model = Pub
-  fields = '__all__'
   template_name = 'beercounter/index.html'
+  form_class = PubForm
 
   def get_context_data(self, **kwargs):
     kwargs['pub_list'] = Pub.objects.order_by(Lower('name'))
@@ -32,7 +26,6 @@ class PubView(DetailView):
   model = Pub
 
   def post(self, request, *args, **kwargs):
-    self.object = self.get_object()
 
     if 'deleteBill' in request.POST:
       get_object_or_404(Bill, pk=request.POST.get("bill")).delete()
@@ -41,6 +34,7 @@ class PubView(DetailView):
       get_object_or_404(Item, pk=request.POST.get("item")).delete()
 
     return HttpResponseRedirect(reverse("beercounter:pub", args=[kwargs.get('pk')]))
+
 
 class BillView(UpdateView):
   template_name = 'beercounter/bill_update_form.html'
@@ -72,15 +66,8 @@ class BillView(UpdateView):
           form.cleaned_data['item'].id):
         order = get_object_or_404(self.object.orders.filter(item_id = \
             form.cleaned_data['item'].id))
-        order.count = F('count') + form.cleaned_data['count']
-        order.save()
+        incrementOrderCount(order, form.cleaned_data['count'])
         return HttpResponseRedirect(reverse("beercounter:bill", args=[self.object.id]))
-
-
-
-    else:
-      return self.form_invalid()
-
 
 class AddItemView(CreateView):
   form_class = ItemForm
@@ -114,21 +101,51 @@ class DeletePubView(DeleteView):
   model = Pub
   success_url = reverse_lazy('beercounter:index')
 
-def incrementCount(request):
-  order = Order.objects.get(pk=request.POST['order'])
-  order.count = F('count') + request.POST['count']
+class UpdateItemView(UpdateView):
+  model = Item
+  form_class = ItemForm
+  template_name = 'beercounter/item_form.html'
+
+
+  def get_context_data(self, **kwargs):
+    data = super(UpdateItemView, self).get_context_data(**kwargs)
+    self.object = self.get_object()
+    data['pubId'] = self.object.pub_id
+    return data
+
+class UpdateBillView(UpdateView):
+  model = Bill
+  form_class = BillForm
+  template_name = 'beercounter/bill_form.html'
+
+
+  def get_context_data(self, **kwargs):
+    data = super(UpdateBillView, self).get_context_data(**kwargs)
+    self.object = self.get_object()
+    data['pubId'] = self.object.pub_id
+    return data
+
+def incrementOrderCount(order, count):
+  order.count = F('count') + count
   order.save()
+  order = Order.objects.get(pk=order.pk)
+
+def incrementCount(request):
+  order = get_object_or_404(Order,pk=request.POST['order'])
+  incrementOrderCount(order, request.POST['count'])
   return HttpResponseRedirect(reverse("beercounter:bill", args=[request.POST['bill']]))
 
 def decrementCount(request):
-  order = Order.objects.get(pk=request.POST['order'])
+  print(request.POST)
+  order = get_object_or_404(Order,pk=request.POST['order'])
   if request.POST['count'] and order.count <= int(request.POST['count']):
     order.delete()
   else:
     order.count = F('count') - request.POST['count']
     order.save()
+    order = Order.objects.get(pk=order.pk)
   return HttpResponseRedirect(reverse("beercounter:bill", args=[request.POST['bill']]))
 
 def cleanOrders(request):
-  Bill.objects.get(pk=request.POST['bill']).orders.all().delete()
+  get_object_or_404(Bill, pk=request.POST['bill']).orders.all().delete()
   return HttpResponseRedirect(reverse("beercounter:bill", args=[request.POST['bill']]))

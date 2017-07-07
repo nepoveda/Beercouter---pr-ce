@@ -21,6 +21,7 @@
         {% csrf_token %}
         <input type="hidden" value="{{bill.id}}" name="bill">
 
+        <a name="updateBill" href="{% url 'beercounter:updatebill' bill.id %}" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span></a>
         <button type="submit" name="deleteBill" class="btn btn-danger " > <span class="glyphicon glyphicon-remove"> </span>
         </button> </div>
   </div>
@@ -51,7 +52,10 @@
                           onsubmit="return confirm('Opravdu?')">
         {% csrf_token %}
         <input type="hidden" value="{{item.id}}" name="item">
-        <button type="submit" name="deleteItem" class="btn btn-danger"> <span class="glyphicon glyphicon-remove"></span> </button> </td>
+      <a name="updateItem" href="{% url 'beercounter:updateitem' item.id %}" class="btn
+        btn-warning"> <span class="glyphicon glyphicon-edit"></span> </a>
+        <button type="submit" name="deleteItem" class="btn btn-danger"> <span class="glyphicon
+        glyphicon-remove"></span> </button> </td>
       </form>
   </tr>
   {% endfor %}

@@ -29,6 +29,7 @@
         <div class="input-group">
 
           <span class="input-group-btn">
+            <div style="display:none;"><input type="submit" formaction="{% url 'beercounter:increment' %}" name="incrementCount"></div>
             <button type="submit" formaction="{% url 'beercounter:decrement' %}" class="btn btn-default" name="decrementCount"> - </button>
           </span>
           <input type="number" min="1" value="1" name="count" class="form-control">
@@ -36,6 +37,7 @@
             <button type="submit" formaction="{% url 'beercounter:increment' %}"
               name="incrementCount" class="btn btn-default"> + </button>
           </span>
+
         </div>
       </form>
     </td>
