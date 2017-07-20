@@ -30,8 +30,8 @@
         <img id="keyboard_icon" src="keybd_closed.png" alt="Show keyboard shortcuts" />
 
         <h2 class="stats">
-            4 statements &nbsp;
-            <span class="run hide_run shortkey_r button_toggle_run">4 run</span>
+            5 statements &nbsp;
+            <span class="run hide_run shortkey_r button_toggle_run">5 run</span>
             <span class="mis shortkey_m button_toggle_mis">0 missing</span>
             <span class="exc shortkey_x button_toggle_exc">0 excluded</span>
 
@@ -68,12 +68,12 @@
         <tr>
             <td class="linenos">
 <p id="n1" class="stm run hide_run"><a href="#n1">1</a></p>
-<p id="n2" class="pln"><a href="#n2">2</a></p>
-<p id="n3" class="stm run hide_run"><a href="#n3">3</a></p>
-<p id="n4" class="pln"><a href="#n4">4</a></p>
-<p id="n5" class="stm run hide_run"><a href="#n5">5</a></p>
+<p id="n2" class="stm run hide_run"><a href="#n2">2</a></p>
+<p id="n3" class="pln"><a href="#n3">3</a></p>
+<p id="n4" class="stm run hide_run"><a href="#n4">4</a></p>
+<p id="n5" class="pln"><a href="#n5">5</a></p>
 <p id="n6" class="stm run hide_run"><a href="#n6">6</a></p>
-<p id="n7" class="pln"><a href="#n7">7</a></p>
+<p id="n7" class="stm run hide_run"><a href="#n7">7</a></p>
 <p id="n8" class="pln"><a href="#n8">8</a></p>
 <p id="n9" class="pln"><a href="#n9">9</a></p>
 <p id="n10" class="pln"><a href="#n10">10</a></p>
@@ -85,27 +85,45 @@
 <p id="n16" class="pln"><a href="#n16">16</a></p>
 <p id="n17" class="pln"><a href="#n17">17</a></p>
 <p id="n18" class="pln"><a href="#n18">18</a></p>
+<p id="n19" class="pln"><a href="#n19">19</a></p>
+<p id="n20" class="pln"><a href="#n20">20</a></p>
+<p id="n21" class="pln"><a href="#n21">21</a></p>
+<p id="n22" class="pln"><a href="#n22">22</a></p>
+<p id="n23" class="pln"><a href="#n23">23</a></p>
+<p id="n24" class="pln"><a href="#n24">24</a></p>
+<p id="n25" class="pln"><a href="#n25">25</a></p>
+<p id="n26" class="pln"><a href="#n26">26</a></p>
+<p id="n27" class="pln"><a href="#n27">27</a></p>
 
             </td>
             <td class="text">
-<p id="t1" class="stm run hide_run"><span class="key">from</span> <span class="nam">django</span><span class="op">.</span><span class="nam">conf</span><span class="op">.</span><span class="nam">urls</span> <span class="key">import</span> <span class="nam">url</span><span class="strut">&nbsp;</span></p>
-<p id="t2" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t3" class="stm run hide_run"><span class="key">from</span> <span class="op">.</span> <span class="key">import</span> <span class="nam">views</span><span class="strut">&nbsp;</span></p>
-<p id="t4" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t5" class="stm run hide_run"><span class="nam">app_name</span> <span class="op">=</span> <span class="str">'beercounter'</span><span class="strut">&nbsp;</span></p>
-<p id="t6" class="stm run hide_run"><span class="nam">urlpatterns</span> <span class="op">=</span> <span class="op">[</span><span class="strut">&nbsp;</span></p>
-<p id="t7" class="pln">    <span class="nam">url</span><span class="op">(</span><span class="str">r'^$'</span><span class="op">,</span> <span class="nam">views</span><span class="op">.</span><span class="nam">IndexView</span><span class="op">.</span><span class="nam">as_view</span><span class="op">(</span><span class="op">)</span><span class="op">,</span> <span class="nam">name</span><span class="op">=</span><span class="str">"index"</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
-<p id="t8" class="pln">    <span class="nam">url</span><span class="op">(</span><span class="str">r'^pub/(?P&lt;pk>[0-9]+)/$'</span><span class="op">,</span> <span class="nam">views</span><span class="op">.</span><span class="nam">PubView</span><span class="op">.</span><span class="nam">as_view</span><span class="op">(</span><span class="op">)</span><span class="op">,</span> <span class="nam">name</span><span class="op">=</span><span class="str">"pub"</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
-<p id="t9" class="pln">    <span class="nam">url</span><span class="op">(</span><span class="str">r'^bill/(?P&lt;pk>[0-9]+)/$'</span><span class="op">,</span> <span class="nam">views</span><span class="op">.</span><span class="nam">BillView</span><span class="op">.</span><span class="nam">as_view</span><span class="op">(</span><span class="op">)</span><span class="op">,</span> <span class="nam">name</span><span class="op">=</span><span class="str">"bill"</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
-<p id="t10" class="pln">    <span class="nam">url</span><span class="op">(</span><span class="str">r'^pub/(?P&lt;pk>[0-9]+)/addItem/$'</span><span class="op">,</span> <span class="nam">views</span><span class="op">.</span><span class="nam">AddItemView</span><span class="op">.</span><span class="nam">as_view</span><span class="op">(</span><span class="op">)</span><span class="op">,</span> <span class="nam">name</span><span class="op">=</span><span class="str">"additem"</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
-<p id="t11" class="pln">    <span class="nam">url</span><span class="op">(</span><span class="str">r'^pub/(?P&lt;pk>[0-9]+)/bill/$'</span><span class="op">,</span> <span class="nam">views</span><span class="op">.</span><span class="nam">AddBillView</span><span class="op">.</span><span class="nam">as_view</span><span class="op">(</span><span class="op">)</span><span class="op">,</span> <span class="nam">name</span><span class="op">=</span><span class="str">"addbill"</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
-<p id="t12" class="pln">    <span class="nam">url</span><span class="op">(</span><span class="str">r'^pub/delete/(?P&lt;pk>[0-9]+)$'</span><span class="op">,</span> <span class="nam">views</span><span class="op">.</span><span class="nam">DeletePubView</span><span class="op">.</span><span class="nam">as_view</span><span class="op">(</span><span class="op">)</span><span class="op">,</span> <span class="nam">name</span><span class="op">=</span><span class="str">"deletepub"</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
-<p id="t13" class="pln">    <span class="nam">url</span><span class="op">(</span><span class="str">r'^item/update/(?P&lt;pk>[0-9]+)$'</span><span class="op">,</span> <span class="nam">views</span><span class="op">.</span><span class="nam">UpdateItemView</span><span class="op">.</span><span class="nam">as_view</span><span class="op">(</span><span class="op">)</span><span class="op">,</span> <span class="nam">name</span><span class="op">=</span><span class="str">"updateitem"</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
-<p id="t14" class="pln">    <span class="nam">url</span><span class="op">(</span><span class="str">r'^bill/update/(?P&lt;pk>[0-9]+)$'</span><span class="op">,</span> <span class="nam">views</span><span class="op">.</span><span class="nam">UpdateBillView</span><span class="op">.</span><span class="nam">as_view</span><span class="op">(</span><span class="op">)</span><span class="op">,</span> <span class="nam">name</span><span class="op">=</span><span class="str">"updatebill"</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
-<p id="t15" class="pln">    <span class="nam">url</span><span class="op">(</span><span class="str">r'^incrementCount/$'</span><span class="op">,</span> <span class="nam">views</span><span class="op">.</span><span class="nam">incrementCount</span><span class="op">,</span> <span class="nam">name</span><span class="op">=</span><span class="str">"increment"</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
-<p id="t16" class="pln">    <span class="nam">url</span><span class="op">(</span><span class="str">r'^decrementCount/$'</span><span class="op">,</span> <span class="nam">views</span><span class="op">.</span><span class="nam">decrementCount</span><span class="op">,</span> <span class="nam">name</span><span class="op">=</span><span class="str">"decrement"</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
-<p id="t17" class="pln">    <span class="nam">url</span><span class="op">(</span><span class="str">r'^cleanOrders/$'</span><span class="op">,</span> <span class="nam">views</span><span class="op">.</span><span class="nam">cleanOrders</span><span class="op">,</span> <span class="nam">name</span><span class="op">=</span><span class="str">"cleanOrders"</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
-<p id="t18" class="pln">    <span class="op">]</span><span class="strut">&nbsp;</span></p>
+<p id="t1" class="stm run hide_run"><span class="key">from</span> <span class="nam">django</span><span class="op">.</span><span class="nam">conf</span><span class="op">.</span><span class="nam">urls</span> <span class="key">import</span> <span class="nam">url</span><span class="op">,</span> <span class="nam">include</span><span class="strut">&nbsp;</span></p>
+<p id="t2" class="stm run hide_run"><span class="key">from</span> <span class="nam">django</span><span class="op">.</span><span class="nam">contrib</span><span class="op">.</span><span class="nam">auth</span> <span class="key">import</span> <span class="nam">views</span> <span class="key">as</span> <span class="nam">auth_views</span><span class="strut">&nbsp;</span></p>
+<p id="t3" class="pln"><span class="strut">&nbsp;</span></p>
+<p id="t4" class="stm run hide_run"><span class="key">from</span> <span class="op">.</span> <span class="key">import</span> <span class="nam">views</span><span class="strut">&nbsp;</span></p>
+<p id="t5" class="pln"><span class="strut">&nbsp;</span></p>
+<p id="t6" class="stm run hide_run"><span class="nam">app_name</span> <span class="op">=</span> <span class="str">'beercounter'</span><span class="strut">&nbsp;</span></p>
+<p id="t7" class="stm run hide_run"><span class="nam">urlpatterns</span> <span class="op">=</span> <span class="op">[</span><span class="strut">&nbsp;</span></p>
+<p id="t8" class="pln">    <span class="nam">url</span><span class="op">(</span><span class="str">r'^$'</span><span class="op">,</span> <span class="nam">views</span><span class="op">.</span><span class="nam">IndexView</span><span class="op">.</span><span class="nam">as_view</span><span class="op">(</span><span class="op">)</span><span class="op">,</span> <span class="nam">name</span><span class="op">=</span><span class="str">"index"</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t9" class="pln">    <span class="nam">url</span><span class="op">(</span><span class="str">r'^pub/(?P&lt;pk>[0-9]+)/$'</span><span class="op">,</span> <span class="nam">views</span><span class="op">.</span><span class="nam">PubView</span><span class="op">.</span><span class="nam">as_view</span><span class="op">(</span><span class="op">)</span><span class="op">,</span> <span class="nam">name</span><span class="op">=</span><span class="str">"pub"</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t10" class="pln">    <span class="nam">url</span><span class="op">(</span><span class="str">r'^bill/(?P&lt;pk>[0-9]+)/$'</span><span class="op">,</span> <span class="nam">views</span><span class="op">.</span><span class="nam">BillView</span><span class="op">.</span><span class="nam">as_view</span><span class="op">(</span><span class="op">)</span><span class="op">,</span> <span class="nam">name</span><span class="op">=</span><span class="str">"bill"</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t11" class="pln">    <span class="nam">url</span><span class="op">(</span><span class="str">r'^pub/(?P&lt;pk>[0-9]+)/addItem/$'</span><span class="op">,</span> <span class="nam">views</span><span class="op">.</span><span class="nam">AddItemView</span><span class="op">.</span><span class="nam">as_view</span><span class="op">(</span><span class="op">)</span><span class="op">,</span> <span class="nam">name</span><span class="op">=</span><span class="str">"additem"</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t12" class="pln">    <span class="nam">url</span><span class="op">(</span><span class="str">r'^pub/(?P&lt;pk>[0-9]+)/bill/$'</span><span class="op">,</span> <span class="nam">views</span><span class="op">.</span><span class="nam">AddBillView</span><span class="op">.</span><span class="nam">as_view</span><span class="op">(</span><span class="op">)</span><span class="op">,</span> <span class="nam">name</span><span class="op">=</span><span class="str">"addbill"</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t13" class="pln">    <span class="nam">url</span><span class="op">(</span><span class="str">r'^pub/delete/(?P&lt;pk>[0-9]+)$'</span><span class="op">,</span> <span class="nam">views</span><span class="op">.</span><span class="nam">DeletePubView</span><span class="op">.</span><span class="nam">as_view</span><span class="op">(</span><span class="op">)</span><span class="op">,</span> <span class="nam">name</span><span class="op">=</span><span class="str">"deletepub"</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t14" class="pln">    <span class="nam">url</span><span class="op">(</span><span class="str">r'^item/update/(?P&lt;pk>[0-9]+)$'</span><span class="op">,</span> <span class="nam">views</span><span class="op">.</span><span class="nam">UpdateItemView</span><span class="op">.</span><span class="nam">as_view</span><span class="op">(</span><span class="op">)</span><span class="op">,</span> <span class="nam">name</span><span class="op">=</span><span class="str">"updateitem"</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t15" class="pln">    <span class="nam">url</span><span class="op">(</span><span class="str">r'^bill/update/(?P&lt;pk>[0-9]+)$'</span><span class="op">,</span> <span class="nam">views</span><span class="op">.</span><span class="nam">UpdateBillView</span><span class="op">.</span><span class="nam">as_view</span><span class="op">(</span><span class="op">)</span><span class="op">,</span> <span class="nam">name</span><span class="op">=</span><span class="str">"updatebill"</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t16" class="pln">    <span class="nam">url</span><span class="op">(</span><span class="str">r'^user/update/(?P&lt;pk>[0-9]+)$'</span><span class="op">,</span> <span class="nam">views</span><span class="op">.</span><span class="nam">UpdateUserView</span><span class="op">.</span><span class="nam">as_view</span><span class="op">(</span><span class="op">)</span><span class="op">,</span> <span class="nam">name</span><span class="op">=</span><span class="str">"updateuser"</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t17" class="pln">    <span class="nam">url</span><span class="op">(</span><span class="str">r'^incrementCount/$'</span><span class="op">,</span> <span class="nam">views</span><span class="op">.</span><span class="nam">incrementCount</span><span class="op">,</span> <span class="nam">name</span><span class="op">=</span><span class="str">"increment"</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t18" class="pln">    <span class="nam">url</span><span class="op">(</span><span class="str">r'^decrementCount/$'</span><span class="op">,</span> <span class="nam">views</span><span class="op">.</span><span class="nam">decrementCount</span><span class="op">,</span> <span class="nam">name</span><span class="op">=</span><span class="str">"decrement"</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t19" class="pln">    <span class="nam">url</span><span class="op">(</span><span class="str">r'^createOrder/$'</span><span class="op">,</span> <span class="nam">views</span><span class="op">.</span><span class="nam">createOrderView</span><span class="op">,</span> <span class="nam">name</span><span class="op">=</span><span class="str">"createorder"</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t20" class="pln">    <span class="nam">url</span><span class="op">(</span><span class="str">r'^cleanOrders/$'</span><span class="op">,</span> <span class="nam">views</span><span class="op">.</span><span class="nam">cleanOrders</span><span class="op">,</span> <span class="nam">name</span><span class="op">=</span><span class="str">"cleanOrders"</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t21" class="pln">    <span class="nam">url</span><span class="op">(</span><span class="str">'^'</span><span class="op">,</span> <span class="nam">include</span><span class="op">(</span><span class="str">'django.contrib.auth.urls'</span><span class="op">)</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t22" class="pln">    <span class="nam">url</span><span class="op">(</span><span class="str">r'^signUp/$'</span><span class="op">,</span> <span class="nam">views</span><span class="op">.</span><span class="nam">signUp</span><span class="op">,</span> <span class="nam">name</span><span class="op">=</span><span class="str">"signup"</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t23" class="pln">    <span class="nam">url</span><span class="op">(</span><span class="str">r'^account_activation_sent/$'</span><span class="op">,</span> <span class="nam">views</span><span class="op">.</span><span class="nam">account_activation_sent</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t24" class="pln">      <span class="nam">name</span><span class="op">=</span><span class="str">'useractivationsent'</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t25" class="pln">    <span class="nam">url</span><span class="op">(</span><span class="str">r'^activate/(?P&lt;uidb64>[0-9A-Za-z_\-]+)/(?P&lt;token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$'</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t26" class="pln">              <span class="nam">views</span><span class="op">.</span><span class="nam">activate</span><span class="op">,</span> <span class="nam">name</span><span class="op">=</span><span class="str">'activate'</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t27" class="pln">    <span class="op">]</span><span class="strut">&nbsp;</span></p>
 
             </td>
         </tr>
@@ -116,7 +134,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.4.1</a>,
-            created at 2017-07-07 11:44
+            created at 2017-07-17 13:36
         </p>
     </div>
 </div>

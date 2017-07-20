@@ -1,0 +1,1 @@
+/home/dan/Documents/django-tutorial/prvni/prvni/settings.py

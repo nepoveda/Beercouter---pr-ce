@@ -7,13 +7,17 @@
     <div class="panel-heading"> <h1>Dostupné hospody</h1> </div>
       <div class="list-group">
         {% for pub in pub_list %}
-         <a href="{% url 'beercounter:pub' pub.id %}" class="list-group-item list-group-item-action"> {{ pub.name }}</a>
+         <a href="{% url 'beercounter:pub' pub.id %}" class="list-group-item list-group-item-action">
+           {% if pub.owner == user %}<span class="glyphicon glyphicon-user"></span> {% endif %}
+           {{ pub.name }}
+         </a>
         {% endfor %}
       </div>
     </div>
   </div>
 
   <br/>
+  {% if user.is_authenticated %}
   <div class="panel-heading"> <h1> Nová hospoda: </h1> </div>
     <form method="POST">
       {% csrf_token %}
@@ -24,5 +28,6 @@
       </span>
     </form>
   </div>
+  {% endif %}
 </div>
 {% endblock %}

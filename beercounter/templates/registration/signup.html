@@ -1,0 +1,15 @@
+{% extends 'beercounter/base.html' %}
+{% load bootstrap3 %}
+
+
+{% block content %}
+  <h2> Registrace </h2>
+  <form method="POST">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons submit="Registrovat" %}
+    {% endbuttons %}
+  </form>
+  <a href="{% url 'beercounter:login' %}" class="btn btn-default"> Přihlásit se </a>
+  <a href="{{request.META.HTTP_REFERER}}" class="btn btn-default"> Zpět </a>
+  {% endblock %}

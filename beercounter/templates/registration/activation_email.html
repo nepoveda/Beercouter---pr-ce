@@ -1,0 +1,7 @@
+{% autoescape off %}
+Hi {{ user.username }},
+
+Aktivujte svůj účet pomocí přiloženého linku:
+
+http://{{ domain }}{% url 'beercounter:activate' uidb64=uid token=token %}
+{% endautoescape %}

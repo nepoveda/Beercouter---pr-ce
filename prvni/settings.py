@@ -31,6 +31,9 @@ ALLOWED_HOSTS = ['127.0.0.1','testserver']
 # Application definition
 
 INSTALLED_APPS = [
+    'djsupervisor',
+    'djcelery_email',
+    'celery',
     'django_nose',
     'bootstrap3',
     'beercounter.apps.BeercounterConfig',
@@ -81,8 +84,6 @@ WSGI_APPLICATION = 'prvni.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'beercounter',
         'USER': 'danig',
@@ -129,6 +130,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
@@ -137,3 +139,18 @@ NOSE_ARGS = [
     '--cover-package=beercounter',
     '--cover-html',
     ]
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+EMAIL_BACKEND = 'djcelery_email.backends.CeleryEmailBackend'
+EMAIL_HOST = '127.0.0.1'
+EMAIL_PORT = 8000
+
+#Celery settings
+BACKEND_URL = 'redis://localhost:6379/0'
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = TIME_ZONE

@@ -3,64 +3,59 @@ from __future__ import unicode_literals
 
 from sys import maxint
 
-from django.test import TestCase
+from django.test import TestCase, RequestFactory
 from django.db import IntegrityError
 
 from .models import *
 from .forms import *
+from .views import *
 # Create your tests here.
 
 class PubTest(TestCase):
   # "Test pub model"
-  # fixtures = ['fixtures.json']
-
-  def setUp(self):
-    "Create test object"
-    self.pub = Pub.objects.create(name = "TestPub")
+  fixtures = ['fixtures.json']
 
   def test_unique(self):
     with self.assertRaises(IntegrityError):
-      Pub.objects.create(name=self.pub.name)
+      Pub.objects.create(name="TestPub")
 
   def test_absolute_url(self):
-    self.assertEqual(self.pub.get_absolute_url(), reverse('beercounter:index'))
+    self.assertEqual(Pub.objects.first().get_absolute_url(), reverse('beercounter:index'))
 
 class BillTest(TestCase):
+  fixtures = ['fixtures.json']
 
-  def setUp(self):
-    self.pub = Pub.objects.create(name = "TestPub")
-    self.bill = self.pub.bills.create(name = "TestBill")
+  @classmethod
+  def setUpTestData(cls):
+    cls.pub = Pub.objects.get(name = "TestPub")
+    cls.pub2 = Pub.objects.get(name = "TestPub2")
+    cls.bill = cls.pub.bills.first()
 
   def test_unique(self):
     with self.assertRaises(IntegrityError):
-      self.pub.bills.create(name = "TestBill")
-
-  def test_unique_together(self):
-    bill2 = self.pub.bills.create(name = "TestBill2")
-    pub2 = Pub.objects.create(name = "TestPub2")
-    bill3 = pub2.bills.create(name = self.bill.name)
-
+      Bill.objects.create(name = "TestBill")
 
   def test_spending(self):
-    item = self.pub.items.create(name="testitem", price=10)
-    item2 = self.pub.items.create(name="testitem2", price=10)
+    item, item2 = self.pub.items.all()[0:2]
     self.bill.orders.create(item = item, count=5)
     self.bill.orders.create(item = item2, count=2)
     self.assertEqual(self.bill.spending,70)
 
 
 class ItemTest(TestCase):
+  fixtures = ['fixtures.json']
 
-  def setUp(self):
-    self.pub = Pub.objects.create(name = "TestPub")
-    self.item = self.pub.items.create(name = "testovacíItem", price=10, category="J")
+  @classmethod
+  def setUpTestData(cls):
+    cls.pub = Pub.objects.get(name = "TestPub")
+    cls.item = cls.pub.items.get(name = "Testovacíitem")
 
   def test_item_unique(self):
     with self.assertRaises(IntegrityError):
       self.pub.items.create(name = self.item.name.encode('utf-8'), price = 10)
 
   def test_item_string_represantion(self):
-    self.assertEqual(self.item.name, "testovacíItem".encode('utf-8').decode('utf-8'))
+    self.assertEqual(self.item.name, "Testovacíitem".encode('utf-8').decode('utf-8'))
 
   def test_verbose_name(self):
     self.assertEqual(Item._meta.verbose_name.encode('utf-8'), "Položka".encode('utf-8'))
@@ -74,12 +69,14 @@ class ItemTest(TestCase):
 
 
 class OrderTest(TestCase):
+  fixtures = ['fixtures.json']
 
-  def setUp(self):
-    self.pub = Pub.objects.create(name = "TestPub")
-    self.item = self.pub.items.create(name = "TestItem", price = 10)
-    self.bill = self.pub.bills.create(name = "TestBill")
-    self.order = self.bill.orders.create(item = self.item, count = 5)
+  @classmethod
+  def setUpTestData(cls):
+    cls.pub = Pub.objects.get(name = "TestPub")
+    cls.item = cls.pub.items.get(name = "TestItem")
+    cls.bill = cls.pub.bills.get(name = "TestBill")
+    cls.order = cls.bill.orders.create(item = cls.item, count = 5)
 
   def test_order_unique(self):
     with self.assertRaises(IntegrityError):
@@ -89,33 +86,38 @@ class OrderTest(TestCase):
     self.assertEqual(self.order.total_cost, 50)
 
 class IndexViewTest(TestCase):
+  fixtures = ['fixtures']
+
+  @classmethod
+  def setUpTestData(cls):
+    cls.factory = RequestFactory()
+    cls.user = User.objects.get(username="user")
 
   def testPubList(self):
-    Pub.objects.create(name = "Test1")
-    Pub.objects.create(name = "Test3")
-    Pub.objects.create(name = "Test2")
-    response = self.client.get(reverse('beercounter:index'))
+    request = self.factory.get(reverse('beercounter:index'))
+    request.user = self.user
+    response = IndexView.as_view()(request)
     self.assertEqual(response.status_code, 200)
-    self.assertQuerysetEqual(response.context_data['pub_list'], ['<Pub: Test1>','<Pub: Test2>',
-      '<Pub: Test3>'])
+    self.assertQuerysetEqual(response.context_data['pub_list'], ['<Pub: Testpub>','<Pub: Testpub2>',
+      '<Pub: Testpub3>', '<Pub: Userpub>', '<Pub: Userpub2>'])
 
   def testAddPub(self):
+    self.client.login(username="user", password="hesloheslo")
     response = self.client.post(reverse('beercounter:index'), {'name': 'newPub'})
     self.assertEqual(response.status_code, 302)
     response = self.client.get(reverse('beercounter:index'))
-    self.assertQuerysetEqual(response.context_data['pub_list'], ['<Pub: Newpub>'])
-    #trying add again the same pub should return same Queryset
-    response = self.client.post(reverse('beercounter:index'), {'name': 'newPub'})
-    response = self.client.get(reverse('beercounter:index'))
-    self.assertQuerysetEqual(response.context_data['pub_list'], ['<Pub: Newpub>'])
+    self.assertTrue(Pub.objects.filter(name="newPub").exists())
+    old_query_set = response.context_data['pub_list']
 
 
 class PubViewTest(TestCase):
+  fixtures = ['fixtures.json']
 
-  def setUp(self):
-    self.pub = Pub.objects.create(name = "TestPub")
-    self.bill = self.pub.bills.create(name = "TestBill")
-    self.item = self.pub.items.create(name = "TestItem")
+  @classmethod
+  def setUpTestData(cls):
+    cls.pub = Pub.objects.get(name = "TestPub")
+    cls.bill = cls.pub.bills.get(name = "TestBill")
+    cls.item = cls.pub.items.get(name = "TestItem")
 
   def test_get(self):
     response = self.client.get(reverse('beercounter:pub', args=[self.pub.id]))
@@ -146,56 +148,44 @@ class PubViewTest(TestCase):
 
 
 class BillViewTest(TestCase):
+  fixtures = ['fixtures.json']
 
-  def setUp(self):
-    self.pub   = Pub.objects.create(name      = "TestPub")
-    self.bill  = self.pub.bills.create(name   = "TestBill")
-    self.item  = self.pub.items.create(name   = "TestItem")
-    self.item2 = self.pub.items.create(name   = "TestItem2")
-    self.order = self.bill.orders.create(item = self.item, count=1)
+  @classmethod
+  def setUpTestData(cls):
+    cls.pub   = Pub.objects.get(name      = "TestPub")
+    cls.bill  = cls.pub.bills.get(name   = "TestBill")
+    cls.item  = cls.pub.items.get(name   = "TestItem")
+    cls.item2 = cls.pub.items.get(name   = "TestItem2")
+    cls.order = cls.bill.orders.create(item = cls.item, count=1)
 
   def test_get(self):
+    self.client.login(username="user", password="hesloheslo")
     response = self.client.get(reverse('beercounter:bill', args=[self.bill.id]))
     self.assertEqual(response.status_code, 200)
     self.assertEqual(response.context_data['object'], self.bill)
 
-  def test_add_new_order(self):
-    response = self.client.post(reverse('beercounter:bill', args=[self.bill.id]), {'addOrder': 'Přidat', 'item':str(self.item2.id), 'count': '3', 'bill':str(self.bill.id)})
-    self.assertEqual(response.status_code, 302)
-    self.assertEqual(len(self.bill.orders.all()), 2)
-    secondOrder = self.bill.orders.all()[1]
-    self.assertEqual(secondOrder.count, 3)
-
-  def test_add_existing_order(self):
-    orderCount = self.order.count
-    response = self.client.post(reverse('beercounter:bill', args=[self.bill.id]), {'addOrder':
-      'Přidat', 'item':str(self.item.id), 'count': '3', 'bill':str(self.bill.id)})
-    self.assertEqual(response.status_code, 302)
-    self.order = Order.objects.get(pk=self.order.pk)
-    self.assertEqual(self.order.count, orderCount + 3)
-
-  def send_different_post(self):
-    response = self.client.post(reverse('beercounter:bill', args=[self.bill.id]), {'addOrder':
-      ''})
-    self.assertEqual(response.status_code, 302)
-
 class AddItemViewTest(TestCase):
+  fixtures = ['fixtures']
 
-  def setUp(self):
-    self.pub = Pub.objects.create(name = "TestPub")
+  @classmethod
+  def setUpTestData(cls):
+    cls.pub = Pub.objects.get(name = "TestPub")
 
   def test_get(self):
+    self.client.login(username="user", password="hesloheslo")
     response = self.client.get(reverse('beercounter:additem', args=[self.pub.id]))
     self.assertEqual(response.status_code, 200)
     self.assertEqual(response.context_data['pubId'], str(self.pub.id))
 
 class DecrementCountView(TestCase):
+  fixtures = ['fixtures']
 
-  def setUp(self):
-    self.pub   = Pub.objects.create(name      = "TestPub")
-    self.bill  = self.pub.bills.create(name   = "TestBill")
-    self.item  = self.pub.items.create(name   = "TestItem")
-    self.order = self.bill.orders.create(item = self.item, count=3)
+  @classmethod
+  def setUpTestData(cls):
+    cls.pub   = Pub.objects.get(name      = "TestPub")
+    cls.bill  = cls.pub.bills.get(name   = "TestBill")
+    cls.item  = cls.pub.items.get(name   = "TestItem")
+    cls.order = cls.bill.orders.create(item = cls.item, count=3)
 
   def test_decremanting(self):
     original_count = self.order.count
@@ -217,14 +207,16 @@ class DecrementCountView(TestCase):
     self.assertEqual(self.order.count, original_order_count)
 
 class CleanOrdersView(TestCase):
+  fixtures = ['fixtures']
 
-  def setUp(self):
-    self.pub   = Pub.objects.create(name      = "TestPub")
-    self.bill  = self.pub.bills.create(name   = "TestBill")
-    self.item  = self.pub.items.create(name   = "TestItem")
-    self.item2  = self.pub.items.create(name   = "TestItem2")
-    self.order = self.bill.orders.create(item = self.item, count=3)
-    self.order2 = self.bill.orders.create(item = self.item2, count=3)
+  @classmethod
+  def setUpTestData(cls):
+    cls.pub    = Pub.objects.get(name      = "TestPub")
+    cls.bill   = cls.pub.bills.get(name   = "TestBill")
+    cls.item   = cls.pub.items.get(name   = "TestItem")
+    cls.item2  = cls.pub.items.get(name   = "TestItem2")
+    cls.order  = cls.bill.orders.create(item = cls.item, count  = 3)
+    cls.order2 = cls.bill.orders.create(item = cls.item2, count = 3)
 
   def test_cleaning_orders(self):
     response = self.client.post(reverse("beercounter:cleanOrders"), {'bill': self.bill.id})

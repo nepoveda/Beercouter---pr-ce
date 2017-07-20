@@ -23,6 +23,15 @@
           <a class="navbar-brand" href="{% url 'beercounter:index' %}"> Beercounter </a>
         </div>
 
+        <ul class="nav navbar-nav navbar-right">
+          {% if user.is_authenticated %}
+          <li> <a href="{% url 'beercounter:updateuser' user.id %}"> Přihlášen jako: {{ user.get_username }} </a> </li>
+            <li> <a href="{% url 'beercounter:logout' %}"> Odhlásit </a> </li>
+          {% else %}
+            <li> <a href="{% url 'beercounter:login' %}"> Přihlásit se </a> </li>
+            <li> <a href="{% url 'beercounter:signup' %}"> Registrovat se </a> </li>
+          {% endif %}
+        </ul>
       </div>
     </nav>
 

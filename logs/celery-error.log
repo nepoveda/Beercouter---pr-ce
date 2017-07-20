@@ -1,0 +1,134 @@
+[2017-07-19 13:48:13,811: INFO/MainProcess] Connected to redis://localhost:6379//
+[2017-07-19 13:48:13,817: INFO/MainProcess] mingle: searching for neighbors
+[2017-07-19 13:48:14,831: INFO/MainProcess] mingle: all alone
+[2017-07-19 13:48:14,856: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2017-07-19 13:48:14,857: INFO/MainProcess] celery@dan-HP-ProBook-450-G3 ready.
+
+worker: Warm shutdown (MainProcess)
+[2017-07-19 13:54:24,041: INFO/MainProcess] Connected to redis://localhost:6379//
+[2017-07-19 13:54:24,047: INFO/MainProcess] mingle: searching for neighbors
+[2017-07-19 13:54:25,060: INFO/MainProcess] mingle: all alone
+[2017-07-19 13:54:25,070: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2017-07-19 13:54:25,070: INFO/MainProcess] celery@dan-HP-ProBook-450-G3 ready.
+
+worker: Warm shutdown (MainProcess)
+[2017-07-19 14:00:28,211: INFO/MainProcess] Connected to redis://localhost:6379//
+[2017-07-19 14:00:28,217: INFO/MainProcess] mingle: searching for neighbors
+[2017-07-19 14:00:29,229: INFO/MainProcess] mingle: all alone
+[2017-07-19 14:00:29,238: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2017-07-19 14:00:29,238: INFO/MainProcess] celery@dan-HP-ProBook-450-G3 ready.
+
+worker: Warm shutdown (MainProcess)
+[2017-07-19 14:11:15,721: INFO/MainProcess] Connected to redis://localhost:6379//
+[2017-07-19 14:11:15,727: INFO/MainProcess] mingle: searching for neighbors
+[2017-07-19 14:11:16,740: INFO/MainProcess] mingle: all alone
+[2017-07-19 14:11:16,754: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2017-07-19 14:11:16,754: INFO/MainProcess] celery@dan-HP-ProBook-450-G3 ready.
+
+worker: Warm shutdown (MainProcess)
+[2017-07-19 14:13:43,306: INFO/MainProcess] Connected to redis://localhost:6379//
+[2017-07-19 14:13:43,311: INFO/MainProcess] mingle: searching for neighbors
+[2017-07-19 14:13:44,323: INFO/MainProcess] mingle: all alone
+[2017-07-19 14:13:44,337: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2017-07-19 14:13:44,337: INFO/MainProcess] celery@dan-HP-ProBook-450-G3 ready.
+
+worker: Warm shutdown (MainProcess)
+[2017-07-19 14:26:09,255: INFO/MainProcess] Connected to redis://localhost:6379//
+[2017-07-19 14:26:09,261: INFO/MainProcess] mingle: searching for neighbors
+[2017-07-19 14:26:10,276: INFO/MainProcess] mingle: all alone
+[2017-07-19 14:26:10,299: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2017-07-19 14:26:10,299: INFO/MainProcess] celery@dan-HP-ProBook-450-G3 ready.
+
+worker: Warm shutdown (MainProcess)
+[2017-07-19 14:27:14,892: INFO/MainProcess] Connected to redis://localhost:6379//
+[2017-07-19 14:27:14,898: INFO/MainProcess] mingle: searching for neighbors
+[2017-07-19 14:27:15,913: INFO/MainProcess] mingle: all alone
+[2017-07-19 14:27:15,945: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2017-07-19 14:27:15,946: INFO/MainProcess] celery@dan-HP-ProBook-450-G3 ready.
+
+worker: Warm shutdown (MainProcess)
+[2017-07-19 15:00:16,036: INFO/MainProcess] Connected to redis://localhost:6379//
+[2017-07-19 15:00:16,041: INFO/MainProcess] mingle: searching for neighbors
+[2017-07-19 15:00:17,055: INFO/MainProcess] mingle: all alone
+[2017-07-19 15:00:17,064: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2017-07-19 15:00:17,065: INFO/MainProcess] celery@dan-HP-ProBook-450-G3 ready.
+[2017-07-19 16:06:35,572: ERROR/MainProcess] Received unregistered task of type u'beercounter.task.send_validation_email'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+'[[14, "Beercounter aktivace", "\\nHi dfkla,\\n\\nAktivujte sv\\u016fj \\u00fa\\u010det pomoc\\u00ed p\\u0159ilo\\u017een\\u00e9ho linku:\\n\\nhttp://127.0.0.1:8000/activate/MTQ/4nv-cd96f683c05031869b84/\\n\\n"], {}, {"chord": null, "callbacks": null, "errbacks": null, "chain": null}]' (270b)
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 559, in on_task_received
+    strategy = strategies[type_]
+KeyError: u'beercounter.task.send_validation_email'
+[2017-07-19 16:07:45,933: ERROR/MainProcess] Received unregistered task of type u'beercounter.task.send_validation_email'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+'[[15, "Beercounter aktivace", "\\nHi gfsdgg,\\n\\nAktivujte sv\\u016fj \\u00fa\\u010det pomoc\\u00ed p\\u0159ilo\\u017een\\u00e9ho linku:\\n\\nhttp://127.0.0.1:8000/activate/MTU/4nv-f761ad7bb04cef17511e/\\n\\n"], {}, {"chord": null, "callbacks": null, "errbacks": null, "chain": null}]' (271b)
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 559, in on_task_received
+    strategy = strategies[type_]
+KeyError: u'beercounter.task.send_validation_email'
+[2017-07-19 17:19:03,361: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/kombu/transport/redis.py", line 1039, in on_readable
+    self.cycle.on_readable(fileno)
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/kombu/transport/redis.py", line 337, in on_readable
+    chan.handlers[type]()
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/kombu/transport/redis.py", line 667, in _receive
+    ret.append(self._receive_one(c))
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/kombu/transport/redis.py", line 678, in _receive_one
+    response = c.parse_response()
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/redis/client.py", line 2183, in parse_response
+    return self._execute(connection, connection.read_response)
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/redis/client.py", line 2172, in _execute
+    connection.connect()
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/redis/connection.py", line 442, in connect
+    raise ConnectionError(self._error_message(e))
+ConnectionError: Error 111 connecting to localhost:6379. Connection refused.
+[2017-07-19 17:19:03,370: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 111 connecting to localhost:6379. Connection refused..
+Trying again in 2.00 seconds...
+
+
+worker: Warm shutdown (MainProcess)
+[2017-07-20 08:54:29,679: INFO/MainProcess] Connected to redis://localhost:6379//
+[2017-07-20 08:54:29,683: INFO/MainProcess] mingle: searching for neighbors
+[2017-07-20 08:54:30,693: INFO/MainProcess] mingle: all alone
+[2017-07-20 08:54:30,701: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2017-07-20 08:54:30,701: INFO/MainProcess] celery@dan-HP-ProBook-450-G3 ready.
+
+worker: Warm shutdown (MainProcess)

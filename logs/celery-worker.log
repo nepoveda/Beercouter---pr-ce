@@ -1,0 +1,1321 @@
+usage: celery <command> [options] 
+
+Show help screen and exit.
+
+positional arguments:
+  args
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+
+Global Options:
+  -A APP, --app APP
+  -b BROKER, --broker BROKER
+  --loader LOADER
+  --config CONFIG
+  --workdir WORKDIR
+  --no-color, -C
+  --quiet, -q
+
+---- -- - - ---- Commands- -------------- --- ------------
+
++ Main: 
+|    celery worker
+|    celery events
+|    celery beat
+|    celery shell
+|    celery multi
+|    celery amqp
+
++ Remote Control: 
+|    celery status
+ 
+|    celery inspect --help
+|    celery inspect active 
+|    celery inspect active_queues 
+|    celery inspect clock 
+|    celery inspect conf [include_defaults=False]
+|    celery inspect memdump [n_samples=10]
+|    celery inspect memsample 
+|    celery inspect objgraph [object_type=Request] [num=200 [max_depth=10]]
+|    celery inspect ping 
+|    celery inspect query_task [id1 [id2 [... [idN]]]]
+|    celery inspect registered [attr1 [attr2 [... [attrN]]]]
+|    celery inspect report 
+|    celery inspect reserved 
+|    celery inspect revoked 
+|    celery inspect scheduled 
+|    celery inspect stats 
+ 
+|    celery control --help
+|    celery control add_consumer <queue> [exchange [type [routing_key]]]
+|    celery control autoscale [max [min]]
+|    celery control cancel_consumer <queue>
+|    celery control disable_events 
+|    celery control election 
+|    celery control enable_events 
+|    celery control heartbeat 
+|    celery control pool_grow [N=1]
+|    celery control pool_restart 
+|    celery control pool_shrink [N=1]
+|    celery control rate_limit <task_name> <rate_limit (e.g., 5/s | 5/m | 5/h)>
+|    celery control revoke [id1 [id2 [... [idN]]]]
+|    celery control shutdown 
+|    celery control terminate <signal> [id1 [id2 [... [idN]]]]
+|    celery control time_limit <task_name> <soft_secs> [hard_secs]
+
++ Utils: 
+|    celery purge
+|    celery list
+|    celery call
+|    celery result
+|    celery migrate
+|    celery graph
+|    celery upgrade
+
++ Debugging: 
+|    celery report
+|    celery logtool
+---- -- - - --------- -- - -------------- --- ------------
+
+Type 'celery <command> --help' for help using a specific command.
+
+usage: celery <command> [options] 
+
+Show help screen and exit.
+
+positional arguments:
+  args
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+
+Global Options:
+  -A APP, --app APP
+  -b BROKER, --broker BROKER
+  --loader LOADER
+  --config CONFIG
+  --workdir WORKDIR
+  --no-color, -C
+  --quiet, -q
+
+---- -- - - ---- Commands- -------------- --- ------------
+
++ Main: 
+|    celery worker
+|    celery events
+|    celery beat
+|    celery shell
+|    celery multi
+|    celery amqp
+
++ Remote Control: 
+|    celery status
+ 
+|    celery inspect --help
+|    celery inspect active 
+|    celery inspect active_queues 
+|    celery inspect clock 
+|    celery inspect conf [include_defaults=False]
+|    celery inspect memdump [n_samples=10]
+|    celery inspect memsample 
+|    celery inspect objgraph [object_type=Request] [num=200 [max_depth=10]]
+|    celery inspect ping 
+|    celery inspect query_task [id1 [id2 [... [idN]]]]
+|    celery inspect registered [attr1 [attr2 [... [attrN]]]]
+|    celery inspect report 
+|    celery inspect reserved 
+|    celery inspect revoked 
+|    celery inspect scheduled 
+|    celery inspect stats 
+ 
+|    celery control --help
+|    celery control add_consumer <queue> [exchange [type [routing_key]]]
+|    celery control autoscale [max [min]]
+|    celery control cancel_consumer <queue>
+|    celery control disable_events 
+|    celery control election 
+|    celery control enable_events 
+|    celery control heartbeat 
+|    celery control pool_grow [N=1]
+|    celery control pool_restart 
+|    celery control pool_shrink [N=1]
+|    celery control rate_limit <task_name> <rate_limit (e.g., 5/s | 5/m | 5/h)>
+|    celery control revoke [id1 [id2 [... [idN]]]]
+|    celery control shutdown 
+|    celery control terminate <signal> [id1 [id2 [... [idN]]]]
+|    celery control time_limit <task_name> <soft_secs> [hard_secs]
+
++ Utils: 
+|    celery purge
+|    celery list
+|    celery call
+|    celery result
+|    celery migrate
+|    celery graph
+|    celery upgrade
+
++ Debugging: 
+|    celery report
+|    celery logtool
+---- -- - - --------- -- - -------------- --- ------------
+
+Type 'celery <command> --help' for help using a specific command.
+
+usage: celery <command> [options] 
+
+Show help screen and exit.
+
+positional arguments:
+  args
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+
+Global Options:
+  -A APP, --app APP
+  -b BROKER, --broker BROKER
+  --loader LOADER
+  --config CONFIG
+  --workdir WORKDIR
+  --no-color, -C
+  --quiet, -q
+
+---- -- - - ---- Commands- -------------- --- ------------
+
++ Main: 
+|    celery worker
+|    celery events
+|    celery beat
+|    celery shell
+|    celery multi
+|    celery amqp
+
++ Remote Control: 
+|    celery status
+ 
+|    celery inspect --help
+|    celery inspect active 
+|    celery inspect active_queues 
+|    celery inspect clock 
+|    celery inspect conf [include_defaults=False]
+|    celery inspect memdump [n_samples=10]
+|    celery inspect memsample 
+|    celery inspect objgraph [object_type=Request] [num=200 [max_depth=10]]
+|    celery inspect ping 
+|    celery inspect query_task [id1 [id2 [... [idN]]]]
+|    celery inspect registered [attr1 [attr2 [... [attrN]]]]
+|    celery inspect report 
+|    celery inspect reserved 
+|    celery inspect revoked 
+|    celery inspect scheduled 
+|    celery inspect stats 
+ 
+|    celery control --help
+|    celery control add_consumer <queue> [exchange [type [routing_key]]]
+|    celery control autoscale [max [min]]
+|    celery control cancel_consumer <queue>
+|    celery control disable_events 
+|    celery control election 
+|    celery control enable_events 
+|    celery control heartbeat 
+|    celery control pool_grow [N=1]
+|    celery control pool_restart 
+|    celery control pool_shrink [N=1]
+|    celery control rate_limit <task_name> <rate_limit (e.g., 5/s | 5/m | 5/h)>
+|    celery control revoke [id1 [id2 [... [idN]]]]
+|    celery control shutdown 
+|    celery control terminate <signal> [id1 [id2 [... [idN]]]]
+|    celery control time_limit <task_name> <soft_secs> [hard_secs]
+
++ Utils: 
+|    celery purge
+|    celery list
+|    celery call
+|    celery result
+|    celery migrate
+|    celery graph
+|    celery upgrade
+
++ Debugging: 
+|    celery report
+|    celery logtool
+---- -- - - --------- -- - -------------- --- ------------
+
+Type 'celery <command> --help' for help using a specific command.
+
+usage: celery <command> [options] 
+
+Show help screen and exit.
+
+positional arguments:
+  args
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+
+Global Options:
+  -A APP, --app APP
+  -b BROKER, --broker BROKER
+  --loader LOADER
+  --config CONFIG
+  --workdir WORKDIR
+  --no-color, -C
+  --quiet, -q
+
+---- -- - - ---- Commands- -------------- --- ------------
+
++ Main: 
+|    celery worker
+|    celery events
+|    celery beat
+|    celery shell
+|    celery multi
+|    celery amqp
+
++ Remote Control: 
+|    celery status
+ 
+|    celery inspect --help
+|    celery inspect active 
+|    celery inspect active_queues 
+|    celery inspect clock 
+|    celery inspect conf [include_defaults=False]
+|    celery inspect memdump [n_samples=10]
+|    celery inspect memsample 
+|    celery inspect objgraph [object_type=Request] [num=200 [max_depth=10]]
+|    celery inspect ping 
+|    celery inspect query_task [id1 [id2 [... [idN]]]]
+|    celery inspect registered [attr1 [attr2 [... [attrN]]]]
+|    celery inspect report 
+|    celery inspect reserved 
+|    celery inspect revoked 
+|    celery inspect scheduled 
+|    celery inspect stats 
+ 
+|    celery control --help
+|    celery control add_consumer <queue> [exchange [type [routing_key]]]
+|    celery control autoscale [max [min]]
+|    celery control cancel_consumer <queue>
+|    celery control disable_events 
+|    celery control election 
+|    celery control enable_events 
+|    celery control heartbeat 
+|    celery control pool_grow [N=1]
+|    celery control pool_restart 
+|    celery control pool_shrink [N=1]
+|    celery control rate_limit <task_name> <rate_limit (e.g., 5/s | 5/m | 5/h)>
+|    celery control revoke [id1 [id2 [... [idN]]]]
+|    celery control shutdown 
+|    celery control terminate <signal> [id1 [id2 [... [idN]]]]
+|    celery control time_limit <task_name> <soft_secs> [hard_secs]
+
++ Utils: 
+|    celery purge
+|    celery list
+|    celery call
+|    celery result
+|    celery migrate
+|    celery graph
+|    celery upgrade
+
++ Debugging: 
+|    celery report
+|    celery logtool
+---- -- - - --------- -- - -------------- --- ------------
+
+Type 'celery <command> --help' for help using a specific command.
+
+usage: celery <command> [options] 
+
+Show help screen and exit.
+
+positional arguments:
+  args
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+
+Global Options:
+  -A APP, --app APP
+  -b BROKER, --broker BROKER
+  --loader LOADER
+  --config CONFIG
+  --workdir WORKDIR
+  --no-color, -C
+  --quiet, -q
+
+---- -- - - ---- Commands- -------------- --- ------------
+
++ Main: 
+|    celery worker
+|    celery events
+|    celery beat
+|    celery shell
+|    celery multi
+|    celery amqp
+
++ Remote Control: 
+|    celery status
+ 
+|    celery inspect --help
+|    celery inspect active 
+|    celery inspect active_queues 
+|    celery inspect clock 
+|    celery inspect conf [include_defaults=False]
+|    celery inspect memdump [n_samples=10]
+|    celery inspect memsample 
+|    celery inspect objgraph [object_type=Request] [num=200 [max_depth=10]]
+|    celery inspect ping 
+|    celery inspect query_task [id1 [id2 [... [idN]]]]
+|    celery inspect registered [attr1 [attr2 [... [attrN]]]]
+|    celery inspect report 
+|    celery inspect reserved 
+|    celery inspect revoked 
+|    celery inspect scheduled 
+|    celery inspect stats 
+ 
+|    celery control --help
+|    celery control add_consumer <queue> [exchange [type [routing_key]]]
+|    celery control autoscale [max [min]]
+|    celery control cancel_consumer <queue>
+|    celery control disable_events 
+|    celery control election 
+|    celery control enable_events 
+|    celery control heartbeat 
+|    celery control pool_grow [N=1]
+|    celery control pool_restart 
+|    celery control pool_shrink [N=1]
+|    celery control rate_limit <task_name> <rate_limit (e.g., 5/s | 5/m | 5/h)>
+|    celery control revoke [id1 [id2 [... [idN]]]]
+|    celery control shutdown 
+|    celery control terminate <signal> [id1 [id2 [... [idN]]]]
+|    celery control time_limit <task_name> <soft_secs> [hard_secs]
+
++ Utils: 
+|    celery purge
+|    celery list
+|    celery call
+|    celery result
+|    celery migrate
+|    celery graph
+|    celery upgrade
+
++ Debugging: 
+|    celery report
+|    celery logtool
+---- -- - - --------- -- - -------------- --- ------------
+
+Type 'celery <command> --help' for help using a specific command.
+
+usage: celery <command> [options] 
+
+Show help screen and exit.
+
+positional arguments:
+  args
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+
+Global Options:
+  -A APP, --app APP
+  -b BROKER, --broker BROKER
+  --loader LOADER
+  --config CONFIG
+  --workdir WORKDIR
+  --no-color, -C
+  --quiet, -q
+
+---- -- - - ---- Commands- -------------- --- ------------
+
++ Main: 
+|    celery worker
+|    celery events
+|    celery beat
+|    celery shell
+|    celery multi
+|    celery amqp
+
++ Remote Control: 
+|    celery status
+ 
+|    celery inspect --help
+|    celery inspect active 
+|    celery inspect active_queues 
+|    celery inspect clock 
+|    celery inspect conf [include_defaults=False]
+|    celery inspect memdump [n_samples=10]
+|    celery inspect memsample 
+|    celery inspect objgraph [object_type=Request] [num=200 [max_depth=10]]
+|    celery inspect ping 
+|    celery inspect query_task [id1 [id2 [... [idN]]]]
+|    celery inspect registered [attr1 [attr2 [... [attrN]]]]
+|    celery inspect report 
+|    celery inspect reserved 
+|    celery inspect revoked 
+|    celery inspect scheduled 
+|    celery inspect stats 
+ 
+|    celery control --help
+|    celery control add_consumer <queue> [exchange [type [routing_key]]]
+|    celery control autoscale [max [min]]
+|    celery control cancel_consumer <queue>
+|    celery control disable_events 
+|    celery control election 
+|    celery control enable_events 
+|    celery control heartbeat 
+|    celery control pool_grow [N=1]
+|    celery control pool_restart 
+|    celery control pool_shrink [N=1]
+|    celery control rate_limit <task_name> <rate_limit (e.g., 5/s | 5/m | 5/h)>
+|    celery control revoke [id1 [id2 [... [idN]]]]
+|    celery control shutdown 
+|    celery control terminate <signal> [id1 [id2 [... [idN]]]]
+|    celery control time_limit <task_name> <soft_secs> [hard_secs]
+
++ Utils: 
+|    celery purge
+|    celery list
+|    celery call
+|    celery result
+|    celery migrate
+|    celery graph
+|    celery upgrade
+
++ Debugging: 
+|    celery report
+|    celery logtool
+---- -- - - --------- -- - -------------- --- ------------
+
+Type 'celery <command> --help' for help using a specific command.
+
+usage: celery <command> [options] 
+
+Show help screen and exit.
+
+positional arguments:
+  args
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+
+Global Options:
+  -A APP, --app APP
+  -b BROKER, --broker BROKER
+  --loader LOADER
+  --config CONFIG
+  --workdir WORKDIR
+  --no-color, -C
+  --quiet, -q
+
+---- -- - - ---- Commands- -------------- --- ------------
+
++ Main: 
+|    celery worker
+|    celery events
+|    celery beat
+|    celery shell
+|    celery multi
+|    celery amqp
+
++ Remote Control: 
+|    celery status
+ 
+|    celery inspect --help
+|    celery inspect active 
+|    celery inspect active_queues 
+|    celery inspect clock 
+|    celery inspect conf [include_defaults=False]
+|    celery inspect memdump [n_samples=10]
+|    celery inspect memsample 
+|    celery inspect objgraph [object_type=Request] [num=200 [max_depth=10]]
+|    celery inspect ping 
+|    celery inspect query_task [id1 [id2 [... [idN]]]]
+|    celery inspect registered [attr1 [attr2 [... [attrN]]]]
+|    celery inspect report 
+|    celery inspect reserved 
+|    celery inspect revoked 
+|    celery inspect scheduled 
+|    celery inspect stats 
+ 
+|    celery control --help
+|    celery control add_consumer <queue> [exchange [type [routing_key]]]
+|    celery control autoscale [max [min]]
+|    celery control cancel_consumer <queue>
+|    celery control disable_events 
+|    celery control election 
+|    celery control enable_events 
+|    celery control heartbeat 
+|    celery control pool_grow [N=1]
+|    celery control pool_restart 
+|    celery control pool_shrink [N=1]
+|    celery control rate_limit <task_name> <rate_limit (e.g., 5/s | 5/m | 5/h)>
+|    celery control revoke [id1 [id2 [... [idN]]]]
+|    celery control shutdown 
+|    celery control terminate <signal> [id1 [id2 [... [idN]]]]
+|    celery control time_limit <task_name> <soft_secs> [hard_secs]
+
++ Utils: 
+|    celery purge
+|    celery list
+|    celery call
+|    celery result
+|    celery migrate
+|    celery graph
+|    celery upgrade
+
++ Debugging: 
+|    celery report
+|    celery logtool
+---- -- - - --------- -- - -------------- --- ------------
+
+Type 'celery <command> --help' for help using a specific command.
+
+usage: celery <command> [options] 
+
+Show help screen and exit.
+
+positional arguments:
+  args
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+
+Global Options:
+  -A APP, --app APP
+  -b BROKER, --broker BROKER
+  --loader LOADER
+  --config CONFIG
+  --workdir WORKDIR
+  --no-color, -C
+  --quiet, -q
+
+---- -- - - ---- Commands- -------------- --- ------------
+
++ Main: 
+|    celery worker
+|    celery events
+|    celery beat
+|    celery shell
+|    celery multi
+|    celery amqp
+
++ Remote Control: 
+|    celery status
+ 
+|    celery inspect --help
+|    celery inspect active 
+|    celery inspect active_queues 
+|    celery inspect clock 
+|    celery inspect conf [include_defaults=False]
+|    celery inspect memdump [n_samples=10]
+|    celery inspect memsample 
+|    celery inspect objgraph [object_type=Request] [num=200 [max_depth=10]]
+|    celery inspect ping 
+|    celery inspect query_task [id1 [id2 [... [idN]]]]
+|    celery inspect registered [attr1 [attr2 [... [attrN]]]]
+|    celery inspect report 
+|    celery inspect reserved 
+|    celery inspect revoked 
+|    celery inspect scheduled 
+|    celery inspect stats 
+ 
+|    celery control --help
+|    celery control add_consumer <queue> [exchange [type [routing_key]]]
+|    celery control autoscale [max [min]]
+|    celery control cancel_consumer <queue>
+|    celery control disable_events 
+|    celery control election 
+|    celery control enable_events 
+|    celery control heartbeat 
+|    celery control pool_grow [N=1]
+|    celery control pool_restart 
+|    celery control pool_shrink [N=1]
+|    celery control rate_limit <task_name> <rate_limit (e.g., 5/s | 5/m | 5/h)>
+|    celery control revoke [id1 [id2 [... [idN]]]]
+|    celery control shutdown 
+|    celery control terminate <signal> [id1 [id2 [... [idN]]]]
+|    celery control time_limit <task_name> <soft_secs> [hard_secs]
+
++ Utils: 
+|    celery purge
+|    celery list
+|    celery call
+|    celery result
+|    celery migrate
+|    celery graph
+|    celery upgrade
+
++ Debugging: 
+|    celery report
+|    celery logtool
+---- -- - - --------- -- - -------------- --- ------------
+
+Type 'celery <command> --help' for help using a specific command.
+
+usage: celery <command> [options] 
+
+Show help screen and exit.
+
+positional arguments:
+  args
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+
+Global Options:
+  -A APP, --app APP
+  -b BROKER, --broker BROKER
+  --loader LOADER
+  --config CONFIG
+  --workdir WORKDIR
+  --no-color, -C
+  --quiet, -q
+
+---- -- - - ---- Commands- -------------- --- ------------
+
++ Main: 
+|    celery worker
+|    celery events
+|    celery beat
+|    celery shell
+|    celery multi
+|    celery amqp
+
++ Remote Control: 
+|    celery status
+ 
+|    celery inspect --help
+|    celery inspect active 
+|    celery inspect active_queues 
+|    celery inspect clock 
+|    celery inspect conf [include_defaults=False]
+|    celery inspect memdump [n_samples=10]
+|    celery inspect memsample 
+|    celery inspect objgraph [object_type=Request] [num=200 [max_depth=10]]
+|    celery inspect ping 
+|    celery inspect query_task [id1 [id2 [... [idN]]]]
+|    celery inspect registered [attr1 [attr2 [... [attrN]]]]
+|    celery inspect report 
+|    celery inspect reserved 
+|    celery inspect revoked 
+|    celery inspect scheduled 
+|    celery inspect stats 
+ 
+|    celery control --help
+|    celery control add_consumer <queue> [exchange [type [routing_key]]]
+|    celery control autoscale [max [min]]
+|    celery control cancel_consumer <queue>
+|    celery control disable_events 
+|    celery control election 
+|    celery control enable_events 
+|    celery control heartbeat 
+|    celery control pool_grow [N=1]
+|    celery control pool_restart 
+|    celery control pool_shrink [N=1]
+|    celery control rate_limit <task_name> <rate_limit (e.g., 5/s | 5/m | 5/h)>
+|    celery control revoke [id1 [id2 [... [idN]]]]
+|    celery control shutdown 
+|    celery control terminate <signal> [id1 [id2 [... [idN]]]]
+|    celery control time_limit <task_name> <soft_secs> [hard_secs]
+
++ Utils: 
+|    celery purge
+|    celery list
+|    celery call
+|    celery result
+|    celery migrate
+|    celery graph
+|    celery upgrade
+
++ Debugging: 
+|    celery report
+|    celery logtool
+---- -- - - --------- -- - -------------- --- ------------
+
+Type 'celery <command> --help' for help using a specific command.
+
+usage: celery <command> [options] 
+
+Show help screen and exit.
+
+positional arguments:
+  args
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+
+Global Options:
+  -A APP, --app APP
+  -b BROKER, --broker BROKER
+  --loader LOADER
+  --config CONFIG
+  --workdir WORKDIR
+  --no-color, -C
+  --quiet, -q
+
+---- -- - - ---- Commands- -------------- --- ------------
+
++ Main: 
+|    celery worker
+|    celery events
+|    celery beat
+|    celery shell
+|    celery multi
+|    celery amqp
+
++ Remote Control: 
+|    celery status
+ 
+|    celery inspect --help
+|    celery inspect active 
+|    celery inspect active_queues 
+|    celery inspect clock 
+|    celery inspect conf [include_defaults=False]
+|    celery inspect memdump [n_samples=10]
+|    celery inspect memsample 
+|    celery inspect objgraph [object_type=Request] [num=200 [max_depth=10]]
+|    celery inspect ping 
+|    celery inspect query_task [id1 [id2 [... [idN]]]]
+|    celery inspect registered [attr1 [attr2 [... [attrN]]]]
+|    celery inspect report 
+|    celery inspect reserved 
+|    celery inspect revoked 
+|    celery inspect scheduled 
+|    celery inspect stats 
+ 
+|    celery control --help
+|    celery control add_consumer <queue> [exchange [type [routing_key]]]
+|    celery control autoscale [max [min]]
+|    celery control cancel_consumer <queue>
+|    celery control disable_events 
+|    celery control election 
+|    celery control enable_events 
+|    celery control heartbeat 
+|    celery control pool_grow [N=1]
+|    celery control pool_restart 
+|    celery control pool_shrink [N=1]
+|    celery control rate_limit <task_name> <rate_limit (e.g., 5/s | 5/m | 5/h)>
+|    celery control revoke [id1 [id2 [... [idN]]]]
+|    celery control shutdown 
+|    celery control terminate <signal> [id1 [id2 [... [idN]]]]
+|    celery control time_limit <task_name> <soft_secs> [hard_secs]
+
++ Utils: 
+|    celery purge
+|    celery list
+|    celery call
+|    celery result
+|    celery migrate
+|    celery graph
+|    celery upgrade
+
++ Debugging: 
+|    celery report
+|    celery logtool
+---- -- - - --------- -- - -------------- --- ------------
+
+Type 'celery <command> --help' for help using a specific command.
+
+usage: celery <command> [options] 
+
+Show help screen and exit.
+
+positional arguments:
+  args
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+
+Global Options:
+  -A APP, --app APP
+  -b BROKER, --broker BROKER
+  --loader LOADER
+  --config CONFIG
+  --workdir WORKDIR
+  --no-color, -C
+  --quiet, -q
+
+---- -- - - ---- Commands- -------------- --- ------------
+
++ Main: 
+|    celery worker
+|    celery events
+|    celery beat
+|    celery shell
+|    celery multi
+|    celery amqp
+
++ Remote Control: 
+|    celery status
+ 
+|    celery inspect --help
+|    celery inspect active 
+|    celery inspect active_queues 
+|    celery inspect clock 
+|    celery inspect conf [include_defaults=False]
+|    celery inspect memdump [n_samples=10]
+|    celery inspect memsample 
+|    celery inspect objgraph [object_type=Request] [num=200 [max_depth=10]]
+|    celery inspect ping 
+|    celery inspect query_task [id1 [id2 [... [idN]]]]
+|    celery inspect registered [attr1 [attr2 [... [attrN]]]]
+|    celery inspect report 
+|    celery inspect reserved 
+|    celery inspect revoked 
+|    celery inspect scheduled 
+|    celery inspect stats 
+ 
+|    celery control --help
+|    celery control add_consumer <queue> [exchange [type [routing_key]]]
+|    celery control autoscale [max [min]]
+|    celery control cancel_consumer <queue>
+|    celery control disable_events 
+|    celery control election 
+|    celery control enable_events 
+|    celery control heartbeat 
+|    celery control pool_grow [N=1]
+|    celery control pool_restart 
+|    celery control pool_shrink [N=1]
+|    celery control rate_limit <task_name> <rate_limit (e.g., 5/s | 5/m | 5/h)>
+|    celery control revoke [id1 [id2 [... [idN]]]]
+|    celery control shutdown 
+|    celery control terminate <signal> [id1 [id2 [... [idN]]]]
+|    celery control time_limit <task_name> <soft_secs> [hard_secs]
+
++ Utils: 
+|    celery purge
+|    celery list
+|    celery call
+|    celery result
+|    celery migrate
+|    celery graph
+|    celery upgrade
+
++ Debugging: 
+|    celery report
+|    celery logtool
+---- -- - - --------- -- - -------------- --- ------------
+
+Type 'celery <command> --help' for help using a specific command.
+
+usage: celery <command> [options] 
+
+Show help screen and exit.
+
+positional arguments:
+  args
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+
+Global Options:
+  -A APP, --app APP
+  -b BROKER, --broker BROKER
+  --loader LOADER
+  --config CONFIG
+  --workdir WORKDIR
+  --no-color, -C
+  --quiet, -q
+
+---- -- - - ---- Commands- -------------- --- ------------
+
++ Main: 
+|    celery worker
+|    celery events
+|    celery beat
+|    celery shell
+|    celery multi
+|    celery amqp
+
++ Remote Control: 
+|    celery status
+ 
+|    celery inspect --help
+|    celery inspect active 
+|    celery inspect active_queues 
+|    celery inspect clock 
+|    celery inspect conf [include_defaults=False]
+|    celery inspect memdump [n_samples=10]
+|    celery inspect memsample 
+|    celery inspect objgraph [object_type=Request] [num=200 [max_depth=10]]
+|    celery inspect ping 
+|    celery inspect query_task [id1 [id2 [... [idN]]]]
+|    celery inspect registered [attr1 [attr2 [... [attrN]]]]
+|    celery inspect report 
+|    celery inspect reserved 
+|    celery inspect revoked 
+|    celery inspect scheduled 
+|    celery inspect stats 
+ 
+|    celery control --help
+|    celery control add_consumer <queue> [exchange [type [routing_key]]]
+|    celery control autoscale [max [min]]
+|    celery control cancel_consumer <queue>
+|    celery control disable_events 
+|    celery control election 
+|    celery control enable_events 
+|    celery control heartbeat 
+|    celery control pool_grow [N=1]
+|    celery control pool_restart 
+|    celery control pool_shrink [N=1]
+|    celery control rate_limit <task_name> <rate_limit (e.g., 5/s | 5/m | 5/h)>
+|    celery control revoke [id1 [id2 [... [idN]]]]
+|    celery control shutdown 
+|    celery control terminate <signal> [id1 [id2 [... [idN]]]]
+|    celery control time_limit <task_name> <soft_secs> [hard_secs]
+
++ Utils: 
+|    celery purge
+|    celery list
+|    celery call
+|    celery result
+|    celery migrate
+|    celery graph
+|    celery upgrade
+
++ Debugging: 
+|    celery report
+|    celery logtool
+---- -- - - --------- -- - -------------- --- ------------
+
+Type 'celery <command> --help' for help using a specific command.
+
+[2017-07-19 11:59:29,090: INFO/MainProcess] Connected to redis://localhost:6379//
+[2017-07-19 11:59:29,096: INFO/MainProcess] mingle: searching for neighbors
+[2017-07-19 11:59:30,116: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/app/control.py:45: DuplicateNodenameWarning: Received multiple replies from node name: celery@dan-HP-ProBook-450-G3.
+Please make sure you give each node a unique nodename using
+the celery worker `-n` option.
+  pluralize(len(dupes), 'name'), ', '.join(sorted(dupes)),
+[2017-07-19 11:59:30,117: INFO/MainProcess] mingle: all alone
+[2017-07-19 11:59:30,142: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2017-07-19 11:59:30,142: INFO/MainProcess] celery@dan-HP-ProBook-450-G3 ready.
+[2017-07-19 12:26:15,396: ERROR/MainProcess] Received unregistered task of type u'beercounter.task.send_validation_email'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+'[[5, "Beercounter aktivace", "\\nHi dfadfa,\\n\\nAktivujte sv\\u016fj \\u00fa\\u010det pomoc\\u00ed p\\u0159ilo\\u017een\\u00e9ho linku:\\n\\nhttp://127.0.0.1:8000/activate/NQ/4nv-0285fea7ebc66bb0209d/\\n\\n"], {}, {"chord": null, "callbacks": null, "errbacks": null, "chain": null}]' (269b)
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 559, in on_task_received
+    strategy = strategies[type_]
+KeyError: u'beercounter.task.send_validation_email'
+[2017-07-19 12:33:30,920: ERROR/MainProcess] Received unregistered task of type u'send_validation_email'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+'[[6, "Beercounter aktivace", "\\nHi akfjah,\\n\\nAktivujte sv\\u016fj \\u00fa\\u010det pomoc\\u00ed p\\u0159ilo\\u017een\\u00e9ho linku:\\n\\nhttp://127.0.0.1:8000/activate/Ng/4nv-1db26692c8a50c5b210a/\\n\\n"], {}, {"chord": null, "callbacks": null, "errbacks": null, "chain": null}]' (269b)
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 559, in on_task_received
+    strategy = strategies[type_]
+KeyError: u'send_validation_email'
+[2017-07-19 12:44:10,857: ERROR/MainProcess] Received unregistered task of type u'beercounter.tasks.send_validation_email'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+'[[7, "Beercounter aktivace", "\\nHi cvyv,\\n\\nAktivujte sv\\u016fj \\u00fa\\u010det pomoc\\u00ed p\\u0159ilo\\u017een\\u00e9ho linku:\\n\\nhttp://127.0.0.1:8000/activate/Nw/4nv-dd9686a320dc627bcf61/\\n\\n"], {}, {"chord": null, "callbacks": null, "errbacks": null, "chain": null}]' (267b)
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 559, in on_task_received
+    strategy = strategies[type_]
+KeyError: u'beercounter.tasks.send_validation_email'
+[2017-07-19 12:52:06,507: ERROR/MainProcess] Received unregistered task of type u'beercounter.tasks.send_validation_email'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+'[[8, "Beercounter aktivace", "\\nHi fadfa,\\n\\nAktivujte sv\\u016fj \\u00fa\\u010det pomoc\\u00ed p\\u0159ilo\\u017een\\u00e9ho linku:\\n\\nhttp://127.0.0.1:8000/activate/OA/4nv-6dbd80b4fb1664d7e0ca/\\n\\n"], {}, {"chord": null, "callbacks": null, "errbacks": null, "chain": null}]' (268b)
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 559, in on_task_received
+    strategy = strategies[type_]
+KeyError: u'beercounter.tasks.send_validation_email'
+[2017-07-19 12:53:21,999: ERROR/MainProcess] Received unregistered task of type u'beercounter.tasks.send_validation_email'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+'[[9, "Beercounter aktivace", "\\nHi fadsfaf,\\n\\nAktivujte sv\\u016fj \\u00fa\\u010det pomoc\\u00ed p\\u0159ilo\\u017een\\u00e9ho linku:\\n\\nhttp://127.0.0.1:8000/activate/OQ/4nv-265f5daf5f56fb5b80b7/\\n\\n"], {}, {"chord": null, "callbacks": null, "errbacks": null, "chain": null}]' (270b)
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 559, in on_task_received
+    strategy = strategies[type_]
+KeyError: u'beercounter.tasks.send_validation_email'
+[2017-07-19 12:56:32,467: ERROR/MainProcess] Received unregistered task of type u'beercounter.tasks.send_validation_email'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+'[[10, "Beercounter aktivace", "\\nHi faf,\\n\\nAktivujte sv\\u016fj \\u00fa\\u010det pomoc\\u00ed p\\u0159ilo\\u017een\\u00e9ho linku:\\n\\nhttp://127.0.0.1:8000/activate/MTA/4nv-40dc9a887e0fcd05b01d/\\n\\n"], {}, {"chord": null, "callbacks": null, "errbacks": null, "chain": null}]' (268b)
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 559, in on_task_received
+    strategy = strategies[type_]
+KeyError: u'beercounter.tasks.send_validation_email'
+
+worker: Warm shutdown (MainProcess)
+ 
+ -------------- celery@dan-HP-ProBook-450-G3 v4.0.2 (latentcall)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-53-generic-x86_64-with-LinuxMint-18.1-serena 2017-07-19 11:59:28
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         prvni:0x7f70f1a80990
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . prvni.celery.debu_task
+
+[2017-07-19 13:41:29,651: INFO/MainProcess] Connected to redis://localhost:6379//
+[2017-07-19 13:41:29,656: INFO/MainProcess] mingle: searching for neighbors
+[2017-07-19 13:41:30,671: INFO/MainProcess] mingle: all alone
+[2017-07-19 13:41:30,695: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2017-07-19 13:41:30,695: INFO/MainProcess] celery@dan-HP-ProBook-450-G3 ready.
+
+worker: Warm shutdown (MainProcess)
+ 
+ -------------- celery@dan-HP-ProBook-450-G3 v4.0.2 (latentcall)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-53-generic-x86_64-with-LinuxMint-18.1-serena 2017-07-19 13:41:29
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         prvni:0x7fae346a6990
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . prvni.celery.debu_task
+
+ 
+ -------------- celery@dan-HP-ProBook-450-G3 v4.0.2 (latentcall)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-53-generic-x86_64-with-LinuxMint-18.1-serena 2017-07-19 13:48:13
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         prvni:0x7f1fbef6a990
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . prvni.celery.debu_task
+
+ 
+ -------------- celery@dan-HP-ProBook-450-G3 v4.0.2 (latentcall)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-53-generic-x86_64-with-LinuxMint-18.1-serena 2017-07-19 13:54:23
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         prvni:0x7fc43d439990
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . prvni.celery.debu_task
+
+ 
+ -------------- celery@dan-HP-ProBook-450-G3 v4.0.2 (latentcall)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-53-generic-x86_64-with-LinuxMint-18.1-serena 2017-07-19 14:00:28
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         prvni:0x7f5b1a995990
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . prvni.celery.debu_task
+
+ 
+ -------------- celery@dan-HP-ProBook-450-G3 v4.0.2 (latentcall)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-53-generic-x86_64-with-LinuxMint-18.1-serena 2017-07-19 14:11:15
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         prvni:0x7fc3cf324990
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . prvni.celery.debu_task
+
+ 
+ -------------- celery@dan-HP-ProBook-450-G3 v4.0.2 (latentcall)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-53-generic-x86_64-with-LinuxMint-18.1-serena 2017-07-19 14:13:43
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         prvni:0x7fc9ca4d5990
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . prvni.celery.debu_task
+
+ 
+ -------------- celery@dan-HP-ProBook-450-G3 v4.0.2 (latentcall)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-53-generic-x86_64-with-LinuxMint-18.1-serena 2017-07-19 14:26:09
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         prvni:0x7f833b367990
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . prvni.celery.debu_task
+
+ 
+ -------------- celery@dan-HP-ProBook-450-G3 v4.0.2 (latentcall)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-53-generic-x86_64-with-LinuxMint-18.1-serena 2017-07-19 14:27:14
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         prvni:0x7ff1e2fc7990
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . prvni.celery.debuk_task
+
+ 
+ -------------- celery@dan-HP-ProBook-450-G3 v4.0.2 (latentcall)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-53-generic-x86_64-with-LinuxMint-18.1-serena 2017-07-19 15:00:15
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         prvni:0x7fe606e90990
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . prvni.celery.debuk_task
+
+ 
+ -------------- celery@dan-HP-ProBook-450-G3 v4.0.2 (latentcall)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-53-generic-x86_64-with-LinuxMint-18.1-serena 2017-07-20 08:54:29
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         prvni:0x7fb7a81c8b90
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . prvni.celery.debuk_task
+

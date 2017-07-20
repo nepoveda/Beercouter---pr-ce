@@ -4,7 +4,7 @@
   <form action="" method="post" class="form">
     {% csrf_token %}
     <p> Opravdu chcete odstratin tuto položku? </p>
-      <input value="Potvrdit" type="submit" class="btn btn-danger">
-      <a class="btn btn-primary" role="button" href="{% url 'beercounter:pub' object.id %}" > Zpět </a>
+      <input value="Ano" type="submit" class="btn btn-success">
+      <a class="btn btn-default" role="button" href="{% url 'beercounter:pub' object.id %}" > Zpět </a>
   </form>
 {% endblock %}

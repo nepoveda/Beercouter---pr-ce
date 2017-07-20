@@ -15,13 +15,14 @@
     </tr>
   </thead>
 
-  {% for order in bill.orders.all %}
+  {% for order in orders %}
   <tr>
     <td> {{order.item.name}} </td>
     <td> {{order.count}}</td>
     <td> {{order.item.price}} </td>
     <td> {{order.total_cost}} </td>
     <td>
+      {% if user.is_authenticated %}
       <form method="POST">
         {% csrf_token %}
         <input type="hidden" name="bill" value={{bill.id}}>
@@ -40,6 +41,7 @@
 
         </div>
       </form>
+      {% endif %}
     </td>
   </tr>
   {% endfor %}
@@ -48,24 +50,73 @@
     <td></td> <td></td>
     <td> {{bill.spending}} </td>
     <td>
+      {% if user.is_authenticated %}
       <form method="POST" action="{% url 'beercounter:cleanOrders' %}" onsubmit="return confirm('Opravdu?')">
         {% csrf_token %}
         <input type="hidden" name="bill" value={{bill.id}}>
         <button type="submit" name="cleanOrders" class="btn btn-danger">Vyčistit</button>
       </form>
+      {% endif %}
    </td>
   </tr>
 </table>
 
-<h2> V Hospodě:{{ bill.pub.name }} </h2>
-
-<form action="" method="POST" >
-  {% csrf_token %}
-  {% bootstrap_form form %}
-  {% buttons %}
-  <input value="Přidat" name="addOrder" type="submit" class="btn btn-primary">
-  <a class="btn btn-default" role="button" href="{% url 'beercounter:pub' bill.pub_id %}" > Zpět </a>
-  {% endbuttons %}
-</form>
-
+<h2> {{ bill.pub.name }} </h2>
+<h3> Menu: </h3>
+<div class="container-fluid">
+  {% if drinks %}
+  <h4> <strong> Nápoje </strong> </h4>
+  {% for item in drinks %}
+  <div class="list-group row">
+    <li class="list-group-item col-sm-3"> {{item.name}} </li>
+    <li class="list-group-item col-sm-3"> {{item.price}},- </li>
+    <li class="list-group-item col-sm-3">
+      <form method="POST" action="{% url 'beercounter:createorder' %}" >
+        {% csrf_token %}
+        <input type="hidden" name="item" value={{item.id}}>
+        <input type="hidden" name="bill" value={{bill.id}}>
+        <input type="number" name="count" value=1 min=1>
+        <button type="submit" name="addOrder" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span></button>
+      </form>
+    </li>
+  </div>
+  {% endfor %}
+  {% endif %}
+  {% if foods %}
+  <h4> <strong>Jídlo </strong> </h4>
+  {% for item in foods %}
+  <div class="list-group row">
+    <li class="list-group-item col-sm-3"> {{item.name}} </li>
+    <li class="list-group-item col-sm-3"> {{item.price}},-</li>
+    <li class="list-group-item col-sm-3">
+      <form method="POST" action="{% url 'beercounter:createorder' %}" >
+        {% csrf_token %}
+        <input type="hidden" name="item" value={{item.id}}>
+        <input type="hidden" name="bill" value={{bill.id}}>
+        <input type="number" name="count" value=1 min=1>
+        <button type="submit" name="addOrder" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span></button>
+      </form>
+    </li>
+  </div>
+  {% endfor %}
+  {% endif %}
+  {% if others %}
+  <h4> <strong>Ostatní </strong></h4>
+  {% for item in others %}
+  <div class="list-group row">
+    <li class="list-group-item col-sm-3"> {{item.name}}</li>
+    <li class="list-group-item col-sm-3"> {{item.price}},- </li>
+    <li class="list-group-item col-sm-3">
+      <form method="POST" action="{% url 'beercounter:createorder' %}" >
+        {% csrf_token %}
+        <input type="hidden" name="item" value={{item.id}}>
+        <input type="hidden" name="bill" value={{bill.id}}>
+        <input type="number" name="count" value=1 min=1>
+        <button type="submit" name="addOrder" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span></button>
+      </form>
+    </li>
+  </div>
+  {% endfor %}
+  {% endif %}
+<a href="{{request.META.HTTP_REFERER}}" class="btn btn-default"> Zpět </a>
 {% endblock%}
