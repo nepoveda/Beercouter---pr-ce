@@ -20,8 +20,8 @@ from django.template.loader         import render_to_string
 
 
 from .models import Pub, Bill, Order, Item
-from .forms import ItemForm, BillForm, OrderForm, PubForm, SignUpForm
-from .task import send_validation_email
+from .forms  import ItemForm, BillForm, OrderForm, PubForm, SignUpForm
+from .task   import send_validation_email
 
 class IndexView(CreateView):
   model = Pub
@@ -71,7 +71,6 @@ class BillView(DetailView):
   template_name = 'beercounter/bill_update_form.html'
   model = Bill
 
-
   def get_context_data(self,**kwargs):
     if self.request.user.is_active:
       items = self.object.pub.items.filter(owner = self.request.user) | self.object.pub.items.filter(isBase = True)
@@ -83,35 +82,6 @@ class BillView(DetailView):
     kwargs['orders'] = self.object.orders.all()
     data = super(BillView, self).get_context_data(**kwargs)
     return data
-
-  # def get_form_kwargs(self,**kwargs):
-  #   kwargs = super(BillView,self).get_form_kwargs(**kwargs)
-  #   kwargs.update({'user': self.request.user})
-  #   return kwargs
-
-  # def form_valid(self, form):
-  #   form.instance.owner = self.request.user
-  #   form.instance.bill = self.object
-  #   if self.request.user.is_staff:
-  #     form.instance.isBase = True
-  #   return super(BillView, self).form_valid(form)
-
-  # def post(self, request, *args, **kwargs):
-  #   self.object = self.get_object()
-  #   form = self.form_class(request.POST, self.request.user)
-
-  #   if 'addOrder' in request.POST:
-
-  #     if form.is_valid():
-  #       form.save()
-  #       return self.form_valid(form)
-
-  #     elif self.object.orders.filter(item_id = \
-  #         form.cleaned_data['item'].id):
-  #       order = get_object_or_404(self.object.orders.filter(item_id = \
-  #           form.cleaned_data['item'].id))
-  #       incrementOrderCount(order, form.cleaned_data['count'])
-  #       return HttpResponseRedirect(reverse("beercounter:bill", args=[self.object.id]))
 
 class AddItemView(CreateView):
   form_class = ItemForm
@@ -238,7 +208,6 @@ def signUp(request):
         'uid': urlsafe_base64_encode(force_bytes(user.pk)),
         'token': token_generator.make_token(user),
         })
-      # user.email_user(subject, message)
       send_validation_email.delay(user.id, subject, message)
       return HttpResponseRedirect(reverse("beercounter:useractivationsent"))
   else:

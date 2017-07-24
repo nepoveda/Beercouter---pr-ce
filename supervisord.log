@@ -1476,3 +1476,2745 @@ Invalid HTTP_HOST header: 'localhost:8000'. You may need to add u'localhost' to 
 2017-07-20 13:50:06,045 DEBG 'webserver' stdout output:
 [20/Jul/2017 13:50:06] "GET / HTTP/1.1" 200 1588
 
+2017-07-20 14:42:52,658 DEBG 'webserver' stdout output:
+[20/Jul/2017 14:42:52] "GET /pub/23/ HTTP/1.1" 200 1316
+
+2017-07-20 14:42:56,032 DEBG 'webserver' stdout output:
+[20/Jul/2017 14:42:56] "GET / HTTP/1.1" 200 1588
+
+2017-07-20 14:42:56,823 DEBG 'webserver' stdout output:
+[20/Jul/2017 14:42:56] "GET /pub/22/ HTTP/1.1" 200 1619
+
+2017-07-20 14:47:19,255 DEBG 'celeryd' stdout output:
+[2017-07-20 14:47:19,255: INFO/MainProcess] Received task: djcelery_email_send_multiple[c7dd844d-3355-4c7b-8f2e-8119450a257b]  ETA:[2017-07-20 13:48:44.481609+02:00] 
+
+2017-07-20 14:47:19,258 DEBG 'celeryd' stdout output:
+[2017-07-20 14:47:19,258: INFO/MainProcess] Received task: djcelery_email_send_multiple[f8e26df0-573b-4202-950c-02db146fd9e2]  ETA:[2017-07-20 13:48:44.478175+02:00] 
+
+2017-07-20 14:47:19,262 DEBG 'celeryd' stdout output:
+[2017-07-20 14:47:19,261: INFO/MainProcess] Received task: djcelery_email_send_multiple[2c69522b-7277-44c7-99f8-b4f0febe43ea]  ETA:[2017-07-20 13:48:44.479417+02:00] 
+
+2017-07-20 14:48:59,274 DEBG 'celeryd' stdout output:
+[2017-07-20 14:48:59,273: INFO/MainProcess] Received task: djcelery_email_send_multiple[cef97ceb-7a15-4b42-8854-256752d44c90]  
+
+2017-07-20 14:50:39,296 DEBG 'celeryd' stdout output:
+[2017-07-20 14:50:39,295: INFO/MainProcess] Received task: beercounter.task.send_validation_email[7421c15d-a127-48f1-b7e2-f7fa88da3ca5]  
+
+2017-07-20 15:23:50,008 DEBG 'webserver' stdout output:
+[20/Jul/2017 15:23:50] "GET / HTTP/1.1" 200 1588
+
+2017-07-20 15:23:51,782 DEBG 'webserver' stdout output:
+[20/Jul/2017 15:23:51] "GET /pub/22/ HTTP/1.1" 200 1619
+
+2017-07-20 15:23:53,108 DEBG 'webserver' stdout output:
+[20/Jul/2017 15:23:53] "GET / HTTP/1.1" 200 1588
+
+2017-07-20 15:43:48,998 WARN received SIGINT indicating exit request
+2017-07-20 15:43:48,999 DEBG killing webserver (pid 19161) with signal SIGTERM
+2017-07-20 15:43:48,999 INFO waiting for autoreload, celeryd, webserver to die
+2017-07-20 15:43:49,016 DEBG fd 12 closed, stopped monitoring <POutputDispatcher at 140341866542936 for <Subprocess at 140341870407904 with name webserver in state STOPPING> (stdout)>
+2017-07-20 15:43:49,016 DEBG 'celeryd' stdout output:
+[2017-07-20 15:43:49,007: ERROR/ForkPoolWorker-1] djcelery_email_send_multiple[9bb81d49-96f9-4450-a422-5495857c151a]: Cannot reach CELERY_EMAIL_BACKEND django.core.mail.backends.smtp.EmailBackend
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 41, in send_emails
+    conn.open()
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 64, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 317, in connect
+    (code, msg) = self.getreply()
+  File "/usr/lib/python2.7/smtplib.py", line 368, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+SMTPServerDisconnected: Connection unexpectedly closed
+[2017-07-20 15:43:49,007: ERROR/ForkPoolWorker-2] djcelery_email_send_multiple[ab140fcf-5801-4e4e-953d-381b8d473c49]: Cannot reach CELERY_EMAIL_BACKEND django.core.mail.backends.smtp.EmailBackend
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 41, in send_emails
+    conn.open()
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 64, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 317, in connect
+    (code, msg) = self.getreply()
+  File "/usr/lib/python2.7/smtplib.py", line 368, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+SMTPServerDisconnected: Connection unexpectedly closed
+[2017-07-20 15:43:49,007: ERROR/ForkPoolWorker-4] djcelery_email_send_multiple[c3c2646c-9c10-46e4-9b24-c4aa624fbbf3]: Cannot reach CELERY_EMAIL_BACKEND django.core.mail.backends.smtp.EmailBackend
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 41, in send_emails
+    conn.open()
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 64, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 317, in connect
+    (code, msg) = self.getreply()
+  File "/usr/lib/python2.7/smtplib.py", line 368, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+SMTPServerDisconnected: Connection unexpectedly closed
+[2017-07-20 15:43:49,012: WARNING/ForkPoolWorker-1] djcelery_email_send_multiple[9bb81d49-96f9-4450-a422-5495857c151a]: Failed to send email message to [u'blah@cosi.com'], retrying. (error(111, 'Connection refused'))
+[2017-07-20 15:43:49,012: WARNING/ForkPoolWorker-4] djcelery_email_send_multiple[c3c2646c-9c10-46e4-9b24-c4aa624fbbf3]: Failed to send email message to [u'blah@cosi.com'], retrying. (error(111, 'Connection refused'))
+[2017-07-20 15:43:49,013: WARNING/ForkPoolWorker-2] djcelery_email_send_multiple[ab140fcf-5801-4e4e-953d-381b8d473c49]: Failed to send email message to [u'blah@cosi.com'], retrying. (error(111, 'Connection refused'))
+
+2017-07-20 15:43:49,023 INFO stopped: webserver (terminated by SIGTERM)
+2017-07-20 15:43:49,024 DEBG received SIGCLD indicating a child quit
+2017-07-20 15:43:49,025 DEBG killing celeryd (pid 19166) with signal SIGTERM
+2017-07-20 15:43:49,026 DEBG 'celeryd' stdout output:
+[2017-07-20 15:43:49,008: ERROR/ForkPoolWorker-3] djcelery_email_send_multiple[0cce398d-f46d-4cbb-b374-d78c7deab64b]: Cannot reach CELERY_EMAIL_BACKEND django.core.mail.backends.smtp.EmailBackend
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 41, in send_emails
+    conn.open()
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 64, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 317, in connect
+    (code, msg) = self.getreply()
+  File "/usr/lib/python2.7/smtplib.py", line 368, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+SMTPServerDisconnected: Connection unexpectedly closed
+
+2017-07-20 15:43:49,033 DEBG 'celeryd' stdout output:
+[2017-07-20 15:43:49,029: INFO/ForkPoolWorker-1] Task djcelery_email_send_multiple[9bb81d49-96f9-4450-a422-5495857c151a] succeeded in 7031.72386765s: 0
+
+worker: Warm shutdown (MainProcess)
+[2017-07-20 15:43:49,031: WARNING/ForkPoolWorker-3] djcelery_email_send_multiple[0cce398d-f46d-4cbb-b374-d78c7deab64b]: Failed to send email message to [u'kldfjalk@ldfjka.lk'], retrying. (error(111, 'Connection refused'))
+
+2017-07-20 15:43:49,067 DEBG 'celeryd' stdout output:
+[2017-07-20 15:43:49,066: INFO/ForkPoolWorker-3] Task djcelery_email_send_multiple[0cce398d-f46d-4cbb-b374-d78c7deab64b] succeeded in 7079.00087505s: 0
+
+2017-07-20 15:43:49,077 DEBG 'celeryd' stdout output:
+[2017-07-20 15:43:49,074: INFO/ForkPoolWorker-4] Task djcelery_email_send_multiple[c3c2646c-9c10-46e4-9b24-c4aa624fbbf3] succeeded in 7031.76130303s: 0
+[2017-07-20 15:43:49,074: INFO/ForkPoolWorker-2] Task djcelery_email_send_multiple[ab140fcf-5801-4e4e-953d-381b8d473c49] succeeded in 6909.4125445s: 0
+
+2017-07-20 15:43:50,083 DEBG 'celeryd' stdout output:
+[2017-07-20 15:43:50,082: WARNING/MainProcess] Restoring 5 unacknowledged message(s)
+
+2017-07-20 15:43:50,094 DEBG 'celeryd' stdout output:
+ 
+ -------------- celery@dan-HP-ProBook-450-G3 v4.0.2 (latentcall)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-53-generic-x86_64-with-LinuxMint-18.1-serena 2017-07-20 13:45:48
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         prvni:0x7f1841565e90
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . beercounter.task.send_validation_email
+  . djcelery_email_send_multiple
+  . prvni.celery.debuk_task
+
+
+2017-07-20 15:43:50,671 DEBG fd 15 closed, stopped monitoring <POutputDispatcher at 140341866542288 for <Subprocess at 140341870410352 with name celeryd in state STOPPING> (stdout)>
+2017-07-20 15:43:50,671 INFO stopped: celeryd (exit status 0)
+2017-07-20 15:43:50,671 DEBG received SIGCLD indicating a child quit
+2017-07-20 15:43:50,671 DEBG killing autoreload (pid 19149) with signal SIGTERM
+2017-07-20 15:43:50,677 DEBG fd 8 closed, stopped monitoring <POutputDispatcher at 140341866621480 for <Subprocess at 140341867088136 with name autoreload in state STOPPING> (stdout)>
+2017-07-20 15:43:50,678 INFO stopped: autoreload (terminated by SIGTERM)
+2017-07-20 15:43:50,678 DEBG received SIGCLD indicating a child quit
+2017-07-20 16:18:31,824 INFO RPC interface 'supervisor' initialized
+2017-07-20 16:18:31,824 INFO supervisord started with pid 24797
+2017-07-20 16:18:32,830 INFO spawned: 'autoreload' with pid 24802
+2017-07-20 16:18:32,836 INFO spawned: 'celeryd' with pid 24803
+2017-07-20 16:18:32,842 INFO spawned: 'webserver' with pid 24804
+2017-07-20 16:18:33,649 DEBG 'celeryd' stdout output:
+[2017-07-20 16:18:33,649: INFO/MainProcess] Connected to redis://localhost:6379//
+
+2017-07-20 16:18:33,654 DEBG 'celeryd' stdout output:
+[2017-07-20 16:18:33,654: INFO/MainProcess] mingle: searching for neighbors
+
+2017-07-20 16:18:34,656 INFO success: autoreload entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-20 16:18:34,656 INFO success: celeryd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-20 16:18:34,656 INFO success: webserver entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-20 16:18:34,673 DEBG 'celeryd' stdout output:
+[2017-07-20 16:18:34,672: INFO/MainProcess] mingle: all alone
+
+2017-07-20 16:18:34,695 DEBG 'celeryd' stdout output:
+[2017-07-20 16:18:34,694: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+2017-07-20 16:18:34,695 DEBG 'celeryd' stdout output:
+[2017-07-20 16:18:34,695: INFO/MainProcess] celery@dan-HP-ProBook-450-G3 ready.
+
+2017-07-20 16:18:34,808 DEBG 'celeryd' stdout output:
+[2017-07-20 16:18:34,807: INFO/MainProcess] Received task: beercounter.task.send_validation_email[7421c15d-a127-48f1-b7e2-f7fa88da3ca5]  
+
+2017-07-20 16:18:34,814 DEBG 'celeryd' stdout output:
+[2017-07-20 16:18:34,812: INFO/MainProcess] Received task: djcelery_email_send_multiple[cef97ceb-7a15-4b42-8854-256752d44c90]  
+
+2017-07-20 16:18:34,832 DEBG 'celeryd' stdout output:
+[2017-07-20 16:18:34,831: INFO/MainProcess] Received task: djcelery_email_send_multiple[c7dd844d-3355-4c7b-8f2e-8119450a257b]  ETA:[2017-07-20 13:48:44.481609+02:00] 
+
+2017-07-20 16:18:34,839 DEBG 'celeryd' stdout output:
+[2017-07-20 16:18:34,839: WARNING/ForkPoolWorker-1] (u'posilam email pro user: ', <User: fasfdf>)
+
+2017-07-20 16:18:34,840 DEBG 'celeryd' stdout output:
+[2017-07-20 16:18:34,840: INFO/MainProcess] Received task: djcelery_email_send_multiple[2c69522b-7277-44c7-99f8-b4f0febe43ea]  ETA:[2017-07-20 13:48:44.479417+02:00] 
+
+2017-07-20 16:18:34,844 DEBG 'celeryd' stdout output:
+[2017-07-20 16:18:34,844: INFO/MainProcess] Received task: djcelery_email_send_multiple[f8e26df0-573b-4202-950c-02db146fd9e2]  ETA:[2017-07-20 13:48:44.478175+02:00] 
+
+2017-07-20 16:18:34,851 DEBG 'celeryd' stdout output:
+[2017-07-20 16:18:34,850: INFO/MainProcess] Received task: djcelery_email_send_multiple[0cce398d-f46d-4cbb-b374-d78c7deab64b]  ETA:[2017-07-20 15:46:49.035866+02:00] 
+
+2017-07-20 16:18:34,856 DEBG 'celeryd' stdout output:
+[2017-07-20 16:18:34,856: INFO/MainProcess] Received task: djcelery_email_send_multiple[c3c2646c-9c10-46e4-9b24-c4aa624fbbf3]  ETA:[2017-07-20 15:46:49.024191+02:00] 
+
+2017-07-20 16:18:34,859 DEBG 'celeryd' stdout output:
+[2017-07-20 16:18:34,858: INFO/MainProcess] Received task: djcelery_email_send_multiple[ab140fcf-5801-4e4e-953d-381b8d473c49]  ETA:[2017-07-20 15:46:49.018508+02:00] 
+
+2017-07-20 16:18:34,869 DEBG 'celeryd' stdout output:
+[2017-07-20 16:18:34,869: INFO/ForkPoolWorker-1] Task beercounter.task.send_validation_email[7421c15d-a127-48f1-b7e2-f7fa88da3ca5] succeeded in 0.0533615129971s: None
+
+2017-07-20 16:18:34,870 DEBG 'celeryd' stdout output:
+[2017-07-20 16:18:34,870: INFO/MainProcess] Received task: djcelery_email_send_multiple[45d1d5c7-5519-493b-9dd7-028e5de2f9ef]  
+
+2017-07-20 16:18:35,449 DEBG 'webserver' stdout output:
+[20/Jul/2017 16:18:35] "GET /pub/22/ HTTP/1.1" 200 1619
+
+2017-07-20 16:18:58,471 DEBG 'webserver' stdout output:
+Not Found: /5555
+
+2017-07-20 16:18:58,471 DEBG 'webserver' stdout output:
+[20/Jul/2017 16:18:58] "GET /5555 HTTP/1.1" 404 8597
+
+2017-07-20 16:20:49,769 DEBG 'webserver' stdout output:
+Not Found: /5555
+
+2017-07-20 16:20:49,770 DEBG 'webserver' stdout output:
+[20/Jul/2017 16:20:49] "GET /5555 HTTP/1.1" 404 8597
+
+2017-07-20 16:20:50,140 DEBG 'celeryd' stdout output:
+[2017-07-20 16:20:50,138: INFO/MainProcess] Events of group {task} enabled by remote.
+
+2017-07-20 16:20:51,879 DEBG 'webserver' stdout output:
+Not Found: /5555
+
+2017-07-20 16:20:51,880 DEBG 'webserver' stdout output:
+[20/Jul/2017 16:20:51] "GET /5555 HTTP/1.1" 404 8597
+
+2017-07-20 16:20:52,634 DEBG 'webserver' stdout output:
+Not Found: /5555
+
+2017-07-20 16:20:52,635 DEBG 'webserver' stdout output:
+[20/Jul/2017 16:20:52] "GET /5555 HTTP/1.1" 404 8597
+
+2017-07-20 16:40:43,858 DEBG 'webserver' stdout output:
+[20/Jul/2017 16:40:43] "GET / HTTP/1.1" 200 1588
+
+2017-07-20 16:40:44,979 DEBG 'webserver' stdout output:
+[20/Jul/2017 16:40:44] "GET / HTTP/1.1" 200 1588
+
+2017-07-20 17:00:51,798 DEBG 'webserver' stdout output:
+[20/Jul/2017 17:00:51] "GET /pub/23/ HTTP/1.1" 200 1316
+
+2017-07-20 17:00:53,071 DEBG 'webserver' stdout output:
+[20/Jul/2017 17:00:53] "GET / HTTP/1.1" 200 1588
+
+2017-07-20 17:16:36,049 WARN received SIGHUP indicating restart request
+2017-07-21 08:58:01,388 INFO RPC interface 'supervisor' initialized
+2017-07-21 08:58:01,388 INFO supervisord started with pid 4056
+2017-07-21 08:58:02,390 INFO spawned: 'autoreload' with pid 4063
+2017-07-21 08:58:02,392 INFO spawned: 'celeryd' with pid 4064
+2017-07-21 08:58:02,394 INFO spawned: 'webserver' with pid 4065
+2017-07-21 08:58:03,096 DEBG 'webserver' stdout output:
+Error: That port is already in use.
+
+2017-07-21 08:58:03,098 DEBG fd 14 closed, stopped monitoring <POutputDispatcher at 140373978673376 for <Subprocess at 140373982053944 with name webserver in state STARTING> (stdout)>
+2017-07-21 08:58:03,099 INFO exited: webserver (exit status 1; not expected)
+2017-07-21 08:58:03,099 DEBG received SIGCLD indicating a child quit
+2017-07-21 08:58:03,366 DEBG 'celeryd' stdout output:
+[2017-07-21 08:58:03,366: INFO/MainProcess] Connected to redis://localhost:6379//
+
+2017-07-21 08:58:03,374 DEBG 'celeryd' stdout output:
+[2017-07-21 08:58:03,374: INFO/MainProcess] mingle: searching for neighbors
+
+2017-07-21 08:58:04,376 INFO success: autoreload entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-21 08:58:04,376 INFO success: celeryd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-21 08:58:04,377 INFO spawned: 'webserver' with pid 4094
+2017-07-21 08:58:04,391 DEBG 'celeryd' stdout output:
+[2017-07-21 08:58:04,391: INFO/MainProcess] mingle: all alone
+
+2017-07-21 08:58:04,398 DEBG 'celeryd' stdout output:
+[2017-07-21 08:58:04,397: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+2017-07-21 08:58:04,398 DEBG 'celeryd' stdout output:
+[2017-07-21 08:58:04,398: INFO/MainProcess] celery@dan-HP-ProBook-450-G3 ready.
+
+2017-07-21 08:58:04,573 DEBG 'celeryd' stdout output:
+[2017-07-21 08:58:04,573: INFO/MainProcess] Received task: djcelery_email_send_multiple[45d1d5c7-5519-493b-9dd7-028e5de2f9ef]  
+
+2017-07-21 08:58:04,574 DEBG 'celeryd' stdout output:
+[2017-07-21 08:58:04,574: INFO/MainProcess] Received task: djcelery_email_send_multiple[ab140fcf-5801-4e4e-953d-381b8d473c49]  ETA:[2017-07-20 15:46:49.018508+02:00] 
+
+2017-07-21 08:58:04,576 DEBG 'celeryd' stdout output:
+[2017-07-21 08:58:04,576: INFO/MainProcess] Received task: djcelery_email_send_multiple[c3c2646c-9c10-46e4-9b24-c4aa624fbbf3]  ETA:[2017-07-20 15:46:49.024191+02:00] 
+
+2017-07-21 08:58:04,577 DEBG 'celeryd' stdout output:
+[2017-07-21 08:58:04,577: INFO/MainProcess] Received task: djcelery_email_send_multiple[0cce398d-f46d-4cbb-b374-d78c7deab64b]  ETA:[2017-07-20 15:46:49.035866+02:00] 
+
+2017-07-21 08:58:04,864 DEBG 'webserver' stdout output:
+Error: That port is already in use.
+
+2017-07-21 08:58:04,866 DEBG fd 14 closed, stopped monitoring <POutputDispatcher at 140373978673376 for <Subprocess at 140373982053944 with name webserver in state STARTING> (stdout)>
+2017-07-21 08:58:04,866 INFO exited: webserver (exit status 1; not expected)
+2017-07-21 08:58:04,866 DEBG received SIGCLD indicating a child quit
+2017-07-21 08:58:06,873 INFO spawned: 'webserver' with pid 4099
+2017-07-21 08:58:07,333 DEBG 'webserver' stdout output:
+Error: That port is already in use.
+
+2017-07-21 08:58:07,334 DEBG fd 14 closed, stopped monitoring <POutputDispatcher at 140373978673376 for <Subprocess at 140373982053944 with name webserver in state STARTING> (stdout)>
+2017-07-21 08:58:07,334 INFO exited: webserver (exit status 1; not expected)
+2017-07-21 08:58:07,334 DEBG received SIGCLD indicating a child quit
+2017-07-21 08:58:10,342 INFO spawned: 'webserver' with pid 4104
+2017-07-21 08:58:10,815 DEBG 'webserver' stdout output:
+Error: That port is already in use.
+
+2017-07-21 08:58:10,816 DEBG fd 14 closed, stopped monitoring <POutputDispatcher at 140373978673376 for <Subprocess at 140373982053944 with name webserver in state STARTING> (stdout)>
+2017-07-21 08:58:10,816 INFO exited: webserver (exit status 1; not expected)
+2017-07-21 08:58:10,816 DEBG received SIGCLD indicating a child quit
+2017-07-21 08:58:11,817 INFO gave up: webserver entered FATAL state, too many start retries too quickly
+2017-07-21 08:59:04,623 DEBG 'celeryd' stdout output:
+[2017-07-21 08:59:04,615: ERROR/ForkPoolWorker-4] djcelery_email_send_multiple[c3c2646c-9c10-46e4-9b24-c4aa624fbbf3]: Cannot reach CELERY_EMAIL_BACKEND django.core.mail.backends.smtp.EmailBackend
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 41, in send_emails
+    conn.open()
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 64, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 317, in connect
+    (code, msg) = self.getreply()
+  File "/usr/lib/python2.7/smtplib.py", line 368, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+SMTPServerDisconnected: Connection unexpectedly closed
+
+2017-07-21 08:59:04,625 DEBG 'celeryd' stdout output:
+[2017-07-21 08:59:04,618: ERROR/ForkPoolWorker-1] djcelery_email_send_multiple[45d1d5c7-5519-493b-9dd7-028e5de2f9ef]: Cannot reach CELERY_EMAIL_BACKEND django.core.mail.backends.smtp.EmailBackend
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 41, in send_emails
+    conn.open()
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 64, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 317, in connect
+    (code, msg) = self.getreply()
+  File "/usr/lib/python2.7/smtplib.py", line 368, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+SMTPServerDisconnected: Connection unexpectedly closed
+
+2017-07-21 08:59:04,630 DEBG 'celeryd' stdout output:
+[2017-07-21 08:59:04,618: ERROR/ForkPoolWorker-2] djcelery_email_send_multiple[ab140fcf-5801-4e4e-953d-381b8d473c49]: Cannot reach CELERY_EMAIL_BACKEND django.core.mail.backends.smtp.EmailBackend
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 41, in send_emails
+    conn.open()
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 64, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 317, in connect
+    (code, msg) = self.getreply()
+  File "/usr/lib/python2.7/smtplib.py", line 368, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+SMTPServerDisconnected: Connection unexpectedly closed
+[2017-07-21 08:59:04,618: ERROR/ForkPoolWorker-3] djcelery_email_send_multiple[0cce398d-f46d-4cbb-b374-d78c7deab64b]: Cannot reach CELERY_EMAIL_BACKEND django.core.mail.backends.smtp.EmailBackend
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 41, in send_emails
+    conn.open()
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 64, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 317, in connect
+    (code, msg) = self.getreply()
+  File "/usr/lib/python2.7/smtplib.py", line 368, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+SMTPServerDisconnected: Connection unexpectedly closed
+
+2017-07-21 09:00:04,627 DEBG 'celeryd' stdout output:
+[2017-07-21 09:00:04,626: WARNING/ForkPoolWorker-1] djcelery_email_send_multiple[45d1d5c7-5519-493b-9dd7-028e5de2f9ef]: Failed to send email message to [u'dfakl@lak.ld'], retrying. (SMTPServerDisconnected('Connection unexpectedly closed',))
+
+2017-07-21 09:00:04,634 DEBG 'celeryd' stdout output:
+[2017-07-21 09:00:04,629: WARNING/ForkPoolWorker-2] djcelery_email_send_multiple[ab140fcf-5801-4e4e-953d-381b8d473c49]: Failed to send email message to [u'blah@cosi.com'], retrying. (SMTPServerDisconnected('Connection unexpectedly closed',))
+[2017-07-21 09:00:04,630: WARNING/ForkPoolWorker-3] djcelery_email_send_multiple[0cce398d-f46d-4cbb-b374-d78c7deab64b]: Failed to send email message to [u'kldfjalk@ldfjka.lk'], retrying. (SMTPServerDisconnected('Connection unexpectedly closed',))
+[2017-07-21 09:00:04,632: WARNING/ForkPoolWorker-4] djcelery_email_send_multiple[c3c2646c-9c10-46e4-9b24-c4aa624fbbf3]: Failed to send email message to [u'blah@cosi.com'], retrying. (SMTPServerDisconnected('Connection unexpectedly closed',))
+
+2017-07-21 09:00:04,679 DEBG 'celeryd' stdout output:
+[2017-07-21 09:00:04,679: INFO/ForkPoolWorker-1] Task djcelery_email_send_multiple[45d1d5c7-5519-493b-9dd7-028e5de2f9ef] succeeded in 120.103708629s: 0
+
+2017-07-21 09:00:04,680 DEBG 'celeryd' stdout output:
+[2017-07-21 09:00:04,679: INFO/MainProcess] Received task: djcelery_email_send_multiple[45d1d5c7-5519-493b-9dd7-028e5de2f9ef]  ETA:[2017-07-21 09:03:04.631103+02:00] 
+
+2017-07-21 09:00:04,681 DEBG 'celeryd' stdout output:
+[2017-07-21 09:00:04,681: INFO/ForkPoolWorker-2] Task djcelery_email_send_multiple[ab140fcf-5801-4e4e-953d-381b8d473c49] succeeded in 120.102992943s: 0
+
+2017-07-21 09:00:04,681 DEBG 'celeryd' stdout output:
+[2017-07-21 09:00:04,681: INFO/ForkPoolWorker-3] Task djcelery_email_send_multiple[0cce398d-f46d-4cbb-b374-d78c7deab64b] succeeded in 120.100827029s: 0
+
+2017-07-21 09:00:04,682 DEBG 'celeryd' stdout output:
+[2017-07-21 09:00:04,681: INFO/MainProcess] Received task: djcelery_email_send_multiple[ab140fcf-5801-4e4e-953d-381b8d473c49]  ETA:[2017-07-21 09:03:04.634780+02:00] 
+
+2017-07-21 09:00:04,683 DEBG 'celeryd' stdout output:
+[2017-07-21 09:00:04,683: INFO/MainProcess] Received task: djcelery_email_send_multiple[0cce398d-f46d-4cbb-b374-d78c7deab64b]  ETA:[2017-07-21 09:03:04.637821+02:00] 
+
+2017-07-21 09:00:04,683 DEBG 'celeryd' stdout output:
+[2017-07-21 09:00:04,683: INFO/ForkPoolWorker-4] Task djcelery_email_send_multiple[c3c2646c-9c10-46e4-9b24-c4aa624fbbf3] succeeded in 120.10459349s: 0
+
+2017-07-21 09:00:04,684 DEBG 'celeryd' stdout output:
+[2017-07-21 09:00:04,684: INFO/MainProcess] Received task: djcelery_email_send_multiple[c3c2646c-9c10-46e4-9b24-c4aa624fbbf3]  ETA:[2017-07-21 09:03:04.637428+02:00] 
+
+2017-07-21 09:00:59,438 WARN received SIGINT indicating exit request
+2017-07-21 09:00:59,438 INFO waiting for autoreload, celeryd to die
+2017-07-21 09:01:00,440 DEBG killing celeryd (pid 4064) with signal SIGTERM
+2017-07-21 09:01:00,441 DEBG 'celeryd' stdout output:
+
+worker: Warm shutdown (MainProcess)
+
+2017-07-21 09:01:01,469 DEBG 'celeryd' stdout output:
+[2017-07-21 09:01:01,468: WARNING/MainProcess] Restoring 4 unacknowledged message(s)
+
+2017-07-21 09:01:01,477 DEBG 'celeryd' stdout output:
+ 
+ -------------- celery@dan-HP-ProBook-450-G3 v4.0.2 (latentcall)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-53-generic-x86_64-with-LinuxMint-18.1-serena 2017-07-21 08:58:03
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         prvni:0x7f5164a84e90
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . beercounter.task.send_validation_email
+  . djcelery_email_send_multiple
+  . prvni.celery.debuk_task
+
+
+2017-07-21 09:01:02,045 DEBG fd 11 closed, stopped monitoring <POutputDispatcher at 140373978648376 for <Subprocess at 140373982054376 with name celeryd in state STOPPING> (stdout)>
+2017-07-21 09:01:02,045 INFO stopped: celeryd (exit status 0)
+2017-07-21 09:01:02,045 DEBG received SIGCLD indicating a child quit
+2017-07-21 09:01:02,045 DEBG killing autoreload (pid 4063) with signal SIGTERM
+2017-07-21 09:01:02,050 DEBG fd 7 closed, stopped monitoring <POutputDispatcher at 140373978647800 for <Subprocess at 140373982054232 with name autoreload in state STOPPING> (stdout)>
+2017-07-21 09:01:02,050 INFO stopped: autoreload (terminated by SIGTERM)
+2017-07-21 09:01:02,050 DEBG received SIGCLD indicating a child quit
+2017-07-21 09:01:13,492 INFO RPC interface 'supervisor' initialized
+2017-07-21 09:01:13,492 INFO supervisord started with pid 4484
+2017-07-21 09:01:14,497 INFO spawned: 'autoreload' with pid 4489
+2017-07-21 09:01:14,503 INFO spawned: 'celeryd' with pid 4490
+2017-07-21 09:01:14,508 INFO spawned: 'webserver' with pid 4491
+2017-07-21 09:01:15,067 DEBG 'webserver' stdout output:
+Error: That port is already in use.
+
+2017-07-21 09:01:15,069 DEBG fd 14 closed, stopped monitoring <POutputDispatcher at 139812271382752 for <Subprocess at 139812274763320 with name webserver in state STARTING> (stdout)>
+2017-07-21 09:01:15,070 INFO exited: webserver (exit status 1; not expected)
+2017-07-21 09:01:15,070 DEBG received SIGCLD indicating a child quit
+2017-07-21 09:01:15,386 DEBG 'celeryd' stdout output:
+[2017-07-21 09:01:15,385: INFO/MainProcess] Connected to redis://localhost:6379//
+
+2017-07-21 09:01:15,392 DEBG 'celeryd' stdout output:
+[2017-07-21 09:01:15,392: INFO/MainProcess] mingle: searching for neighbors
+
+2017-07-21 09:01:16,393 INFO success: autoreload entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-21 09:01:16,394 INFO success: celeryd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-21 09:01:16,398 INFO spawned: 'webserver' with pid 4515
+2017-07-21 09:01:16,407 DEBG 'celeryd' stdout output:
+[2017-07-21 09:01:16,406: INFO/MainProcess] mingle: all alone
+
+2017-07-21 09:01:16,435 DEBG 'celeryd' stdout output:
+[2017-07-21 09:01:16,434: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+2017-07-21 09:01:16,435 DEBG 'celeryd' stdout output:
+[2017-07-21 09:01:16,435: INFO/MainProcess] celery@dan-HP-ProBook-450-G3 ready.
+
+2017-07-21 09:01:16,593 DEBG 'celeryd' stdout output:
+[2017-07-21 09:01:16,593: INFO/MainProcess] Received task: djcelery_email_send_multiple[c3c2646c-9c10-46e4-9b24-c4aa624fbbf3]  ETA:[2017-07-21 09:03:04.637428+02:00] 
+
+2017-07-21 09:01:16,594 DEBG 'celeryd' stdout output:
+[2017-07-21 09:01:16,594: INFO/MainProcess] Received task: djcelery_email_send_multiple[0cce398d-f46d-4cbb-b374-d78c7deab64b]  ETA:[2017-07-21 09:03:04.637821+02:00] 
+
+2017-07-21 09:01:16,595 DEBG 'celeryd' stdout output:
+[2017-07-21 09:01:16,595: INFO/MainProcess] Received task: djcelery_email_send_multiple[ab140fcf-5801-4e4e-953d-381b8d473c49]  ETA:[2017-07-21 09:03:04.634780+02:00] 
+
+2017-07-21 09:01:16,596 DEBG 'celeryd' stdout output:
+[2017-07-21 09:01:16,596: INFO/MainProcess] Received task: djcelery_email_send_multiple[45d1d5c7-5519-493b-9dd7-028e5de2f9ef]  ETA:[2017-07-21 09:03:04.631103+02:00] 
+
+2017-07-21 09:01:16,897 DEBG 'webserver' stdout output:
+Error: That port is already in use.
+
+2017-07-21 09:01:16,899 DEBG fd 14 closed, stopped monitoring <POutputDispatcher at 139812271382752 for <Subprocess at 139812274763320 with name webserver in state STARTING> (stdout)>
+2017-07-21 09:01:16,899 INFO exited: webserver (exit status 1; not expected)
+2017-07-21 09:01:16,899 DEBG received SIGCLD indicating a child quit
+2017-07-21 09:01:18,906 INFO spawned: 'webserver' with pid 4520
+2017-07-21 09:01:19,356 DEBG 'webserver' stdout output:
+Error: That port is already in use.
+
+2017-07-21 09:01:19,357 DEBG fd 14 closed, stopped monitoring <POutputDispatcher at 139812271382752 for <Subprocess at 139812274763320 with name webserver in state STARTING> (stdout)>
+2017-07-21 09:01:19,358 INFO exited: webserver (exit status 1; not expected)
+2017-07-21 09:01:19,358 DEBG received SIGCLD indicating a child quit
+2017-07-21 09:01:22,366 INFO spawned: 'webserver' with pid 4525
+2017-07-21 09:01:22,829 DEBG 'webserver' stdout output:
+Error: That port is already in use.
+
+2017-07-21 09:01:22,831 DEBG fd 14 closed, stopped monitoring <POutputDispatcher at 139812271382752 for <Subprocess at 139812274763320 with name webserver in state STARTING> (stdout)>
+2017-07-21 09:01:22,831 INFO exited: webserver (exit status 1; not expected)
+2017-07-21 09:01:22,831 DEBG received SIGCLD indicating a child quit
+2017-07-21 09:01:23,832 INFO gave up: webserver entered FATAL state, too many start retries too quickly
+2017-07-21 09:01:29,870 WARN received SIGINT indicating exit request
+2017-07-21 09:01:29,870 INFO waiting for autoreload, celeryd to die
+2017-07-21 09:01:30,872 DEBG killing celeryd (pid 4490) with signal SIGTERM
+2017-07-21 09:01:30,873 DEBG 'celeryd' stdout output:
+
+worker: Warm shutdown (MainProcess)
+
+2017-07-21 09:01:31,900 DEBG 'celeryd' stdout output:
+[2017-07-21 09:01:31,899: WARNING/MainProcess] Restoring 4 unacknowledged message(s)
+
+2017-07-21 09:01:31,909 DEBG 'celeryd' stdout output:
+ 
+ -------------- celery@dan-HP-ProBook-450-G3 v4.0.2 (latentcall)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-53-generic-x86_64-with-LinuxMint-18.1-serena 2017-07-21 09:01:15
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         prvni:0x7fc2aad3be90
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . beercounter.task.send_validation_email
+  . djcelery_email_send_multiple
+  . prvni.celery.debuk_task
+
+
+2017-07-21 09:01:32,484 DEBG fd 11 closed, stopped monitoring <POutputDispatcher at 139812271357752 for <Subprocess at 139812274763752 with name celeryd in state STOPPING> (stdout)>
+2017-07-21 09:01:32,485 INFO stopped: celeryd (exit status 0)
+2017-07-21 09:01:32,485 DEBG received SIGCLD indicating a child quit
+2017-07-21 09:01:32,485 DEBG killing autoreload (pid 4489) with signal SIGTERM
+2017-07-21 09:01:32,490 DEBG fd 7 closed, stopped monitoring <POutputDispatcher at 139812271357176 for <Subprocess at 139812274763608 with name autoreload in state STOPPING> (stdout)>
+2017-07-21 09:01:32,490 INFO stopped: autoreload (terminated by SIGTERM)
+2017-07-21 09:01:32,490 DEBG received SIGCLD indicating a child quit
+2017-07-21 09:02:13,171 INFO RPC interface 'supervisor' initialized
+2017-07-21 09:02:13,171 INFO supervisord started with pid 4566
+2017-07-21 09:02:14,175 INFO spawned: 'autoreload' with pid 4571
+2017-07-21 09:02:14,177 INFO spawned: 'celeryd' with pid 4572
+2017-07-21 09:02:14,180 INFO spawned: 'webserver' with pid 4573
+2017-07-21 09:02:14,854 DEBG 'webserver' stdout output:
+Error: That port is already in use.
+
+2017-07-21 09:02:14,856 DEBG fd 14 closed, stopped monitoring <POutputDispatcher at 139895513075936 for <Subprocess at 139895516456504 with name webserver in state STARTING> (stdout)>
+2017-07-21 09:02:14,856 INFO exited: webserver (exit status 1; not expected)
+2017-07-21 09:02:14,856 DEBG received SIGCLD indicating a child quit
+2017-07-21 09:02:15,031 DEBG 'celeryd' stdout output:
+[2017-07-21 09:02:15,030: INFO/MainProcess] Connected to redis://localhost:6379//
+
+2017-07-21 09:02:15,036 DEBG 'celeryd' stdout output:
+[2017-07-21 09:02:15,035: INFO/MainProcess] mingle: searching for neighbors
+
+2017-07-21 09:02:16,037 INFO success: autoreload entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-21 09:02:16,037 INFO success: celeryd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-21 09:02:16,042 INFO spawned: 'webserver' with pid 4597
+2017-07-21 09:02:16,052 DEBG 'celeryd' stdout output:
+[2017-07-21 09:02:16,051: INFO/MainProcess] mingle: all alone
+
+2017-07-21 09:02:16,071 DEBG 'celeryd' stdout output:
+[2017-07-21 09:02:16,071: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+2017-07-21 09:02:16,071 DEBG 'celeryd' stdout output:
+[2017-07-21 09:02:16,071: INFO/MainProcess] celery@dan-HP-ProBook-450-G3 ready.
+
+2017-07-21 09:02:16,179 DEBG 'celeryd' stdout output:
+[2017-07-21 09:02:16,179: INFO/MainProcess] Received task: djcelery_email_send_multiple[45d1d5c7-5519-493b-9dd7-028e5de2f9ef]  ETA:[2017-07-21 09:03:04.631103+02:00] 
+
+2017-07-21 09:02:16,181 DEBG 'celeryd' stdout output:
+[2017-07-21 09:02:16,180: INFO/MainProcess] Received task: djcelery_email_send_multiple[ab140fcf-5801-4e4e-953d-381b8d473c49]  ETA:[2017-07-21 09:03:04.634780+02:00] 
+
+2017-07-21 09:02:16,182 DEBG 'celeryd' stdout output:
+[2017-07-21 09:02:16,182: INFO/MainProcess] Received task: djcelery_email_send_multiple[0cce398d-f46d-4cbb-b374-d78c7deab64b]  ETA:[2017-07-21 09:03:04.637821+02:00] 
+
+2017-07-21 09:02:16,183 DEBG 'celeryd' stdout output:
+[2017-07-21 09:02:16,183: INFO/MainProcess] Received task: djcelery_email_send_multiple[c3c2646c-9c10-46e4-9b24-c4aa624fbbf3]  ETA:[2017-07-21 09:03:04.637428+02:00] 
+
+2017-07-21 09:02:16,517 DEBG 'webserver' stdout output:
+Error: That port is already in use.
+
+2017-07-21 09:02:16,518 DEBG fd 14 closed, stopped monitoring <POutputDispatcher at 139895513075936 for <Subprocess at 139895516456504 with name webserver in state STARTING> (stdout)>
+2017-07-21 09:02:16,518 INFO exited: webserver (exit status 1; not expected)
+2017-07-21 09:02:16,518 DEBG received SIGCLD indicating a child quit
+2017-07-21 09:02:18,525 INFO spawned: 'webserver' with pid 4605
+2017-07-21 09:02:18,987 DEBG 'webserver' stdout output:
+Error: That port is already in use.
+
+2017-07-21 09:02:18,989 DEBG fd 14 closed, stopped monitoring <POutputDispatcher at 139895513075936 for <Subprocess at 139895516456504 with name webserver in state STARTING> (stdout)>
+2017-07-21 09:02:18,989 INFO exited: webserver (exit status 1; not expected)
+2017-07-21 09:02:18,989 DEBG received SIGCLD indicating a child quit
+2017-07-21 09:02:21,997 INFO spawned: 'webserver' with pid 4615
+2017-07-21 09:02:22,464 DEBG 'webserver' stdout output:
+Error: That port is already in use.
+
+2017-07-21 09:02:22,466 DEBG fd 14 closed, stopped monitoring <POutputDispatcher at 139895513075936 for <Subprocess at 139895516456504 with name webserver in state STARTING> (stdout)>
+2017-07-21 09:02:22,466 INFO exited: webserver (exit status 1; not expected)
+2017-07-21 09:02:22,466 DEBG received SIGCLD indicating a child quit
+2017-07-21 09:02:23,467 INFO gave up: webserver entered FATAL state, too many start retries too quickly
+2017-07-21 09:02:37,447 WARN received SIGINT indicating exit request
+2017-07-21 09:02:37,448 INFO waiting for autoreload, celeryd to die
+2017-07-21 09:02:38,450 DEBG killing celeryd (pid 4572) with signal SIGTERM
+2017-07-21 09:02:38,451 DEBG 'celeryd' stdout output:
+
+worker: Warm shutdown (MainProcess)
+
+2017-07-21 09:02:39,480 DEBG 'celeryd' stdout output:
+[2017-07-21 09:02:39,479: WARNING/MainProcess] Restoring 4 unacknowledged message(s)
+
+2017-07-21 09:02:39,490 DEBG 'celeryd' stdout output:
+ 
+ -------------- celery@dan-HP-ProBook-450-G3 v4.0.2 (latentcall)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-53-generic-x86_64-with-LinuxMint-18.1-serena 2017-07-21 09:02:14
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         prvni:0x7fd12becce90
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . beercounter.task.send_validation_email
+  . djcelery_email_send_multiple
+  . prvni.celery.debuk_task
+
+
+2017-07-21 09:02:40,059 DEBG fd 11 closed, stopped monitoring <POutputDispatcher at 139895513050936 for <Subprocess at 139895516457296 with name celeryd in state STOPPING> (stdout)>
+2017-07-21 09:02:40,059 INFO stopped: celeryd (exit status 0)
+2017-07-21 09:02:40,059 DEBG received SIGCLD indicating a child quit
+2017-07-21 09:02:40,059 DEBG killing autoreload (pid 4571) with signal SIGTERM
+2017-07-21 09:02:40,066 DEBG fd 7 closed, stopped monitoring <POutputDispatcher at 139895513050360 for <Subprocess at 139895516455352 with name autoreload in state STOPPING> (stdout)>
+2017-07-21 09:02:40,066 INFO stopped: autoreload (terminated by SIGTERM)
+2017-07-21 09:02:40,067 DEBG received SIGCLD indicating a child quit
+2017-07-21 09:06:45,279 INFO RPC interface 'supervisor' initialized
+2017-07-21 09:06:45,279 INFO supervisord started with pid 5231
+2017-07-21 09:06:46,284 INFO spawned: 'autoreload' with pid 5236
+2017-07-21 09:06:46,290 INFO spawned: 'celeryd' with pid 5237
+2017-07-21 09:06:46,296 INFO spawned: 'webserver' with pid 5238
+2017-07-21 09:06:47,021 DEBG 'webserver' stdout output:
+Error: That port is already in use.
+
+2017-07-21 09:06:47,024 DEBG fd 14 closed, stopped monitoring <POutputDispatcher at 139998470062304 for <Subprocess at 139998473442872 with name webserver in state STARTING> (stdout)>
+2017-07-21 09:06:47,024 INFO exited: webserver (exit status 1; not expected)
+2017-07-21 09:06:47,024 DEBG received SIGCLD indicating a child quit
+2017-07-21 09:06:47,071 DEBG 'celeryd' stdout output:
+[2017-07-21 09:06:47,071: INFO/MainProcess] Connected to redis://localhost:6379//
+
+2017-07-21 09:06:47,076 DEBG 'celeryd' stdout output:
+[2017-07-21 09:06:47,076: INFO/MainProcess] mingle: searching for neighbors
+
+2017-07-21 09:06:48,077 INFO success: autoreload entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-21 09:06:48,078 INFO success: celeryd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-21 09:06:48,086 INFO spawned: 'webserver' with pid 5262
+2017-07-21 09:06:48,095 DEBG 'celeryd' stdout output:
+[2017-07-21 09:06:48,091: INFO/MainProcess] mingle: all alone
+
+2017-07-21 09:06:48,118 DEBG 'celeryd' stdout output:
+[2017-07-21 09:06:48,118: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+2017-07-21 09:06:48,119 DEBG 'celeryd' stdout output:
+[2017-07-21 09:06:48,118: INFO/MainProcess] celery@dan-HP-ProBook-450-G3 ready.
+
+2017-07-21 09:06:48,229 DEBG 'celeryd' stdout output:
+[2017-07-21 09:06:48,228: INFO/MainProcess] Received task: djcelery_email_send_multiple[0cce398d-f46d-4cbb-b374-d78c7deab64b]  ETA:[2017-07-21 09:08:55.350609+02:00] 
+
+2017-07-21 09:06:48,230 DEBG 'celeryd' stdout output:
+[2017-07-21 09:06:48,230: INFO/MainProcess] Received task: djcelery_email_send_multiple[c3c2646c-9c10-46e4-9b24-c4aa624fbbf3]  ETA:[2017-07-21 09:08:55.350665+02:00] 
+
+2017-07-21 09:06:48,231 DEBG 'celeryd' stdout output:
+[2017-07-21 09:06:48,231: INFO/MainProcess] Received task: djcelery_email_send_multiple[ab140fcf-5801-4e4e-953d-381b8d473c49]  ETA:[2017-07-21 09:08:55.350621+02:00] 
+
+2017-07-21 09:06:48,232 DEBG 'celeryd' stdout output:
+[2017-07-21 09:06:48,232: INFO/MainProcess] Received task: djcelery_email_send_multiple[45d1d5c7-5519-493b-9dd7-028e5de2f9ef]  ETA:[2017-07-21 09:08:55.350621+02:00] 
+
+2017-07-21 09:06:48,545 DEBG 'webserver' stdout output:
+Error: That port is already in use.
+
+2017-07-21 09:06:48,546 DEBG fd 14 closed, stopped monitoring <POutputDispatcher at 139998470062304 for <Subprocess at 139998473442872 with name webserver in state STARTING> (stdout)>
+2017-07-21 09:06:48,546 INFO exited: webserver (exit status 1; not expected)
+2017-07-21 09:06:48,546 DEBG received SIGCLD indicating a child quit
+2017-07-21 09:06:50,553 INFO spawned: 'webserver' with pid 5267
+2017-07-21 09:06:51,018 DEBG 'webserver' stdout output:
+Error: That port is already in use.
+
+2017-07-21 09:06:51,020 DEBG fd 14 closed, stopped monitoring <POutputDispatcher at 139998470062304 for <Subprocess at 139998473442872 with name webserver in state STARTING> (stdout)>
+2017-07-21 09:06:51,020 INFO exited: webserver (exit status 1; not expected)
+2017-07-21 09:06:51,020 DEBG received SIGCLD indicating a child quit
+2017-07-21 09:06:54,029 INFO spawned: 'webserver' with pid 5284
+2017-07-21 09:06:54,492 DEBG 'webserver' stdout output:
+Error: That port is already in use.
+
+2017-07-21 09:06:54,494 DEBG fd 14 closed, stopped monitoring <POutputDispatcher at 139998470062304 for <Subprocess at 139998473442872 with name webserver in state STARTING> (stdout)>
+2017-07-21 09:06:54,494 INFO exited: webserver (exit status 1; not expected)
+2017-07-21 09:06:54,494 DEBG received SIGCLD indicating a child quit
+2017-07-21 09:06:55,495 INFO gave up: webserver entered FATAL state, too many start retries too quickly
+2017-07-21 09:09:55,894 DEBG 'celeryd' stdout output:
+[2017-07-21 09:09:55,891: ERROR/ForkPoolWorker-1] djcelery_email_send_multiple[0cce398d-f46d-4cbb-b374-d78c7deab64b]: Cannot reach CELERY_EMAIL_BACKEND django.core.mail.backends.smtp.EmailBackend
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 41, in send_emails
+    conn.open()
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 64, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 317, in connect
+    (code, msg) = self.getreply()
+  File "/usr/lib/python2.7/smtplib.py", line 368, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+SMTPServerDisconnected: Connection unexpectedly closed
+
+2017-07-21 09:09:55,896 DEBG 'celeryd' stdout output:
+[2017-07-21 09:09:55,891: ERROR/ForkPoolWorker-2] djcelery_email_send_multiple[45d1d5c7-5519-493b-9dd7-028e5de2f9ef]: Cannot reach CELERY_EMAIL_BACKEND django.core.mail.backends.smtp.EmailBackend
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 41, in send_emails
+    conn.open()
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 64, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 317, in connect
+    (code, msg) = self.getreply()
+  File "/usr/lib/python2.7/smtplib.py", line 368, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+SMTPServerDisconnected: Connection unexpectedly closed
+
+2017-07-21 09:09:55,898 DEBG 'celeryd' stdout output:
+[2017-07-21 09:09:55,891: ERROR/ForkPoolWorker-3] djcelery_email_send_multiple[ab140fcf-5801-4e4e-953d-381b8d473c49]: Cannot reach CELERY_EMAIL_BACKEND django.core.mail.backends.smtp.EmailBackend
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 41, in send_emails
+    conn.open()
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 64, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 317, in connect
+    (code, msg) = self.getreply()
+  File "/usr/lib/python2.7/smtplib.py", line 368, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+SMTPServerDisconnected: Connection unexpectedly closed
+
+2017-07-21 09:09:55,899 DEBG 'celeryd' stdout output:
+[2017-07-21 09:09:55,894: ERROR/ForkPoolWorker-4] djcelery_email_send_multiple[c3c2646c-9c10-46e4-9b24-c4aa624fbbf3]: Cannot reach CELERY_EMAIL_BACKEND django.core.mail.backends.smtp.EmailBackend
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 41, in send_emails
+    conn.open()
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 64, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 317, in connect
+    (code, msg) = self.getreply()
+  File "/usr/lib/python2.7/smtplib.py", line 368, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+SMTPServerDisconnected: Connection unexpectedly closed
+
+2017-07-21 09:10:55,941 DEBG 'celeryd' stdout output:
+[2017-07-21 09:10:55,940: WARNING/ForkPoolWorker-1] djcelery_email_send_multiple[0cce398d-f46d-4cbb-b374-d78c7deab64b]: Failed to send email message to [u'kldfjalk@ldfjka.lk'], retrying. (SMTPServerDisconnected('Connection unexpectedly closed',))
+
+2017-07-21 09:10:55,942 DEBG 'celeryd' stdout output:
+[2017-07-21 09:10:55,940: WARNING/ForkPoolWorker-2] djcelery_email_send_multiple[45d1d5c7-5519-493b-9dd7-028e5de2f9ef]: Failed to send email message to [u'dfakl@lak.ld'], retrying. (SMTPServerDisconnected('Connection unexpectedly closed',))
+[2017-07-21 09:10:55,940: WARNING/ForkPoolWorker-3] djcelery_email_send_multiple[ab140fcf-5801-4e4e-953d-381b8d473c49]: Failed to send email message to [u'blah@cosi.com'], retrying. (SMTPServerDisconnected('Connection unexpectedly closed',))
+
+2017-07-21 09:10:55,944 DEBG 'celeryd' stdout output:
+[2017-07-21 09:10:55,943: WARNING/ForkPoolWorker-4] djcelery_email_send_multiple[c3c2646c-9c10-46e4-9b24-c4aa624fbbf3]: Failed to send email message to [u'blah@cosi.com'], retrying. (SMTPServerDisconnected('Connection unexpectedly closed',))
+
+2017-07-21 09:10:55,950 DEBG 'celeryd' stdout output:
+[2017-07-21 09:10:55,949: ERROR/ForkPoolWorker-3] Task djcelery_email_send_multiple[ab140fcf-5801-4e4e-953d-381b8d473c49] raised unexpected: SMTPServerDisconnected('Connection unexpectedly closed',)
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/app/trace.py", line 367, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/app/trace.py", line 622, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 58, in send_emails
+    send_emails.retry([[message], combined_kwargs], exc=e, throw=False)
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/app/task.py", line 668, in retry
+    raise_with_context(exc)
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 49, in send_emails
+    sent = conn.send_messages([dict_to_email(message)])
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 104, in send_messages
+    new_conn_created = self.open()
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 64, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 317, in connect
+    (code, msg) = self.getreply()
+  File "/usr/lib/python2.7/smtplib.py", line 368, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+SMTPServerDisconnected: Connection unexpectedly closed
+
+2017-07-21 09:10:55,960 DEBG 'celeryd' stdout output:
+[2017-07-21 09:10:55,949: ERROR/ForkPoolWorker-4] Task djcelery_email_send_multiple[c3c2646c-9c10-46e4-9b24-c4aa624fbbf3] raised unexpected: SMTPServerDisconnected('Connection unexpectedly closed',)
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/app/trace.py", line 367, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/app/trace.py", line 622, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 58, in send_emails
+    send_emails.retry([[message], combined_kwargs], exc=e, throw=False)
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/app/task.py", line 668, in retry
+    raise_with_context(exc)
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 49, in send_emails
+    sent = conn.send_messages([dict_to_email(message)])
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 104, in send_messages
+    new_conn_created = self.open()
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 64, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 317, in connect
+    (code, msg) = self.getreply()
+  File "/usr/lib/python2.7/smtplib.py", line 368, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+SMTPServerDisconnected: Connection unexpectedly closed
+
+2017-07-21 09:10:55,964 DEBG 'celeryd' stdout output:
+[2017-07-21 09:10:55,961: ERROR/ForkPoolWorker-1] Task djcelery_email_send_multiple[0cce398d-f46d-4cbb-b374-d78c7deab64b] raised unexpected: SMTPServerDisconnected('Connection unexpectedly closed',)
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/app/trace.py", line 367, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/app/trace.py", line 622, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 58, in send_emails
+    send_emails.retry([[message], combined_kwargs], exc=e, throw=False)
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/app/task.py", line 668, in retry
+    raise_with_context(exc)
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 49, in send_emails
+    sent = conn.send_messages([dict_to_email(message)])
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 104, in send_messages
+    new_conn_created = self.open()
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 64, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 317, in connect
+    (code, msg) = self.getreply()
+  File "/usr/lib/python2.7/smtplib.py", line 368, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+SMTPServerDisconnected: Connection unexpectedly closed
+
+2017-07-21 09:10:55,986 DEBG 'celeryd' stdout output:
+[2017-07-21 09:10:55,985: INFO/ForkPoolWorker-2] Task djcelery_email_send_multiple[45d1d5c7-5519-493b-9dd7-028e5de2f9ef] succeeded in 120.121652248s: 0
+
+2017-07-21 09:10:55,986 DEBG 'celeryd' stdout output:
+[2017-07-21 09:10:55,986: INFO/MainProcess] Received task: djcelery_email_send_multiple[45d1d5c7-5519-493b-9dd7-028e5de2f9ef]  ETA:[2017-07-21 09:13:55.945909+02:00] 
+
+2017-07-21 09:12:43,685 WARN received SIGINT indicating exit request
+2017-07-21 09:12:43,685 INFO waiting for autoreload, celeryd to die
+2017-07-21 09:12:44,687 DEBG killing celeryd (pid 5237) with signal SIGTERM
+2017-07-21 09:12:44,689 DEBG 'celeryd' stdout output:
+
+worker: Warm shutdown (MainProcess)
+
+2017-07-21 09:12:45,717 DEBG 'celeryd' stdout output:
+[2017-07-21 09:12:45,716: WARNING/MainProcess] Restoring 1 unacknowledged message(s)
+
+2017-07-21 09:12:45,721 DEBG 'celeryd' stdout output:
+ 
+ -------------- celery@dan-HP-ProBook-450-G3 v4.0.2 (latentcall)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-53-generic-x86_64-with-LinuxMint-18.1-serena 2017-07-21 09:06:46
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         prvni:0x7fa8f7d20e90
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . beercounter.task.send_validation_email
+  . djcelery_email_send_multiple
+  . prvni.celery.debuk_task
+
+
+2017-07-21 09:12:46,290 DEBG fd 11 closed, stopped monitoring <POutputDispatcher at 139998470037304 for <Subprocess at 139998473443304 with name celeryd in state STOPPING> (stdout)>
+2017-07-21 09:12:46,290 INFO stopped: celeryd (exit status 0)
+2017-07-21 09:12:46,290 DEBG received SIGCLD indicating a child quit
+2017-07-21 09:12:46,290 DEBG killing autoreload (pid 5236) with signal SIGTERM
+2017-07-21 09:12:46,298 DEBG fd 7 closed, stopped monitoring <POutputDispatcher at 139998470036728 for <Subprocess at 139998473443160 with name autoreload in state STOPPING> (stdout)>
+2017-07-21 09:12:46,298 INFO stopped: autoreload (terminated by SIGTERM)
+2017-07-21 09:12:46,299 DEBG received SIGCLD indicating a child quit
+2017-07-21 09:12:50,120 INFO RPC interface 'supervisor' initialized
+2017-07-21 09:12:50,121 INFO supervisord started with pid 18018
+2017-07-21 09:12:51,123 INFO spawned: 'autoreload' with pid 18026
+2017-07-21 09:12:51,124 INFO spawned: 'celeryd' with pid 18027
+2017-07-21 09:12:51,126 INFO spawned: 'webserver' with pid 18028
+2017-07-21 09:12:51,743 DEBG 'webserver' stdout output:
+Error: That port is already in use.
+
+2017-07-21 09:12:51,746 DEBG fd 14 closed, stopped monitoring <POutputDispatcher at 140230976430304 for <Subprocess at 140230979810872 with name webserver in state STARTING> (stdout)>
+2017-07-21 09:12:51,746 INFO exited: webserver (exit status 1; not expected)
+2017-07-21 09:12:51,746 DEBG received SIGCLD indicating a child quit
+2017-07-21 09:12:51,880 DEBG 'celeryd' stdout output:
+[2017-07-21 09:12:51,879: INFO/MainProcess] Connected to redis://localhost:6379//
+
+2017-07-21 09:12:51,884 DEBG 'celeryd' stdout output:
+[2017-07-21 09:12:51,884: INFO/MainProcess] mingle: searching for neighbors
+
+2017-07-21 09:12:52,886 INFO success: autoreload entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-21 09:12:52,886 INFO success: celeryd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-21 09:12:52,891 INFO spawned: 'webserver' with pid 18054
+2017-07-21 09:12:52,900 DEBG 'celeryd' stdout output:
+[2017-07-21 09:12:52,899: INFO/MainProcess] mingle: all alone
+
+2017-07-21 09:12:52,929 DEBG 'celeryd' stdout output:
+[2017-07-21 09:12:52,928: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+2017-07-21 09:12:52,929 DEBG 'celeryd' stdout output:
+[2017-07-21 09:12:52,929: INFO/MainProcess] celery@dan-HP-ProBook-450-G3 ready.
+
+2017-07-21 09:12:53,068 DEBG 'celeryd' stdout output:
+[2017-07-21 09:12:53,068: INFO/MainProcess] Received task: djcelery_email_send_multiple[45d1d5c7-5519-493b-9dd7-028e5de2f9ef]  ETA:[2017-07-21 09:13:55.945909+02:00] 
+
+2017-07-21 09:12:53,352 DEBG 'webserver' stdout output:
+Error: That port is already in use.
+
+2017-07-21 09:12:53,353 DEBG fd 14 closed, stopped monitoring <POutputDispatcher at 140230976430304 for <Subprocess at 140230979810872 with name webserver in state STARTING> (stdout)>
+2017-07-21 09:12:53,353 INFO exited: webserver (exit status 1; not expected)
+2017-07-21 09:12:53,353 DEBG received SIGCLD indicating a child quit
+2017-07-21 09:12:55,360 INFO spawned: 'webserver' with pid 18059
+2017-07-21 09:12:55,821 DEBG 'webserver' stdout output:
+Error: That port is already in use.
+
+2017-07-21 09:12:55,822 DEBG fd 14 closed, stopped monitoring <POutputDispatcher at 140230976430304 for <Subprocess at 140230979810872 with name webserver in state STARTING> (stdout)>
+2017-07-21 09:12:55,823 INFO exited: webserver (exit status 1; not expected)
+2017-07-21 09:12:55,823 DEBG received SIGCLD indicating a child quit
+2017-07-21 09:12:58,835 INFO spawned: 'webserver' with pid 18064
+2017-07-21 09:12:59,428 DEBG 'webserver' stdout output:
+Error: That port is already in use.
+
+2017-07-21 09:12:59,429 DEBG fd 14 closed, stopped monitoring <POutputDispatcher at 140230976430304 for <Subprocess at 140230979810872 with name webserver in state STARTING> (stdout)>
+2017-07-21 09:12:59,430 INFO exited: webserver (exit status 1; not expected)
+2017-07-21 09:12:59,430 DEBG received SIGCLD indicating a child quit
+2017-07-21 09:13:00,431 INFO gave up: webserver entered FATAL state, too many start retries too quickly
+2017-07-21 09:13:38,277 WARN received SIGINT indicating exit request
+2017-07-21 09:13:38,278 INFO waiting for autoreload, celeryd to die
+2017-07-21 09:13:39,280 DEBG killing celeryd (pid 18027) with signal SIGTERM
+2017-07-21 09:13:39,281 DEBG 'celeryd' stdout output:
+
+worker: Warm shutdown (MainProcess)
+
+2017-07-21 09:13:40,308 DEBG 'celeryd' stdout output:
+[2017-07-21 09:13:40,307: WARNING/MainProcess] Restoring 1 unacknowledged message(s)
+
+2017-07-21 09:13:40,312 DEBG 'celeryd' stdout output:
+ 
+ -------------- celery@dan-HP-ProBook-450-G3 v4.0.2 (latentcall)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-53-generic-x86_64-with-LinuxMint-18.1-serena 2017-07-21 09:12:51
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         prvni:0x7f6faf3b7e90
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . beercounter.task.send_validation_email
+  . djcelery_email_send_multiple
+  . prvni.celery.debuk_task
+
+
+2017-07-21 09:13:40,876 DEBG fd 11 closed, stopped monitoring <POutputDispatcher at 140230976405304 for <Subprocess at 140230979811304 with name celeryd in state STOPPING> (stdout)>
+2017-07-21 09:13:40,877 INFO stopped: celeryd (exit status 0)
+2017-07-21 09:13:40,877 DEBG received SIGCLD indicating a child quit
+2017-07-21 09:13:40,877 DEBG killing autoreload (pid 18026) with signal SIGTERM
+2017-07-21 09:13:40,882 DEBG fd 7 closed, stopped monitoring <POutputDispatcher at 140230976404728 for <Subprocess at 140230979811160 with name autoreload in state STOPPING> (stdout)>
+2017-07-21 09:13:40,882 INFO stopped: autoreload (terminated by SIGTERM)
+2017-07-21 09:13:40,882 DEBG received SIGCLD indicating a child quit
+2017-07-21 09:14:06,191 INFO RPC interface 'supervisor' initialized
+2017-07-21 09:14:06,191 INFO supervisord started with pid 18166
+2017-07-21 09:14:07,197 INFO spawned: 'autoreload' with pid 18171
+2017-07-21 09:14:07,203 INFO spawned: 'celeryd' with pid 18172
+2017-07-21 09:14:07,208 INFO spawned: 'webserver' with pid 18173
+2017-07-21 09:14:08,036 DEBG 'celeryd' stdout output:
+[2017-07-21 09:14:08,035: INFO/MainProcess] Connected to redis://localhost:6379//
+
+2017-07-21 09:14:08,040 DEBG 'celeryd' stdout output:
+[2017-07-21 09:14:08,040: INFO/MainProcess] mingle: searching for neighbors
+
+2017-07-21 09:14:09,042 INFO success: autoreload entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-21 09:14:09,042 INFO success: celeryd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-21 09:14:09,043 INFO success: webserver entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-21 09:14:09,056 DEBG 'celeryd' stdout output:
+[2017-07-21 09:14:09,055: INFO/MainProcess] mingle: all alone
+
+2017-07-21 09:14:09,082 DEBG 'celeryd' stdout output:
+[2017-07-21 09:14:09,081: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+2017-07-21 09:14:09,082 DEBG 'celeryd' stdout output:
+[2017-07-21 09:14:09,082: INFO/MainProcess] celery@dan-HP-ProBook-450-G3 ready.
+
+2017-07-21 09:14:09,216 DEBG 'celeryd' stdout output:
+[2017-07-21 09:14:09,215: INFO/MainProcess] Received task: djcelery_email_send_multiple[45d1d5c7-5519-493b-9dd7-028e5de2f9ef]  ETA:[2017-07-21 09:13:55.945909+02:00] 
+
+2017-07-21 09:14:24,692 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:14:24] "GET / HTTP/1.1" 200 1588
+
+2017-07-21 09:14:25,735 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:14:25] "GET /pub/23/ HTTP/1.1" 200 1316
+
+2017-07-21 09:14:26,803 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:14:26] "GET / HTTP/1.1" 200 1588
+
+2017-07-21 09:14:27,484 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:14:27] "GET /pub/22/ HTTP/1.1" 200 1619
+
+2017-07-21 09:14:28,968 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:14:28] "GET / HTTP/1.1" 200 1588
+
+2017-07-21 09:14:30,095 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:14:30] "GET /signUp/ HTTP/1.1" 200 3957
+
+2017-07-21 09:14:31,890 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:14:31] "GET /login/ HTTP/1.1" 200 2026
+
+2017-07-21 09:14:33,131 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:14:33] "GET /password_reset/ HTTP/1.1" 200 1520
+
+2017-07-21 09:14:35,581 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:14:35] "POST /password_reset/ HTTP/1.1" 302 0
+
+2017-07-21 09:14:35,593 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:14:35] "GET /password_reset/done/ HTTP/1.1" 200 1061
+
+2017-07-21 09:14:44,734 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:14:44] "GET / HTTP/1.1" 200 1588
+
+2017-07-21 09:25:54,826 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:25:54] "GET /pub/23/ HTTP/1.1" 200 1316
+
+2017-07-21 09:25:55,905 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:25:55] "GET / HTTP/1.1" 200 1588
+
+2017-07-21 09:31:55,975 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:31:55] "GET /login/ HTTP/1.1" 200 2019
+
+2017-07-21 09:31:57,637 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:31:57] "GET / HTTP/1.1" 200 1588
+
+2017-07-21 09:32:54,323 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:32:54] "GET /pub/23/ HTTP/1.1" 200 1316
+
+2017-07-21 09:32:55,313 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:32:55] "GET /login/ HTTP/1.1" 200 2026
+
+2017-07-21 09:32:56,396 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:32:56] "GET /password_reset/ HTTP/1.1" 200 1520
+
+2017-07-21 09:33:00,854 DEBG 'celeryd' stdout output:
+[2017-07-21 09:33:00,853: INFO/MainProcess] Received task: djcelery_email_send_multiple[8352319f-746a-419e-8147-41356a81e228]  
+
+2017-07-21 09:33:00,859 DEBG 'celeryd' stdout output:
+[2017-07-21 09:33:00,858: INFO/MainProcess] Received task: djcelery_email_send_multiple[c8e03cd1-3df4-40d3-b2bc-cd6f8f0ee13c]  
+
+2017-07-21 09:33:00,859 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:33:00] "POST /password_reset/ HTTP/1.1" 302 0
+
+2017-07-21 09:33:00,872 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:33:00] "GET /password_reset/done/ HTTP/1.1" 200 1061
+
+2017-07-21 09:34:48,217 DEBG 'celeryd' stdout output:
+[2017-07-21 09:34:48,216: INFO/MainProcess] Events of group {task} enabled by remote.
+
+2017-07-21 09:35:12,012 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:35:12] "GET / HTTP/1.1" 200 1588
+
+2017-07-21 09:35:13,039 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:35:13] "GET /login/ HTTP/1.1" 200 2019
+
+2017-07-21 09:35:14,087 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:35:14] "GET /password_reset/ HTTP/1.1" 200 1520
+
+2017-07-21 09:35:16,296 DEBG 'celeryd' stdout output:
+[2017-07-21 09:35:16,295: INFO/MainProcess] Received task: djcelery_email_send_multiple[6568d859-c7e9-4b0d-a6eb-f76b07ebd414]  
+
+2017-07-21 09:35:16,309 DEBG 'celeryd' stdout output:
+[2017-07-21 09:35:16,308: INFO/MainProcess] Received task: djcelery_email_send_multiple[75a91fd6-dd3f-4fd1-b7c7-6266443ea985]  
+
+2017-07-21 09:35:16,309 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:35:16] "POST /password_reset/ HTTP/1.1" 302 0
+
+2017-07-21 09:35:16,318 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:35:16] "GET /password_reset/done/ HTTP/1.1" 200 1061
+
+2017-07-21 09:37:29,504 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:37:29] "GET /password_reset/done/ HTTP/1.1" 200 1061
+
+2017-07-21 09:38:26,823 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:38:26] "GET /password_reset/done/ HTTP/1.1" 200 1061
+
+2017-07-21 09:38:27,989 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:38:27] "GET / HTTP/1.1" 200 1588
+
+2017-07-21 09:40:43,728 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:40:43] "GET / HTTP/1.1" 200 1588
+
+2017-07-21 09:59:35,984 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:59:35] "GET /pub/23/ HTTP/1.1" 200 1316
+
+2017-07-21 09:59:37,066 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:59:37] "GET / HTTP/1.1" 200 1588
+
+2017-07-21 09:59:37,580 DEBG 'webserver' stdout output:
+[21/Jul/2017 09:59:37] "GET / HTTP/1.1" 200 1588
+
+2017-07-21 10:04:20,399 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:04:20] "GET / HTTP/1.1" 200 1588
+
+2017-07-21 10:04:21,439 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:04:21] "GET /pub/22/ HTTP/1.1" 200 1619
+
+2017-07-21 10:04:24,292 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:04:24] "GET / HTTP/1.1" 200 1588
+
+2017-07-21 10:35:38,521 DEBG 'celeryd' stdout output:
+[2017-07-21 10:35:38,519: INFO/MainProcess] Received task: djcelery_email_send_multiple[75a91fd6-dd3f-4fd1-b7c7-6266443ea985]  
+
+2017-07-21 10:39:42,314 WARN received SIGINT indicating exit request
+2017-07-21 10:39:42,315 DEBG killing webserver (pid 18173) with signal SIGTERM
+2017-07-21 10:39:42,315 INFO waiting for autoreload, celeryd, webserver to die
+2017-07-21 10:39:42,323 DEBG fd 14 closed, stopped monitoring <POutputDispatcher at 139923606462688 for <Subprocess at 139923609843256 with name webserver in state STOPPING> (stdout)>
+2017-07-21 10:39:42,325 INFO stopped: webserver (terminated by SIGTERM)
+2017-07-21 10:39:42,325 DEBG received SIGCLD indicating a child quit
+2017-07-21 10:39:42,326 DEBG killing celeryd (pid 18172) with signal SIGTERM
+2017-07-21 10:39:42,329 DEBG 'celeryd' stdout output:
+[2017-07-21 10:39:42,324: ERROR/ForkPoolWorker-3] djcelery_email_send_multiple[c8e03cd1-3df4-40d3-b2bc-cd6f8f0ee13c]: Cannot reach CELERY_EMAIL_BACKEND django.core.mail.backends.smtp.EmailBackend
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 41, in send_emails
+    conn.open()
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 64, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 317, in connect
+    (code, msg) = self.getreply()
+  File "/usr/lib/python2.7/smtplib.py", line 368, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+SMTPServerDisconnected: Connection unexpectedly closed
+[2017-07-21 10:39:42,324: ERROR/ForkPoolWorker-4] djcelery_email_send_multiple[6568d859-c7e9-4b0d-a6eb-f76b07ebd414]: Cannot reach CELERY_EMAIL_BACKEND django.core.mail.backends.smtp.EmailBackend
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 41, in send_emails
+    conn.open()
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 64, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 317, in connect
+    (code, msg) = self.getreply()
+  File "/usr/lib/python2.7/smtplib.py", line 368, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+SMTPServerDisconnected: Connection unexpectedly closed
+
+2017-07-21 10:39:42,330 DEBG 'celeryd' stdout output:
+[2017-07-21 10:39:42,325: ERROR/ForkPoolWorker-2] djcelery_email_send_multiple[8352319f-746a-419e-8147-41356a81e228]: Cannot reach CELERY_EMAIL_BACKEND django.core.mail.backends.smtp.EmailBackend
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 41, in send_emails
+    conn.open()
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 64, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 317, in connect
+    (code, msg) = self.getreply()
+  File "/usr/lib/python2.7/smtplib.py", line 368, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+SMTPServerDisconnected: Connection unexpectedly closed
+[2017-07-21 10:39:42,329: WARNING/ForkPoolWorker-4] djcelery_email_send_multiple[6568d859-c7e9-4b0d-a6eb-f76b07ebd414]: Failed to send email message to [u'blah@cosi.com'], retrying. (error(111, 'Connection refused'))
+
+2017-07-21 10:39:42,335 DEBG 'celeryd' stdout output:
+[2017-07-21 10:39:42,330: WARNING/ForkPoolWorker-2] djcelery_email_send_multiple[8352319f-746a-419e-8147-41356a81e228]: Failed to send email message to [u'blah@cosi.com'], retrying. (error(111, 'Connection refused'))
+[2017-07-21 10:39:42,330: WARNING/ForkPoolWorker-3] djcelery_email_send_multiple[c8e03cd1-3df4-40d3-b2bc-cd6f8f0ee13c]: Failed to send email message to [u'blah@cosi.com'], retrying. (error(111, 'Connection refused'))
+[2017-07-21 10:39:42,328: ERROR/ForkPoolWorker-1] djcelery_email_send_multiple[45d1d5c7-5519-493b-9dd7-028e5de2f9ef]: Cannot reach CELERY_EMAIL_BACKEND django.core.mail.backends.smtp.EmailBackend
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 41, in send_emails
+    conn.open()
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 64, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 317, in connect
+    (code, msg) = self.getreply()
+  File "/usr/lib/python2.7/smtplib.py", line 368, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+SMTPServerDisconnected: Connection unexpectedly closed
+[2017-07-21 10:39:42,332: WARNING/ForkPoolWorker-1] djcelery_email_send_multiple[45d1d5c7-5519-493b-9dd7-028e5de2f9ef]: Failed to send email message to [u'dfakl@lak.ld'], retrying. (error(111, 'Connection refused'))
+
+2017-07-21 10:39:42,336 DEBG 'celeryd' stdout output:
+
+worker: Warm shutdown (MainProcess)
+
+2017-07-21 10:39:42,343 DEBG 'celeryd' stdout output:
+[2017-07-21 10:39:42,339: ERROR/ForkPoolWorker-1] Task djcelery_email_send_multiple[45d1d5c7-5519-493b-9dd7-028e5de2f9ef] raised unexpected: error(111, 'Connection refused')
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/app/trace.py", line 367, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/app/trace.py", line 622, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 58, in send_emails
+    send_emails.retry([[message], combined_kwargs], exc=e, throw=False)
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/app/task.py", line 668, in retry
+    raise_with_context(exc)
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 49, in send_emails
+    sent = conn.send_messages([dict_to_email(message)])
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 104, in send_messages
+    new_conn_created = self.open()
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 64, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 316, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/lib/python2.7/smtplib.py", line 291, in _get_socket
+    return socket.create_connection((host, port), timeout)
+  File "/usr/lib/python2.7/socket.py", line 575, in create_connection
+    raise err
+error: [Errno 111] Connection refused
+
+2017-07-21 10:39:42,367 DEBG 'celeryd' stdout output:
+[2017-07-21 10:39:42,367: INFO/ForkPoolWorker-2] Task djcelery_email_send_multiple[8352319f-746a-419e-8147-41356a81e228] succeeded in 4001.51170299s: 0
+
+2017-07-21 10:39:42,369 DEBG 'celeryd' stdout output:
+[2017-07-21 10:39:42,368: INFO/ForkPoolWorker-4] Task djcelery_email_send_multiple[6568d859-c7e9-4b0d-a6eb-f76b07ebd414] succeeded in 3866.06756596s: 0
+
+2017-07-21 10:39:42,373 DEBG 'celeryd' stdout output:
+[2017-07-21 10:39:42,372: INFO/ForkPoolWorker-3] Task djcelery_email_send_multiple[c8e03cd1-3df4-40d3-b2bc-cd6f8f0ee13c] succeeded in 4001.51269686s: 0
+
+2017-07-21 10:39:43,364 DEBG 'celeryd' stdout output:
+[2017-07-21 10:39:43,363: WARNING/MainProcess] Restoring 1 unacknowledged message(s)
+
+2017-07-21 10:39:43,368 DEBG 'celeryd' stdout output:
+ 
+ -------------- celery@dan-HP-ProBook-450-G3 v4.0.2 (latentcall)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-53-generic-x86_64-with-LinuxMint-18.1-serena 2017-07-21 09:14:07
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         prvni:0x7f6bd7c2de90
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . beercounter.task.send_validation_email
+  . djcelery_email_send_multiple
+  . prvni.celery.debuk_task
+
+
+2017-07-21 10:39:43,934 DEBG fd 11 closed, stopped monitoring <POutputDispatcher at 139923606437688 for <Subprocess at 139923609843688 with name celeryd in state STOPPING> (stdout)>
+2017-07-21 10:39:43,934 INFO stopped: celeryd (exit status 0)
+2017-07-21 10:39:43,935 DEBG received SIGCLD indicating a child quit
+2017-07-21 10:39:43,935 DEBG killing autoreload (pid 18171) with signal SIGTERM
+2017-07-21 10:39:43,940 DEBG fd 7 closed, stopped monitoring <POutputDispatcher at 139923606437112 for <Subprocess at 139923609843544 with name autoreload in state STOPPING> (stdout)>
+2017-07-21 10:39:43,940 INFO stopped: autoreload (terminated by SIGTERM)
+2017-07-21 10:39:43,940 DEBG received SIGCLD indicating a child quit
+2017-07-21 10:41:29,889 INFO RPC interface 'supervisor' initialized
+2017-07-21 10:41:29,889 INFO supervisord started with pid 21206
+2017-07-21 10:41:30,895 INFO spawned: 'autoreload' with pid 21211
+2017-07-21 10:41:30,901 INFO spawned: 'celeryd' with pid 21212
+2017-07-21 10:41:30,907 INFO spawned: 'webserver' with pid 21213
+2017-07-21 10:41:30,915 INFO spawned: 'flower' with pid 21214
+2017-07-21 10:41:31,673 DEBG 'flower' stdout output:
+[I 170721 10:41:31 command:139] Visit me at http://localhost:5555
+
+2017-07-21 10:41:31,688 DEBG 'flower' stdout output:
+[I 170721 10:41:31 command:144] Broker: redis://localhost:6379//
+
+2017-07-21 10:41:31,694 DEBG 'flower' stdout output:
+[I 170721 10:41:31 command:147] Registered tasks: 
+    [u'beercounter.task.send_validation_email',
+     u'celery.accumulate',
+     u'celery.backend_cleanup',
+     u'celery.chain',
+     u'celery.chord',
+     u'celery.chord_unlock',
+     u'celery.chunks',
+     u'celery.group',
+     u'celery.map',
+     u'celery.starmap',
+     'djcelery_email_send_multiple',
+     u'prvni.celery.debuk_task']
+
+2017-07-21 10:41:31,734 DEBG 'flower' stdout output:
+[I 170721 10:41:31 mixins:224] Connected to redis://localhost:6379//
+
+2017-07-21 10:41:31,883 DEBG 'celeryd' stdout output:
+[2017-07-21 10:41:31,883: INFO/MainProcess] Connected to redis://localhost:6379//
+
+2017-07-21 10:41:31,888 DEBG 'celeryd' stdout output:
+[2017-07-21 10:41:31,888: INFO/MainProcess] mingle: searching for neighbors
+
+2017-07-21 10:41:32,890 INFO success: autoreload entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-21 10:41:32,890 INFO success: celeryd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-21 10:41:32,890 INFO success: webserver entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-21 10:41:32,890 INFO success: flower entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-21 10:41:32,904 DEBG 'celeryd' stdout output:
+[2017-07-21 10:41:32,903: INFO/MainProcess] mingle: all alone
+
+2017-07-21 10:41:32,938 DEBG 'celeryd' stdout output:
+[2017-07-21 10:41:32,937: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+2017-07-21 10:41:32,938 DEBG 'celeryd' stdout output:
+[2017-07-21 10:41:32,937: INFO/MainProcess] celery@dan-HP-ProBook-450-G3 ready.
+
+2017-07-21 10:41:33,492 DEBG 'celeryd' stdout output:
+[2017-07-21 10:41:33,491: INFO/MainProcess] Received task: djcelery_email_send_multiple[75a91fd6-dd3f-4fd1-b7c7-6266443ea985]  
+
+2017-07-21 10:41:33,497 DEBG 'celeryd' stdout output:
+[2017-07-21 10:41:33,496: INFO/MainProcess] Received task: djcelery_email_send_multiple[6568d859-c7e9-4b0d-a6eb-f76b07ebd414]  ETA:[2017-07-21 10:42:42.332785+02:00] 
+
+2017-07-21 10:41:33,503 DEBG 'celeryd' stdout output:
+[2017-07-21 10:41:33,502: INFO/MainProcess] Received task: djcelery_email_send_multiple[c8e03cd1-3df4-40d3-b2bc-cd6f8f0ee13c]  ETA:[2017-07-21 10:42:42.333410+02:00] 
+
+2017-07-21 10:41:34,292 DEBG 'flower' stdout output:
+[W 170721 10:41:34 control:44] 'stats' inspect method failed
+
+2017-07-21 10:41:34,293 DEBG 'flower' stdout output:
+[W 170721 10:41:34 control:44] 'active_queues' inspect method failed
+[W 170721 10:41:34 control:44] 'registered' inspect method failed
+[W 170721 10:41:34 control:44] 'scheduled' inspect method failed
+
+2017-07-21 10:41:34,293 DEBG 'flower' stdout output:
+[W 170721 10:41:34 control:44] 'active' inspect method failed
+[W 170721 10:41:34 control:44] 'reserved' inspect method failed
+
+2017-07-21 10:41:34,294 DEBG 'flower' stdout output:
+[W 170721 10:41:34 control:44] 'revoked' inspect method failed
+[W 170721 10:41:34 control:44] 'conf' inspect method failed
+
+2017-07-21 10:41:36,710 DEBG 'celeryd' stdout output:
+[2017-07-21 10:41:36,709: INFO/MainProcess] Events of group {task} enabled by remote.
+
+2017-07-21 10:41:57,564 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:41:57] "GET / HTTP/1.1" 200 1588
+
+2017-07-21 10:41:59,208 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:41:59] "GET /pub/22/ HTTP/1.1" 200 1619
+
+2017-07-21 10:42:00,127 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:42:00] "GET / HTTP/1.1" 200 1588
+
+2017-07-21 10:42:19,955 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:42:19] "GET /login/ HTTP/1.1" 200 2019
+
+2017-07-21 10:42:21,141 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:42:21] "GET /password_reset/ HTTP/1.1" 200 1520
+
+2017-07-21 10:42:23,296 DEBG 'celeryd' stdout output:
+[2017-07-21 10:42:23,296: INFO/MainProcess] Received task: djcelery_email_send_multiple[0799e09a-3337-4763-ba85-7b30e31633ee]  
+
+2017-07-21 10:42:23,301 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:42:23] "POST /password_reset/ HTTP/1.1" 302 0
+
+2017-07-21 10:42:23,304 DEBG 'celeryd' stdout output:
+[2017-07-21 10:42:23,304: INFO/MainProcess] Received task: djcelery_email_send_multiple[cfd56aa4-d674-4cf6-9fac-1dadd8c9e29e]  
+
+2017-07-21 10:42:23,316 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:42:23] "GET /password_reset/done/ HTTP/1.1" 200 1061
+
+2017-07-21 10:43:01,538 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:43:01] "GET / HTTP/1.1" 200 1588
+
+2017-07-21 10:48:49,978 WARN received SIGINT indicating exit request
+2017-07-21 10:48:49,979 DEBG killing flower (pid 21214) with signal SIGTERM
+2017-07-21 10:48:49,979 INFO waiting for autoreload, celeryd, webserver, flower to die
+2017-07-21 10:48:49,980 DEBG 'flower' stdout output:
+[I 170721 10:48:49 command:47] SIGTERM detected, shutting down
+
+2017-07-21 10:48:50,081 DEBG fd 17 closed, stopped monitoring <POutputDispatcher at 140631226676216 for <Subprocess at 140631227451512 with name flower in state STOPPING> (stdout)>
+2017-07-21 10:48:50,081 INFO stopped: flower (exit status 0)
+2017-07-21 10:48:50,081 DEBG received SIGCLD indicating a child quit
+2017-07-21 10:48:50,081 DEBG killing webserver (pid 21213) with signal SIGTERM
+2017-07-21 10:48:50,085 DEBG fd 14 closed, stopped monitoring <POutputDispatcher at 140631226675856 for <Subprocess at 140631230048232 with name webserver in state STOPPING> (stdout)>
+2017-07-21 10:48:50,085 INFO stopped: webserver (terminated by SIGTERM)
+2017-07-21 10:48:50,085 DEBG received SIGCLD indicating a child quit
+2017-07-21 10:48:50,085 DEBG killing celeryd (pid 21212) with signal SIGTERM
+2017-07-21 10:48:50,086 DEBG 'celeryd' stdout output:
+
+worker: Warm shutdown (MainProcess)
+2017-07-21 10:48:50,086 DEBG 'celeryd' stdout output:
+[2017-07-21 10:48:50,085: ERROR/ForkPoolWorker-3] djcelery_email_send_multiple[cfd56aa4-d674-4cf6-9fac-1dadd8c9e29e]: Cannot reach CELERY_EMAIL_BACKEND django.core.mail.backends.smtp.EmailBackend
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 41, in send_emails
+    conn.open()
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 64, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 317, in connect
+    (code, msg) = self.getreply()
+  File "/usr/lib/python2.7/smtplib.py", line 368, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+SMTPServerDisconnected: Connection unexpectedly closed
+[2017-07-21 10:48:50,085: ERROR/ForkPoolWorker-2] djcelery_email_send_multiple[0799e09a-3337-4763-ba85-7b30e31633ee]: Cannot reach CELERY_EMAIL_BACKEND django.core.mail.backends.smtp.EmailBackend
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 41, in send_emails
+    conn.open()
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 64, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 317, in connect
+    (code, msg) = self.getreply()
+  File "/usr/lib/python2.7/smtplib.py", line 368, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+SMTPServerDisconnected: Connection unexpectedly closed
+
+2017-07-21 10:48:50,087 DEBG 'celeryd' stdout output:
+[2017-07-21 10:48:50,086: WARNING/ForkPoolWorker-3] djcelery_email_send_multiple[cfd56aa4-d674-4cf6-9fac-1dadd8c9e29e]: Failed to send email message to [u'blah@cosi.com'], retrying. (error(111, 'Connection refused'))
+[2017-07-21 10:48:50,087: WARNING/ForkPoolWorker-2] djcelery_email_send_multiple[0799e09a-3337-4763-ba85-7b30e31633ee]: Failed to send email message to [u'blah@cosi.com'], retrying. (error(111, 'Connection refused'))
+
+2017-07-21 10:48:50,087 DEBG 'celeryd' stdout output:
+
+
+2017-07-21 10:48:50,088 DEBG 'celeryd' stdout output:
+[2017-07-21 10:48:50,086: ERROR/ForkPoolWorker-1] djcelery_email_send_multiple[75a91fd6-dd3f-4fd1-b7c7-6266443ea985]: Cannot reach CELERY_EMAIL_BACKEND django.core.mail.backends.smtp.EmailBackend
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 41, in send_emails
+    conn.open()
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 64, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 317, in connect
+    (code, msg) = self.getreply()
+  File "/usr/lib/python2.7/smtplib.py", line 368, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+SMTPServerDisconnected: Connection unexpectedly closed
+
+2017-07-21 10:48:50,088 DEBG 'celeryd' stdout output:
+[2017-07-21 10:48:50,085: ERROR/ForkPoolWorker-4] djcelery_email_send_multiple[6568d859-c7e9-4b0d-a6eb-f76b07ebd414]: Cannot reach CELERY_EMAIL_BACKEND django.core.mail.backends.smtp.EmailBackend
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 41, in send_emails
+    conn.open()
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 64, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 317, in connect
+    (code, msg) = self.getreply()
+  File "/usr/lib/python2.7/smtplib.py", line 368, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+SMTPServerDisconnected: Connection unexpectedly closed
+
+2017-07-21 10:48:50,094 DEBG 'celeryd' stdout output:
+[2017-07-21 10:48:50,088: WARNING/ForkPoolWorker-1] djcelery_email_send_multiple[75a91fd6-dd3f-4fd1-b7c7-6266443ea985]: Failed to send email message to [u'blah@cosi.com'], retrying. (error(111, 'Connection refused'))
+[2017-07-21 10:48:50,090: WARNING/ForkPoolWorker-4] djcelery_email_send_multiple[6568d859-c7e9-4b0d-a6eb-f76b07ebd414]: Failed to send email message to [u'blah@cosi.com'], retrying. (error(111, 'Connection refused'))
+
+2017-07-21 10:48:50,119 DEBG 'celeryd' stdout output:
+[2017-07-21 10:48:50,119: INFO/ForkPoolWorker-3] Task djcelery_email_send_multiple[cfd56aa4-d674-4cf6-9fac-1dadd8c9e29e] succeeded in 386.812823654s: 0
+
+2017-07-21 10:48:50,121 DEBG 'celeryd' stdout output:
+[2017-07-21 10:48:50,120: INFO/ForkPoolWorker-2] Task djcelery_email_send_multiple[0799e09a-3337-4763-ba85-7b30e31633ee] succeeded in 386.822700382s: 0
+
+2017-07-21 10:48:50,124 DEBG 'celeryd' stdout output:
+[2017-07-21 10:48:50,123: INFO/ForkPoolWorker-1] Task djcelery_email_send_multiple[75a91fd6-dd3f-4fd1-b7c7-6266443ea985] succeeded in 436.623874508s: 0
+
+2017-07-21 10:48:50,128 DEBG 'celeryd' stdout output:
+[2017-07-21 10:48:50,127: INFO/ForkPoolWorker-4] Task djcelery_email_send_multiple[6568d859-c7e9-4b0d-a6eb-f76b07ebd414] succeeded in 367.181024112s: 0
+
+2017-07-21 10:48:51,142 DEBG 'celeryd' stdout output:
+[2017-07-21 10:48:51,142: WARNING/MainProcess] Restoring 1 unacknowledged message(s)
+
+2017-07-21 10:48:51,147 DEBG 'celeryd' stdout output:
+ 
+ -------------- celery@dan-HP-ProBook-450-G3 v4.0.2 (latentcall)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-53-generic-x86_64-with-LinuxMint-18.1-serena 2017-07-21 10:41:31
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         prvni:0x7f7288a1fe90
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . beercounter.task.send_validation_email
+  . djcelery_email_send_multiple
+  . prvni.celery.debuk_task
+
+
+2017-07-21 10:48:51,739 DEBG fd 11 closed, stopped monitoring <POutputDispatcher at 140631226675496 for <Subprocess at 140631230528472 with name celeryd in state STOPPING> (stdout)>
+2017-07-21 10:48:51,740 INFO stopped: celeryd (exit status 0)
+2017-07-21 10:48:51,740 DEBG received SIGCLD indicating a child quit
+2017-07-21 10:48:51,740 DEBG killing autoreload (pid 21211) with signal SIGTERM
+2017-07-21 10:48:51,748 DEBG fd 7 closed, stopped monitoring <POutputDispatcher at 140631226953384 for <Subprocess at 140631227248008 with name autoreload in state STOPPING> (stdout)>
+2017-07-21 10:48:51,748 INFO stopped: autoreload (terminated by SIGTERM)
+2017-07-21 10:48:51,748 DEBG received SIGCLD indicating a child quit
+2017-07-21 10:53:41,967 INFO RPC interface 'supervisor' initialized
+2017-07-21 10:53:41,968 INFO supervisord started with pid 3930
+2017-07-21 10:53:42,970 INFO spawned: 'autoreload' with pid 3940
+2017-07-21 10:53:42,972 INFO spawned: 'celeryd' with pid 3941
+2017-07-21 10:53:42,974 INFO spawned: 'webserver' with pid 3942
+2017-07-21 10:53:42,976 INFO spawned: 'flower' with pid 3943
+2017-07-21 10:53:43,977 INFO success: autoreload entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-21 10:53:43,977 INFO success: celeryd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-21 10:53:43,977 INFO success: webserver entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-21 10:53:43,977 INFO success: flower entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-21 10:53:44,352 DEBG 'flower' stdout output:
+[I 170721 10:53:44 command:139] Visit me at http://localhost:5555
+
+2017-07-21 10:53:44,373 DEBG 'flower' stdout output:
+[I 170721 10:53:44 command:144] Broker: redis://localhost:6379//
+
+2017-07-21 10:53:44,381 DEBG 'flower' stdout output:
+[I 170721 10:53:44 command:147] Registered tasks: 
+    [u'beercounter.task.send_validation_email',
+     u'celery.accumulate',
+     u'celery.backend_cleanup',
+     u'celery.chain',
+     u'celery.chord',
+     u'celery.chord_unlock',
+     u'celery.chunks',
+     u'celery.group',
+     u'celery.map',
+     u'celery.starmap',
+     'djcelery_email_send_multiple',
+     u'prvni.celery.debuk_task']
+
+2017-07-21 10:53:44,425 DEBG 'flower' stdout output:
+[I 170721 10:53:44 mixins:224] Connected to redis://localhost:6379//
+
+2017-07-21 10:53:44,613 DEBG 'celeryd' stdout output:
+[2017-07-21 10:53:44,612: INFO/MainProcess] Connected to redis://localhost:6379//
+
+2017-07-21 10:53:44,618 DEBG 'celeryd' stdout output:
+[2017-07-21 10:53:44,618: INFO/MainProcess] mingle: searching for neighbors
+
+2017-07-21 10:53:45,637 DEBG 'celeryd' stdout output:
+[2017-07-21 10:53:45,636: INFO/MainProcess] mingle: all alone
+
+2017-07-21 10:53:45,657 DEBG 'celeryd' stdout output:
+[2017-07-21 10:53:45,657: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+2017-07-21 10:53:45,659 DEBG 'celeryd' stdout output:
+[2017-07-21 10:53:45,658: INFO/MainProcess] celery@dan-HP-ProBook-450-G3 ready.
+
+2017-07-21 10:53:46,138 DEBG 'celeryd' stdout output:
+[2017-07-21 10:53:46,137: INFO/MainProcess] Received task: djcelery_email_send_multiple[c8e03cd1-3df4-40d3-b2bc-cd6f8f0ee13c]  ETA:[2017-07-21 10:42:42.333410+02:00] 
+
+2017-07-21 10:53:46,142 DEBG 'celeryd' stdout output:
+[2017-07-21 10:53:46,141: INFO/MainProcess] Received task: djcelery_email_send_multiple[0799e09a-3337-4763-ba85-7b30e31633ee]  ETA:[2017-07-21 10:51:50.088455+02:00] 
+
+2017-07-21 10:53:46,146 DEBG 'celeryd' stdout output:
+[2017-07-21 10:53:46,145: INFO/MainProcess] Received task: djcelery_email_send_multiple[75a91fd6-dd3f-4fd1-b7c7-6266443ea985]  ETA:[2017-07-21 10:51:50.094832+02:00] 
+
+2017-07-21 10:53:46,154 DEBG 'celeryd' stdout output:
+[2017-07-21 10:53:46,153: INFO/MainProcess] Received task: djcelery_email_send_multiple[6568d859-c7e9-4b0d-a6eb-f76b07ebd414]  ETA:[2017-07-21 10:51:50.091932+02:00] 
+
+2017-07-21 10:53:47,036 DEBG 'flower' stdout output:
+[W 170721 10:53:47 control:44] 'stats' inspect method failed
+
+2017-07-21 10:53:47,037 DEBG 'flower' stdout output:
+[W 170721 10:53:47 control:44] 'active_queues' inspect method failed
+[W 170721 10:53:47 control:44] 'registered' inspect method failed
+[W 170721 10:53:47 control:44] 'scheduled' inspect method failed
+
+2017-07-21 10:53:47,037 DEBG 'flower' stdout output:
+[W 170721 10:53:47 control:44] 'active' inspect method failed
+[W 170721 10:53:47 control:44] 'reserved' inspect method failed
+
+2017-07-21 10:53:47,037 DEBG 'flower' stdout output:
+[W 170721 10:53:47 control:44] 'revoked' inspect method failed
+[W 170721 10:53:47 control:44] 'conf' inspect method failed
+
+2017-07-21 10:53:49,404 DEBG 'celeryd' stdout output:
+[2017-07-21 10:53:49,403: INFO/MainProcess] Events of group {task} enabled by remote.
+
+2017-07-21 10:53:55,438 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:53:55] "GET / HTTP/1.1" 200 1588
+
+2017-07-21 10:53:55,690 DEBG 'webserver' stdout output:
+Not Found: /favicon.ico
+
+2017-07-21 10:53:55,691 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:53:55] "GET /favicon.ico HTTP/1.1" 404 8618
+
+2017-07-21 10:54:03,163 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:54:03] "GET /login/ HTTP/1.1" 200 2019
+
+2017-07-21 10:54:04,527 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:54:04] "GET /password_reset/ HTTP/1.1" 200 1520
+
+2017-07-21 10:54:07,843 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:54:07] "POST /password_reset/ HTTP/1.1" 302 0
+
+2017-07-21 10:54:07,855 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:54:07] "GET /password_reset/done/ HTTP/1.1" 200 1061
+
+2017-07-21 10:54:32,580 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:54:32] "GET /password_reset/done/ HTTP/1.1" 200 1061
+
+2017-07-21 10:54:34,966 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:54:34] "GET / HTTP/1.1" 200 1588
+
+2017-07-21 10:54:36,562 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:54:36] "GET /pub/22/ HTTP/1.1" 200 1619
+
+2017-07-21 10:54:37,417 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:54:37] "GET /login/ HTTP/1.1" 200 2026
+
+2017-07-21 10:54:38,782 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:54:38] "GET /password_reset/ HTTP/1.1" 200 1520
+
+2017-07-21 10:54:46,190 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:54:46] "POST /password_reset/ HTTP/1.1" 302 0
+
+2017-07-21 10:54:46,209 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:54:46] "GET /password_reset/done/ HTTP/1.1" 200 1061
+
+2017-07-21 10:56:20,205 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:56:20] "GET /signUp/ HTTP/1.1" 200 3977
+
+2017-07-21 10:56:20,549 DEBG 'webserver' stdout output:
+Not Found: /favicon.ico
+
+2017-07-21 10:56:20,550 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:56:20] "GET /favicon.ico HTTP/1.1" 404 8618
+
+2017-07-21 10:56:31,314 DEBG 'celeryd' stdout output:
+[2017-07-21 10:56:31,314: INFO/MainProcess] Received task: beercounter.task.send_validation_email[921e3a36-acb7-4cfe-9bbd-1b3fc5515ed7]  
+
+2017-07-21 10:56:31,316 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:56:31] "POST /signUp/ HTTP/1.1" 302 0
+
+2017-07-21 10:56:31,326 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:56:31] "GET /account_activation_sent/ HTTP/1.1" 200 1042
+
+2017-07-21 10:56:53,473 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:56:53] "GET /activate/MTk/4nx-2454c2a1b987193bc550/ HTTP/1.1" 302 0
+
+2017-07-21 10:56:53,497 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:56:53] "GET / HTTP/1.1" 200 2205
+
+2017-07-21 10:56:56,177 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:56:56] "GET /logout/ HTTP/1.1" 302 0
+
+2017-07-21 10:56:56,206 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:56:56] "GET / HTTP/1.1" 200 1588
+
+2017-07-21 10:57:16,609 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:57:16] "GET / HTTP/1.1" 200 1588
+
+2017-07-21 10:57:29,844 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:57:29] "GET /reset/NA/4nx-a379775b1e8be955960b/ HTTP/1.1" 302 0
+
+2017-07-21 10:57:29,882 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:57:29] "GET /reset/NA/set-password/ HTTP/1.1" 200 2342
+
+2017-07-21 10:57:30,153 DEBG 'webserver' stdout output:
+Not Found: /favicon.ico
+
+2017-07-21 10:57:30,154 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:57:30] "GET /favicon.ico HTTP/1.1" 404 8618
+
+2017-07-21 10:57:38,980 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:57:38] "GET /reset/NA/4nx-a379775b1e8be955960b/ HTTP/1.1" 302 0
+
+2017-07-21 10:57:39,018 DEBG 'webserver' stdout output:
+[21/Jul/2017 10:57:39] "GET /reset/NA/set-password/ HTTP/1.1" 200 2342
+
+2017-07-21 11:34:36,114 DEBG 'webserver' stdout output:
+[21/Jul/2017 11:34:36] "GET /pub/23/ HTTP/1.1" 200 1316
+
+2017-07-21 11:34:37,128 DEBG 'webserver' stdout output:
+[21/Jul/2017 11:34:37] "GET / HTTP/1.1" 200 1588
+
+2017-07-21 11:34:37,962 DEBG 'webserver' stdout output:
+[21/Jul/2017 11:34:37] "GET /pub/22/ HTTP/1.1" 200 1619
+
+2017-07-21 11:56:55,059 DEBG 'celeryd' stdout output:
+[2017-07-21 11:56:55,058: INFO/MainProcess] Received task: beercounter.task.send_validation_email[921e3a36-acb7-4cfe-9bbd-1b3fc5515ed7]  
+
+2017-07-21 11:57:00,715 DEBG 'webserver' stdout output:
+[21/Jul/2017 11:57:00] "GET /pub/22/ HTTP/1.1" 200 1619
+
+2017-07-21 11:57:01,477 DEBG 'webserver' stdout output:
+[21/Jul/2017 11:57:01] "GET / HTTP/1.1" 200 1588
+
+2017-07-21 12:02:13,340 DEBG 'webserver' stdout output:
+[21/Jul/2017 12:02:13] "GET / HTTP/1.1" 200 1588
+
+2017-07-21 12:56:55,494 DEBG 'celeryd' stdout output:
+[2017-07-21 12:56:55,493: INFO/MainProcess] Received task: beercounter.task.send_validation_email[921e3a36-acb7-4cfe-9bbd-1b3fc5515ed7]  
+
+2017-07-21 13:56:55,964 DEBG 'celeryd' stdout output:
+[2017-07-21 13:56:55,963: INFO/MainProcess] Received task: beercounter.task.send_validation_email[921e3a36-acb7-4cfe-9bbd-1b3fc5515ed7]  
+
+2017-07-21 14:56:56,472 DEBG 'celeryd' stdout output:
+[2017-07-21 14:56:56,471: INFO/MainProcess] Received task: beercounter.task.send_validation_email[921e3a36-acb7-4cfe-9bbd-1b3fc5515ed7]  
+
+2017-07-21 15:56:56,936 DEBG 'celeryd' stdout output:
+[2017-07-21 15:56:56,936: INFO/MainProcess] Received task: beercounter.task.send_validation_email[921e3a36-acb7-4cfe-9bbd-1b3fc5515ed7]  
+
+2017-07-21 16:56:57,406 DEBG 'celeryd' stdout output:
+[2017-07-21 16:56:57,406: INFO/MainProcess] Received task: beercounter.task.send_validation_email[921e3a36-acb7-4cfe-9bbd-1b3fc5515ed7]  
+
+2017-07-21 17:04:17,295 DEBG 'webserver' stdout output:
+[21/Jul/2017 17:04:17] "GET /pub/23/ HTTP/1.1" 200 1316
+
+2017-07-21 17:04:18,502 DEBG 'webserver' stdout output:
+[21/Jul/2017 17:04:18] "GET / HTTP/1.1" 200 1588
+
+2017-07-21 17:12:32,659 DEBG 'webserver' stdout output:
+[21/Jul/2017 17:12:32] "GET / HTTP/1.1" 200 1588
+
+2017-07-21 17:17:30,719 WARN received SIGTERM indicating exit request
+2017-07-21 17:17:30,719 DEBG killing flower (pid 3943) with signal SIGTERM
+2017-07-21 17:17:30,719 INFO waiting for autoreload, celeryd, webserver, flower to die
+2017-07-21 17:17:30,722 WARN received SIGHUP indicating restart request
+2017-07-21 17:17:30,723 DEBG fd 14 closed, stopped monitoring <POutputDispatcher at 140677024621200 for <Subprocess at 140677027992856 with name webserver in state RUNNING> (stdout)>
+2017-07-21 17:17:30,723 INFO exited: webserver (terminated by SIGTERM; not expected)
+2017-07-21 17:17:30,723 DEBG received SIGCLD indicating a child quit
+2017-07-21 17:17:30,737 DEBG fd 17 closed, stopped monitoring <POutputDispatcher at 140677024621560 for <Subprocess at 140677027993864 with name flower in state STOPPING> (stdout)>
+2017-07-21 17:17:30,737 INFO stopped: flower (terminated by SIGHUP)
+2017-07-21 17:17:30,738 DEBG received SIGCLD indicating a child quit
+2017-07-21 17:17:30,745 DEBG 'celeryd' stdout output:
+
+Restarting celery worker (/home/dan/Documents/django-tutorial/prvni/venv/bin/celery -A prvni worker --loglevel=info)
+2017-07-21 17:17:30,745 DEBG killing celeryd (pid 3941) with signal SIGTERM
+2017-07-21 17:17:30,746 DEBG 'celeryd' stdout output:
+
+worker: Warm shutdown (MainProcess)
+2017-07-21 17:17:30,756 DEBG 'celeryd' stdout output:
+
+
+2017-07-21 17:17:30,762 DEBG fd 7 closed, stopped monitoring <POutputDispatcher at 140677024898728 for <Subprocess at 140677025193352 with name autoreload in state RUNNING> (stdout)>
+2017-07-21 17:17:30,763 INFO exited: autoreload (terminated by SIGTERM; not expected)
+2017-07-21 17:17:30,763 DEBG received SIGCLD indicating a child quit
+2017-07-21 17:17:31,275 DEBG 'celeryd' stdout output:
+[2017-07-21 17:17:31,275: ERROR/MainProcess] Process 'ForkPoolWorker-1' pid:3970 exited with 'exitcode 70'
+
+2017-07-21 17:17:31,275 CRIT uncaptured python exception, closing channel <POutputDispatcher at 140677024620840 for <Subprocess at 140677028471800 with name celeryd in state STOPPING> (stdout)> (<type 'exceptions.IOError'>:[Errno 5] Input/output error [/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/supervisor/supervisord.py|runforever|227] [/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/supervisor/dispatchers.py|handle_read_event|232] [/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/supervisor/dispatchers.py|record_output|166] [/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/supervisor/dispatchers.py|_log|147] [/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/supervisor/loggers.py|log|293] [/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/supervisor/loggers.py|emit|86] [/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/supervisor/loggers.py|handleError|90] [/usr/lib/python2.7/traceback.py|print_exception|124] [/usr/lib/python2.7/traceback.py|_print|13])
+2017-07-24 09:27:10,099 INFO RPC interface 'supervisor' initialized
+2017-07-24 09:27:10,100 INFO supervisord started with pid 3624
+2017-07-24 09:27:11,105 INFO spawned: 'autoreload' with pid 3629
+2017-07-24 09:27:11,108 INFO spawned: 'celeryd' with pid 3630
+2017-07-24 09:27:11,109 INFO spawned: 'webserver' with pid 3631
+2017-07-24 09:27:11,111 INFO spawned: 'flower' with pid 3632
+2017-07-24 09:27:11,899 DEBG 'flower' stdout output:
+[I 170724 09:27:11 command:139] Visit me at http://localhost:5555
+
+2017-07-24 09:27:11,912 DEBG 'flower' stdout output:
+[I 170724 09:27:11 command:144] Broker: redis://localhost:6379//
+
+2017-07-24 09:27:11,917 DEBG 'flower' stdout output:
+[I 170724 09:27:11 command:147] Registered tasks: 
+    [u'beercounter.task.send_validation_email',
+     u'celery.accumulate',
+     u'celery.backend_cleanup',
+     u'celery.chain',
+     u'celery.chord',
+     u'celery.chord_unlock',
+     u'celery.chunks',
+     u'celery.group',
+     u'celery.map',
+     u'celery.starmap',
+     'djcelery_email_send_multiple',
+     u'prvni.celery.debuk_task']
+
+2017-07-24 09:27:11,933 DEBG 'flower' stdout output:
+[I 170724 09:27:11 mixins:224] Connected to redis://localhost:6379//
+
+2017-07-24 09:27:12,064 DEBG 'celeryd' stdout output:
+[2017-07-24 09:27:12,064: INFO/MainProcess] Connected to redis://localhost:6379//
+
+2017-07-24 09:27:12,070 DEBG 'celeryd' stdout output:
+[2017-07-24 09:27:12,070: INFO/MainProcess] mingle: searching for neighbors
+
+2017-07-24 09:27:13,071 INFO success: autoreload entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 09:27:13,072 INFO success: celeryd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 09:27:13,072 INFO success: webserver entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 09:27:13,072 INFO success: flower entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 09:27:13,084 DEBG 'celeryd' stdout output:
+[2017-07-24 09:27:13,084: INFO/MainProcess] mingle: all alone
+
+2017-07-24 09:27:13,113 DEBG 'celeryd' stdout output:
+[2017-07-24 09:27:13,113: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+2017-07-24 09:27:13,114 DEBG 'celeryd' stdout output:
+[2017-07-24 09:27:13,113: INFO/MainProcess] celery@dan-HP-ProBook-450-G3 ready.
+
+2017-07-24 09:27:13,222 DEBG 'celeryd' stdout output:
+[2017-07-24 09:27:13,221: INFO/MainProcess] Received task: beercounter.task.send_validation_email[921e3a36-acb7-4cfe-9bbd-1b3fc5515ed7]  
+
+2017-07-24 09:27:13,251 DEBG 'celeryd' stdout output:
+[2017-07-24 09:27:13,250: WARNING/ForkPoolWorker-1] (u'posilam email pro user: ', <User: dajk>)
+
+2017-07-24 09:27:13,287 DEBG 'celeryd' stdout output:
+[2017-07-24 09:27:13,286: INFO/ForkPoolWorker-1] Task beercounter.task.send_validation_email[921e3a36-acb7-4cfe-9bbd-1b3fc5515ed7] succeeded in 0.060480481s: None
+
+2017-07-24 09:27:13,287 DEBG 'celeryd' stdout output:
+[2017-07-24 09:27:13,287: INFO/MainProcess] Received task: djcelery_email_send_multiple[0a8ce299-a298-4743-8d57-96e3dd4ee9f7]  
+
+2017-07-24 09:27:14,527 DEBG 'flower' stdout output:
+[W 170724 09:27:14 control:44] 'stats' inspect method failed
+
+2017-07-24 09:27:14,528 DEBG 'flower' stdout output:
+[W 170724 09:27:14 control:44] 'active_queues' inspect method failed
+[W 170724 09:27:14 control:44] 'registered' inspect method failed
+
+2017-07-24 09:27:14,529 DEBG 'flower' stdout output:
+[W 170724 09:27:14 control:44] 'scheduled' inspect method failed
+[W 170724 09:27:14 control:44] 'active' inspect method failed
+
+2017-07-24 09:27:14,530 DEBG 'flower' stdout output:
+[W 170724 09:27:14 control:44] 'reserved' inspect method failed
+[W 170724 09:27:14 control:44] 'revoked' inspect method failed
+
+2017-07-24 09:27:14,530 DEBG 'flower' stdout output:
+[W 170724 09:27:14 control:44] 'conf' inspect method failed
+
+2017-07-24 09:27:16,923 DEBG 'celeryd' stdout output:
+[2017-07-24 09:27:16,922: INFO/MainProcess] Events of group {task} enabled by remote.
+
+2017-07-24 09:27:29,241 DEBG 'webserver' stdout output:
+[24/Jul/2017 09:27:29] "GET / HTTP/1.1" 200 1588
+
+2017-07-24 09:27:29,272 DEBG 'webserver' stdout output:
+[24/Jul/2017 09:27:29] "GET /static/beercounter/css/style.css HTTP/1.1" 304 0
+
+2017-07-24 09:27:29,476 DEBG 'webserver' stdout output:
+Not Found: /favicon.ico
+
+2017-07-24 09:27:29,476 DEBG 'webserver' stdout output:
+[24/Jul/2017 09:27:29] "GET /favicon.ico HTTP/1.1" 404 8618
+
+2017-07-24 09:27:30,413 DEBG 'webserver' stdout output:
+[24/Jul/2017 09:27:30] "GET /pub/23/ HTTP/1.1" 200 1316
+
+2017-07-24 09:27:31,679 DEBG 'webserver' stdout output:
+[24/Jul/2017 09:27:31] "GET / HTTP/1.1" 200 1588
+
+2017-07-24 09:27:52,789 DEBG 'webserver' stdout output:
+[24/Jul/2017 09:27:52] "GET /activate/MTk/4nx-2454c2a1b987193bc550/ HTTP/1.1" 200 1079
+
+2017-07-24 09:32:33,931 DEBG 'webserver' stdout output:
+[24/Jul/2017 09:32:33] "GET /pub/23/ HTTP/1.1" 200 1316
+
+2017-07-24 09:32:35,072 DEBG 'webserver' stdout output:
+[24/Jul/2017 09:32:35] "GET / HTTP/1.1" 200 1588
+
+2017-07-24 09:38:42,152 DEBG 'webserver' stdout output:
+[24/Jul/2017 09:38:42] "GET /pub/22/ HTTP/1.1" 200 1619
+
+2017-07-24 09:38:43,732 DEBG 'webserver' stdout output:
+[24/Jul/2017 09:38:43] "GET / HTTP/1.1" 200 1588
+
+2017-07-24 09:42:31,887 DEBG 'flower' stdout output:
+[W 170724 09:42:31 web:1587] 404 GET /task/0a8ce299-a298-4743-8d57-96e3dd4ee9f7 (::1): Unknown task '0a8ce299-a298-4743-8d57-96e3dd4ee9f7'
+
+2017-07-24 09:44:03,151 DEBG 'webserver' stdout output:
+[24/Jul/2017 09:44:03] "GET /pub/22/ HTTP/1.1" 200 1619
+
+2017-07-24 09:44:04,141 DEBG 'webserver' stdout output:
+[24/Jul/2017 09:44:04] "GET / HTTP/1.1" 200 1588
+
+2017-07-24 09:44:07,019 DEBG 'webserver' stdout output:
+[24/Jul/2017 09:44:07] "GET /login/ HTTP/1.1" 200 2019
+
+2017-07-24 09:44:12,329 DEBG 'webserver' stdout output:
+[24/Jul/2017 09:44:12] "POST /login/ HTTP/1.1" 302 0
+
+2017-07-24 09:44:12,350 DEBG 'webserver' stdout output:
+[24/Jul/2017 09:44:12] "GET / HTTP/1.1" 200 2559
+
+2017-07-24 09:44:47,290 DEBG 'webserver' stdout output:
+[24/Jul/2017 09:44:47] "GET /pub/26/ HTTP/1.1" 200 2185
+
+2017-07-24 09:44:49,234 DEBG 'webserver' stdout output:
+[24/Jul/2017 09:44:49] "GET / HTTP/1.1" 200 2559
+
+2017-07-24 09:44:50,262 DEBG 'webserver' stdout output:
+[24/Jul/2017 09:44:50] "GET /pub/25/ HTTP/1.1" 200 3602
+
+2017-07-24 09:44:51,454 DEBG 'webserver' stdout output:
+[24/Jul/2017 09:44:51] "GET /bill/14/ HTTP/1.1" 200 2648
+
+2017-07-24 10:02:56,546 DEBG killing autoreload (pid 3629) with signal SIGTERM
+2017-07-24 10:02:56,546 INFO waiting for autoreload to stop
+2017-07-24 10:02:56,547 DEBG fd 7 closed, stopped monitoring <POutputDispatcher at 139699389980328 for <Subprocess at 139699390274952 with name autoreload in state STOPPING> (stdout)>
+2017-07-24 10:02:56,548 INFO stopped: autoreload (terminated by SIGTERM)
+2017-07-24 10:02:56,548 DEBG received SIGCLD indicating a child quit
+2017-07-24 10:02:56,549 DEBG killing webserver (pid 3631) with signal SIGTERM
+2017-07-24 10:02:56,549 INFO waiting for webserver to stop
+2017-07-24 10:02:56,553 DEBG fd 14 closed, stopped monitoring <POutputDispatcher at 139699389702800 for <Subprocess at 139699393074456 with name webserver in state STOPPING> (stdout)>
+2017-07-24 10:02:56,553 INFO stopped: webserver (terminated by SIGTERM)
+2017-07-24 10:02:56,553 DEBG received SIGCLD indicating a child quit
+2017-07-24 10:02:56,555 DEBG killing celeryd (pid 3630) with signal SIGTERM
+2017-07-24 10:02:56,555 INFO waiting for celeryd to stop
+2017-07-24 10:02:56,555 DEBG 'celeryd' stdout output:
+
+worker: Warm shutdown (MainProcess)
+
+2017-07-24 10:02:56,558 DEBG 'celeryd' stdout output:
+[2017-07-24 10:02:56,553: ERROR/ForkPoolWorker-3] djcelery_email_send_multiple[0a8ce299-a298-4743-8d57-96e3dd4ee9f7]: Cannot reach CELERY_EMAIL_BACKEND django.core.mail.backends.smtp.EmailBackend
+Traceback (most recent call last):
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/djcelery_email/tasks.py", line 41, in send_emails
+    conn.open()
+  File "/home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 64, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 317, in connect
+    (code, msg) = self.getreply()
+  File "/usr/lib/python2.7/smtplib.py", line 368, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+SMTPServerDisconnected: Connection unexpectedly closed
+
+2017-07-24 10:02:56,558 DEBG 'celeryd' stdout output:
+[2017-07-24 10:02:56,558: WARNING/ForkPoolWorker-3] djcelery_email_send_multiple[0a8ce299-a298-4743-8d57-96e3dd4ee9f7]: Failed to send email message to [u'dfjklal@fjla.jk'], retrying. (error(111, 'Connection refused'))
+
+2017-07-24 10:02:56,581 DEBG 'celeryd' stdout output:
+[2017-07-24 10:02:56,580: INFO/ForkPoolWorker-3] Task djcelery_email_send_multiple[0a8ce299-a298-4743-8d57-96e3dd4ee9f7] succeeded in 2143.29236336s: 0
+
+2017-07-24 10:02:57,585 DEBG 'celeryd' stdout output:
+ 
+ -------------- celery@dan-HP-ProBook-450-G3 v4.0.2 (latentcall)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-53-generic-x86_64-with-LinuxMint-18.1-serena 2017-07-24 09:27:11
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         prvni:0x7f59f0e0ae90
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . beercounter.task.send_validation_email
+  . djcelery_email_send_multiple
+  . prvni.celery.debuk_task
+
+
+2017-07-24 10:02:58,136 DEBG fd 11 closed, stopped monitoring <POutputDispatcher at 139699389702440 for <Subprocess at 139699393553400 with name celeryd in state STOPPING> (stdout)>
+2017-07-24 10:02:58,136 INFO stopped: celeryd (exit status 0)
+2017-07-24 10:02:58,136 DEBG received SIGCLD indicating a child quit
+2017-07-24 10:02:58,137 DEBG killing flower (pid 3632) with signal SIGTERM
+2017-07-24 10:02:58,137 INFO waiting for flower to stop
+2017-07-24 10:02:58,137 DEBG 'flower' stdout output:
+[I 170724 10:02:58 command:47] SIGTERM detected, shutting down
+
+2017-07-24 10:02:58,171 DEBG fd 17 closed, stopped monitoring <POutputDispatcher at 139699389703160 for <Subprocess at 139699393075464 with name flower in state STOPPING> (stdout)>
+2017-07-24 10:02:58,171 INFO stopped: flower (exit status 0)
+2017-07-24 10:02:58,172 DEBG received SIGCLD indicating a child quit
+2017-07-24 10:02:58,175 INFO spawned: 'autoreload' with pid 5961
+2017-07-24 10:02:59,177 INFO success: autoreload entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 10:02:59,187 INFO spawned: 'webserver' with pid 5973
+2017-07-24 10:03:00,191 INFO success: webserver entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 10:03:00,200 INFO spawned: 'celeryd' with pid 5978
+2017-07-24 10:03:00,823 DEBG 'celeryd' stdout output:
+[2017-07-24 10:03:00,822: INFO/MainProcess] Connected to redis://localhost:6379//
+
+2017-07-24 10:03:00,828 DEBG 'celeryd' stdout output:
+[2017-07-24 10:03:00,828: INFO/MainProcess] mingle: searching for neighbors
+
+2017-07-24 10:03:01,829 INFO success: celeryd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 10:03:01,833 INFO spawned: 'flower' with pid 5987
+2017-07-24 10:03:01,841 DEBG 'celeryd' stdout output:
+[2017-07-24 10:03:01,840: INFO/MainProcess] mingle: all alone
+
+2017-07-24 10:03:01,849 DEBG 'celeryd' stdout output:
+[2017-07-24 10:03:01,849: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+2017-07-24 10:03:01,849 DEBG 'celeryd' stdout output:
+[2017-07-24 10:03:01,849: INFO/MainProcess] celery@dan-HP-ProBook-450-G3 ready.
+
+2017-07-24 10:03:02,285 DEBG 'flower' stdout output:
+[I 170724 10:03:02 command:139] Visit me at http://localhost:5555
+
+2017-07-24 10:03:02,295 DEBG 'flower' stdout output:
+[I 170724 10:03:02 command:144] Broker: redis://localhost:6379//
+
+2017-07-24 10:03:02,299 DEBG 'flower' stdout output:
+[I 170724 10:03:02 command:147] Registered tasks: 
+    [u'beercounter.task.send_validation_email',
+     u'celery.accumulate',
+     u'celery.backend_cleanup',
+     u'celery.chain',
+     u'celery.chord',
+     u'celery.chord_unlock',
+     u'celery.chunks',
+     u'celery.group',
+     u'celery.map',
+     u'celery.starmap',
+     'djcelery_email_send_multiple',
+     u'prvni.celery.debuk_task']
+
+2017-07-24 10:03:02,315 DEBG 'flower' stdout output:
+[I 170724 10:03:02 mixins:224] Connected to redis://localhost:6379//
+
+2017-07-24 10:03:03,317 INFO success: flower entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 10:03:03,390 DEBG 'flower' stdout output:
+[W 170724 10:03:03 base:978] Requeuing undeliverable message for queue u'e37fc796-cb2b-3d7e-b013-637f4d117b07.reply.celery.pidbox': No consumers.
+
+2017-07-24 10:03:03,392 DEBG 'flower' stdout output:
+[W 170724 10:03:03 base:978] Requeuing undeliverable message for queue u'cda081a2-e13c-3b65-8b47-d2d553ba5fd4.reply.celery.pidbox': No consumers.
+
+2017-07-24 10:03:07,308 DEBG 'celeryd' stdout output:
+[2017-07-24 10:03:07,307: INFO/MainProcess] Events of group {task} enabled by remote.
+
+2017-07-24 10:06:19,785 DEBG killing autoreload (pid 5961) with signal SIGTERM
+2017-07-24 10:06:19,785 INFO waiting for autoreload to stop
+2017-07-24 10:06:19,787 DEBG fd 8 closed, stopped monitoring <POutputDispatcher at 139699389702800 for <Subprocess at 139699390274952 with name autoreload in state STOPPING> (stdout)>
+2017-07-24 10:06:19,787 INFO stopped: autoreload (terminated by SIGTERM)
+2017-07-24 10:06:19,787 DEBG received SIGCLD indicating a child quit
+2017-07-24 10:06:19,788 DEBG killing webserver (pid 5973) with signal SIGTERM
+2017-07-24 10:06:19,789 INFO waiting for webserver to stop
+2017-07-24 10:06:19,792 DEBG fd 12 closed, stopped monitoring <POutputDispatcher at 139699389702296 for <Subprocess at 139699393074456 with name webserver in state STOPPING> (stdout)>
+2017-07-24 10:06:19,792 INFO stopped: webserver (terminated by SIGTERM)
+2017-07-24 10:06:19,792 DEBG received SIGCLD indicating a child quit
+2017-07-24 10:06:19,793 DEBG killing celeryd (pid 5978) with signal SIGTERM
+2017-07-24 10:06:19,793 INFO waiting for celeryd to stop
+2017-07-24 10:06:19,794 DEBG 'celeryd' stdout output:
+
+worker: Warm shutdown (MainProcess)
+
+2017-07-24 10:06:20,804 DEBG 'celeryd' stdout output:
+ 
+ -------------- celery@dan-HP-ProBook-450-G3 v4.0.2 (latentcall)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-53-generic-x86_64-with-LinuxMint-18.1-serena 2017-07-24 10:03:00
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         prvni:0x7f4d9b3a6e90
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . beercounter.task.send_validation_email
+  . djcelery_email_send_multiple
+  . prvni.celery.debuk_task
+
+
+2017-07-24 10:06:21,342 DEBG fd 15 closed, stopped monitoring <POutputDispatcher at 139699389704816 for <Subprocess at 139699393553400 with name celeryd in state STOPPING> (stdout)>
+2017-07-24 10:06:21,343 INFO stopped: celeryd (exit status 0)
+2017-07-24 10:06:21,343 DEBG received SIGCLD indicating a child quit
+2017-07-24 10:06:21,344 DEBG killing flower (pid 5987) with signal SIGTERM
+2017-07-24 10:06:21,344 INFO waiting for flower to stop
+2017-07-24 10:06:21,344 DEBG 'flower' stdout output:
+[I 170724 10:06:21 command:47] SIGTERM detected, shutting down
+
+2017-07-24 10:06:21,378 DEBG fd 18 closed, stopped monitoring <POutputDispatcher at 139699389325608 for <Subprocess at 139699393075464 with name flower in state STOPPING> (stdout)>
+2017-07-24 10:06:21,378 INFO stopped: flower (exit status 0)
+2017-07-24 10:06:21,378 DEBG received SIGCLD indicating a child quit
+2017-07-24 10:06:21,381 INFO spawned: 'autoreload' with pid 6158
+2017-07-24 10:06:22,383 INFO success: autoreload entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 10:06:22,393 INFO spawned: 'webserver' with pid 6170
+2017-07-24 10:06:23,397 INFO success: webserver entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 10:06:23,407 INFO spawned: 'celeryd' with pid 6175
+2017-07-24 10:06:24,027 DEBG 'celeryd' stdout output:
+[2017-07-24 10:06:24,026: INFO/MainProcess] Connected to redis://localhost:6379//
+
+2017-07-24 10:06:24,032 DEBG 'celeryd' stdout output:
+[2017-07-24 10:06:24,031: INFO/MainProcess] mingle: searching for neighbors
+
+2017-07-24 10:06:25,033 INFO success: celeryd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 10:06:25,046 INFO spawned: 'flower' with pid 6184
+2017-07-24 10:06:25,050 DEBG 'celeryd' stdout output:
+[2017-07-24 10:06:25,047: INFO/MainProcess] mingle: all alone
+
+2017-07-24 10:06:25,070 DEBG 'celeryd' stdout output:
+[2017-07-24 10:06:25,070: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+2017-07-24 10:06:25,071 DEBG 'celeryd' stdout output:
+[2017-07-24 10:06:25,070: INFO/MainProcess] celery@dan-HP-ProBook-450-G3 ready.
+
+2017-07-24 10:06:25,504 DEBG 'flower' stdout output:
+[I 170724 10:06:25 command:139] Visit me at http://localhost:5555
+
+2017-07-24 10:06:25,514 DEBG 'flower' stdout output:
+[I 170724 10:06:25 command:144] Broker: redis://localhost:6379//
+
+2017-07-24 10:06:25,518 DEBG 'flower' stdout output:
+[I 170724 10:06:25 command:147] Registered tasks: 
+    [u'beercounter.task.send_validation_email',
+     u'celery.accumulate',
+     u'celery.backend_cleanup',
+     u'celery.chain',
+     u'celery.chord',
+     u'celery.chord_unlock',
+     u'celery.chunks',
+     u'celery.group',
+     u'celery.map',
+     u'celery.starmap',
+     'djcelery_email_send_multiple',
+     u'prvni.celery.debuk_task']
+
+2017-07-24 10:06:25,542 DEBG 'flower' stdout output:
+[I 170724 10:06:25 mixins:224] Connected to redis://localhost:6379//
+
+2017-07-24 10:06:26,544 INFO success: flower entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 10:06:26,651 DEBG 'flower' stdout output:
+[W 170724 10:06:26 base:978] Requeuing undeliverable message for queue u'8d203f27-f650-3b68-837e-7ae234a797b1.reply.celery.pidbox': No consumers.
+
+2017-07-24 10:06:26,651 DEBG 'flower' stdout output:
+[W 170724 10:06:26 base:978] Requeuing undeliverable message for queue u'08969f8e-f79b-3862-bcfa-ab22ffb982e7.reply.celery.pidbox': No consumers.
+
+2017-07-24 10:06:27,669 DEBG 'flower' stdout output:
+[W 170724 10:06:27 control:44] 'active' inspect method failed
+
+2017-07-24 10:06:27,670 DEBG 'flower' stdout output:
+[W 170724 10:06:27 control:44] 'reserved' inspect method failed
+
+2017-07-24 10:06:30,528 DEBG 'celeryd' stdout output:
+[2017-07-24 10:06:30,527: INFO/MainProcess] Events of group {task} enabled by remote.
+
+2017-07-24 10:07:59,667 DEBG killing autoreload (pid 6158) with signal SIGTERM
+2017-07-24 10:07:59,668 INFO waiting for autoreload to stop
+2017-07-24 10:07:59,670 DEBG fd 8 closed, stopped monitoring <POutputDispatcher at 139699389391144 for <Subprocess at 139699390274952 with name autoreload in state STOPPING> (stdout)>
+2017-07-24 10:07:59,670 INFO stopped: autoreload (terminated by SIGTERM)
+2017-07-24 10:07:59,670 DEBG received SIGCLD indicating a child quit
+2017-07-24 10:07:59,671 DEBG killing webserver (pid 6170) with signal SIGTERM
+2017-07-24 10:07:59,671 INFO waiting for webserver to stop
+2017-07-24 10:07:59,674 DEBG fd 12 closed, stopped monitoring <POutputDispatcher at 139699389392728 for <Subprocess at 139699393074456 with name webserver in state STOPPING> (stdout)>
+2017-07-24 10:07:59,674 INFO stopped: webserver (terminated by SIGTERM)
+2017-07-24 10:07:59,674 DEBG received SIGCLD indicating a child quit
+2017-07-24 10:07:59,675 DEBG killing celeryd (pid 6175) with signal SIGTERM
+2017-07-24 10:07:59,676 INFO waiting for celeryd to stop
+2017-07-24 10:07:59,676 DEBG 'celeryd' stdout output:
+
+worker: Warm shutdown (MainProcess)
+
+2017-07-24 10:08:00,686 DEBG 'celeryd' stdout output:
+ 
+ -------------- celery@dan-HP-ProBook-450-G3 v4.0.2 (latentcall)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-53-generic-x86_64-with-LinuxMint-18.1-serena 2017-07-24 10:06:23
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         prvni:0x7fc8642a2e90
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . beercounter.task.send_validation_email
+  . djcelery_email_send_multiple
+  . prvni.celery.debuk_task
+
+
+2017-07-24 10:08:01,227 DEBG fd 15 closed, stopped monitoring <POutputDispatcher at 139699389394312 for <Subprocess at 139699393553400 with name celeryd in state STOPPING> (stdout)>
+2017-07-24 10:08:01,227 INFO stopped: celeryd (exit status 0)
+2017-07-24 10:08:01,227 DEBG received SIGCLD indicating a child quit
+2017-07-24 10:08:01,228 DEBG killing flower (pid 6184) with signal SIGTERM
+2017-07-24 10:08:01,228 INFO waiting for flower to stop
+2017-07-24 10:08:01,228 DEBG 'flower' stdout output:
+[I 170724 10:08:01 command:47] SIGTERM detected, shutting down
+
+2017-07-24 10:08:01,272 DEBG fd 18 closed, stopped monitoring <POutputDispatcher at 139699389424632 for <Subprocess at 139699393075464 with name flower in state STOPPING> (stdout)>
+2017-07-24 10:08:01,272 INFO stopped: flower (exit status 0)
+2017-07-24 10:08:01,273 DEBG received SIGCLD indicating a child quit
+2017-07-24 10:08:01,276 INFO spawned: 'autoreload' with pid 6284
+2017-07-24 10:08:02,277 INFO success: autoreload entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 10:08:02,286 INFO spawned: 'webserver' with pid 6301
+2017-07-24 10:08:03,289 INFO success: webserver entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 10:08:03,299 INFO spawned: 'celeryd' with pid 6306
+2017-07-24 10:08:03,929 DEBG 'celeryd' stdout output:
+[2017-07-24 10:08:03,928: INFO/MainProcess] Connected to redis://localhost:6379//
+
+2017-07-24 10:08:03,935 DEBG 'celeryd' stdout output:
+[2017-07-24 10:08:03,935: INFO/MainProcess] mingle: searching for neighbors
+
+2017-07-24 10:08:04,936 INFO success: celeryd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 10:08:04,949 INFO spawned: 'flower' with pid 6315
+2017-07-24 10:08:04,952 DEBG 'celeryd' stdout output:
+[2017-07-24 10:08:04,950: INFO/MainProcess] mingle: all alone
+
+2017-07-24 10:08:04,973 DEBG 'celeryd' stdout output:
+[2017-07-24 10:08:04,973: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+2017-07-24 10:08:04,974 DEBG 'celeryd' stdout output:
+[2017-07-24 10:08:04,973: INFO/MainProcess] celery@dan-HP-ProBook-450-G3 ready.
+
+2017-07-24 10:08:05,422 DEBG 'flower' stdout output:
+[I 170724 10:08:05 command:139] Visit me at http://localhost:5555
+
+2017-07-24 10:08:05,433 DEBG 'flower' stdout output:
+[I 170724 10:08:05 command:144] Broker: redis://localhost:6379//
+
+2017-07-24 10:08:05,438 DEBG 'flower' stdout output:
+[I 170724 10:08:05 command:147] Registered tasks: 
+    [u'beercounter.task.send_validation_email',
+     u'celery.accumulate',
+     u'celery.backend_cleanup',
+     u'celery.chain',
+     u'celery.chord',
+     u'celery.chord_unlock',
+     u'celery.chunks',
+     u'celery.group',
+     u'celery.map',
+     u'celery.starmap',
+     'djcelery_email_send_multiple',
+     u'prvni.celery.debuk_task']
+
+2017-07-24 10:08:05,450 DEBG 'flower' stdout output:
+[I 170724 10:08:05 mixins:224] Connected to redis://localhost:6379//
+
+2017-07-24 10:08:06,452 INFO success: flower entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 10:08:07,578 DEBG 'flower' stdout output:
+[W 170724 10:08:07 control:44] 'active' inspect method failed
+
+2017-07-24 10:08:07,578 DEBG 'flower' stdout output:
+[W 170724 10:08:07 control:44] 'reserved' inspect method failed
+[W 170724 10:08:07 control:44] 'revoked' inspect method failed
+
+2017-07-24 10:08:10,448 DEBG 'celeryd' stdout output:
+[2017-07-24 10:08:10,447: INFO/MainProcess] Events of group {task} enabled by remote.
+
+2017-07-24 10:08:20,840 DEBG 'webserver' stdout output:
+[24/Jul/2017 10:08:20] "GET /bill/14/ HTTP/1.1" 200 2648
+
+2017-07-24 10:08:25,142 DEBG 'webserver' stdout output:
+[24/Jul/2017 10:08:25] "GET /pub/25/ HTTP/1.1" 200 3602
+
+2017-07-24 10:08:26,823 DEBG 'webserver' stdout output:
+[24/Jul/2017 10:08:26] "GET /bill/14/ HTTP/1.1" 200 2648
+
+2017-07-24 10:08:28,294 DEBG 'webserver' stdout output:
+[24/Jul/2017 10:08:28] "GET /pub/25/ HTTP/1.1" 200 3602
+
+2017-07-24 10:08:29,065 DEBG 'webserver' stdout output:
+[24/Jul/2017 10:08:29] "GET / HTTP/1.1" 200 2559
+
+2017-07-24 10:08:37,037 DEBG 'webserver' stdout output:
+[24/Jul/2017 10:08:37] "GET /logout/ HTTP/1.1" 302 0
+
+2017-07-24 10:08:37,059 DEBG 'webserver' stdout output:
+[24/Jul/2017 10:08:37] "GET / HTTP/1.1" 200 1588
+
+2017-07-24 10:08:37,816 DEBG 'webserver' stdout output:
+[24/Jul/2017 10:08:37] "GET /login/ HTTP/1.1" 200 2019
+
+2017-07-24 10:08:38,608 DEBG 'webserver' stdout output:
+[24/Jul/2017 10:08:38] "GET /signUp/ HTTP/1.1" 200 3963
+
+2017-07-24 10:08:39,881 DEBG 'webserver' stdout output:
+[24/Jul/2017 10:08:39] "GET / HTTP/1.1" 200 1588
+
+2017-07-24 10:08:41,052 DEBG 'webserver' stdout output:
+[24/Jul/2017 10:08:41] "GET /pub/22/ HTTP/1.1" 200 1619
+
+2017-07-24 10:09:26,501 DEBG killing autoreload (pid 6284) with signal SIGTERM
+2017-07-24 10:09:26,501 INFO waiting for autoreload to stop
+2017-07-24 10:09:26,506 DEBG fd 8 closed, stopped monitoring <POutputDispatcher at 139699390263880 for <Subprocess at 139699390274952 with name autoreload in state STOPPING> (stdout)>
+2017-07-24 10:09:26,506 INFO stopped: autoreload (terminated by SIGTERM)
+2017-07-24 10:09:26,506 DEBG received SIGCLD indicating a child quit
+2017-07-24 10:09:26,507 DEBG killing webserver (pid 6301) with signal SIGTERM
+2017-07-24 10:09:26,508 INFO waiting for webserver to stop
+2017-07-24 10:09:26,511 DEBG fd 12 closed, stopped monitoring <POutputDispatcher at 139699389393376 for <Subprocess at 139699393074456 with name webserver in state STOPPING> (stdout)>
+2017-07-24 10:09:26,511 INFO stopped: webserver (terminated by SIGTERM)
+2017-07-24 10:09:26,511 DEBG received SIGCLD indicating a child quit
+2017-07-24 10:09:26,512 DEBG killing celeryd (pid 6306) with signal SIGTERM
+2017-07-24 10:09:26,512 INFO waiting for celeryd to stop
+2017-07-24 10:09:26,512 DEBG 'celeryd' stdout output:
+
+worker: Warm shutdown (MainProcess)
+
+2017-07-24 10:09:27,521 DEBG 'celeryd' stdout output:
+ 
+ -------------- celery@dan-HP-ProBook-450-G3 v4.0.2 (latentcall)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-53-generic-x86_64-with-LinuxMint-18.1-serena 2017-07-24 10:08:03
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         prvni:0x7f6db26fce90
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . beercounter.task.send_validation_email
+  . djcelery_email_send_multiple
+  . prvni.celery.debuk_task
+
+
+2017-07-24 10:09:28,061 DEBG fd 15 closed, stopped monitoring <POutputDispatcher at 139699389393448 for <Subprocess at 139699393553400 with name celeryd in state STOPPING> (stdout)>
+2017-07-24 10:09:28,061 INFO stopped: celeryd (exit status 0)
+2017-07-24 10:09:28,061 DEBG received SIGCLD indicating a child quit
+2017-07-24 10:09:28,062 DEBG killing flower (pid 6315) with signal SIGTERM
+2017-07-24 10:09:28,062 INFO waiting for flower to stop
+2017-07-24 10:09:28,062 DEBG 'flower' stdout output:
+[I 170724 10:09:28 command:47] SIGTERM detected, shutting down
+
+2017-07-24 10:09:28,100 DEBG fd 18 closed, stopped monitoring <POutputDispatcher at 139699389391432 for <Subprocess at 139699393075464 with name flower in state STOPPING> (stdout)>
+2017-07-24 10:09:28,100 INFO stopped: flower (exit status 0)
+2017-07-24 10:09:28,100 DEBG received SIGCLD indicating a child quit
+2017-07-24 10:09:28,103 INFO spawned: 'autoreload' with pid 6400
+2017-07-24 10:09:29,105 INFO success: autoreload entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 10:09:29,114 INFO spawned: 'webserver' with pid 6412
+2017-07-24 10:09:30,117 INFO success: webserver entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 10:09:30,127 INFO spawned: 'celeryd' with pid 6417
+2017-07-24 10:09:30,765 DEBG 'celeryd' stdout output:
+[2017-07-24 10:09:30,764: INFO/MainProcess] Connected to redis://localhost:6379//
+
+2017-07-24 10:09:30,770 DEBG 'celeryd' stdout output:
+[2017-07-24 10:09:30,770: INFO/MainProcess] mingle: searching for neighbors
+
+2017-07-24 10:09:31,772 INFO success: celeryd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 10:09:31,776 INFO spawned: 'flower' with pid 6426
+2017-07-24 10:09:31,783 DEBG 'celeryd' stdout output:
+[2017-07-24 10:09:31,783: INFO/MainProcess] mingle: all alone
+
+2017-07-24 10:09:31,795 DEBG 'celeryd' stdout output:
+[2017-07-24 10:09:31,795: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+2017-07-24 10:09:31,795 DEBG 'celeryd' stdout output:
+[2017-07-24 10:09:31,795: INFO/MainProcess] celery@dan-HP-ProBook-450-G3 ready.
+
+2017-07-24 10:09:32,229 DEBG 'flower' stdout output:
+[I 170724 10:09:32 command:139] Visit me at http://localhost:5555
+
+2017-07-24 10:09:32,239 DEBG 'flower' stdout output:
+[I 170724 10:09:32 command:144] Broker: redis://localhost:6379//
+
+2017-07-24 10:09:32,243 DEBG 'flower' stdout output:
+[I 170724 10:09:32 command:147] Registered tasks: 
+    [u'beercounter.task.send_validation_email',
+     u'celery.accumulate',
+     u'celery.backend_cleanup',
+     u'celery.chain',
+     u'celery.chord',
+     u'celery.chord_unlock',
+     u'celery.chunks',
+     u'celery.group',
+     u'celery.map',
+     u'celery.starmap',
+     'djcelery_email_send_multiple',
+     u'prvni.celery.debuk_task']
+
+2017-07-24 10:09:32,254 DEBG 'flower' stdout output:
+[I 170724 10:09:32 mixins:224] Connected to redis://localhost:6379//
+
+2017-07-24 10:09:33,256 INFO success: flower entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 10:09:34,331 DEBG 'flower' stdout output:
+[W 170724 10:09:34 control:44] 'active' inspect method failed
+
+2017-07-24 10:09:34,332 DEBG 'flower' stdout output:
+[W 170724 10:09:34 control:44] 'reserved' inspect method failed
+[W 170724 10:09:34 control:44] 'conf' inspect method failed
+
+2017-07-24 10:09:36,988 DEBG killing autoreload (pid 6400) with signal SIGTERM
+2017-07-24 10:09:36,988 INFO waiting for autoreload to stop
+2017-07-24 10:09:36,989 DEBG fd 8 closed, stopped monitoring <POutputDispatcher at 139699389796432 for <Subprocess at 139699390274952 with name autoreload in state STOPPING> (stdout)>
+2017-07-24 10:09:36,989 INFO stopped: autoreload (terminated by SIGTERM)
+2017-07-24 10:09:36,989 DEBG received SIGCLD indicating a child quit
+2017-07-24 10:09:36,990 DEBG killing webserver (pid 6412) with signal SIGTERM
+2017-07-24 10:09:36,990 INFO waiting for webserver to stop
+2017-07-24 10:09:36,992 DEBG fd 12 closed, stopped monitoring <POutputDispatcher at 139699389441880 for <Subprocess at 139699393074456 with name webserver in state STOPPING> (stdout)>
+2017-07-24 10:09:36,993 INFO stopped: webserver (terminated by SIGTERM)
+2017-07-24 10:09:36,993 DEBG received SIGCLD indicating a child quit
+2017-07-24 10:09:36,994 DEBG killing celeryd (pid 6417) with signal SIGTERM
+2017-07-24 10:09:36,994 INFO waiting for celeryd to stop
+2017-07-24 10:09:36,994 DEBG 'celeryd' stdout output:
+
+worker: Warm shutdown (MainProcess)
+
+2017-07-24 10:09:38,003 DEBG 'celeryd' stdout output:
+ 
+ -------------- celery@dan-HP-ProBook-450-G3 v4.0.2 (latentcall)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-53-generic-x86_64-with-LinuxMint-18.1-serena 2017-07-24 10:09:30
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         prvni:0x7f96240b9e90
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . beercounter.task.send_validation_email
+  . djcelery_email_send_multiple
+  . prvni.celery.debuk_task
+
+
+2017-07-24 10:09:38,541 DEBG fd 15 closed, stopped monitoring <POutputDispatcher at 139699389443464 for <Subprocess at 139699393553400 with name celeryd in state STOPPING> (stdout)>
+2017-07-24 10:09:38,541 INFO stopped: celeryd (exit status 0)
+2017-07-24 10:09:38,542 DEBG received SIGCLD indicating a child quit
+2017-07-24 10:09:38,542 DEBG killing flower (pid 6426) with signal SIGTERM
+2017-07-24 10:09:38,543 INFO waiting for flower to stop
+2017-07-24 10:09:38,543 DEBG 'flower' stdout output:
+[I 170724 10:09:38 command:47] SIGTERM detected, shutting down
+
+2017-07-24 10:09:38,576 DEBG fd 18 closed, stopped monitoring <POutputDispatcher at 139699389443536 for <Subprocess at 139699393075464 with name flower in state STOPPING> (stdout)>
+2017-07-24 10:09:38,576 INFO stopped: flower (exit status 0)
+2017-07-24 10:09:38,576 DEBG received SIGCLD indicating a child quit
+2017-07-24 10:09:38,580 INFO spawned: 'autoreload' with pid 6467
+2017-07-24 10:09:39,581 INFO success: autoreload entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 10:09:39,589 INFO spawned: 'webserver' with pid 6479
+2017-07-24 10:09:40,591 INFO success: webserver entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 10:09:40,598 INFO spawned: 'celeryd' with pid 6484
+2017-07-24 10:09:41,223 DEBG 'celeryd' stdout output:
+[2017-07-24 10:09:41,222: INFO/MainProcess] Connected to redis://localhost:6379//
+
+2017-07-24 10:09:41,228 DEBG 'celeryd' stdout output:
+[2017-07-24 10:09:41,228: INFO/MainProcess] mingle: searching for neighbors
+
+2017-07-24 10:09:42,230 INFO success: celeryd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 10:09:42,233 INFO spawned: 'flower' with pid 6493
+2017-07-24 10:09:42,241 DEBG 'celeryd' stdout output:
+[2017-07-24 10:09:42,241: INFO/MainProcess] mingle: all alone
+
+2017-07-24 10:09:42,250 DEBG 'celeryd' stdout output:
+[2017-07-24 10:09:42,250: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+2017-07-24 10:09:42,250 DEBG 'celeryd' stdout output:
+[2017-07-24 10:09:42,250: INFO/MainProcess] celery@dan-HP-ProBook-450-G3 ready.
+
+2017-07-24 10:09:42,686 DEBG 'flower' stdout output:
+[I 170724 10:09:42 command:139] Visit me at http://localhost:5555
+
+2017-07-24 10:09:42,696 DEBG 'flower' stdout output:
+[I 170724 10:09:42 command:144] Broker: redis://localhost:6379//
+
+2017-07-24 10:09:42,700 DEBG 'flower' stdout output:
+[I 170724 10:09:42 command:147] Registered tasks: 
+    [u'beercounter.task.send_validation_email',
+     u'celery.accumulate',
+     u'celery.backend_cleanup',
+     u'celery.chain',
+     u'celery.chord',
+     u'celery.chord_unlock',
+     u'celery.chunks',
+     u'celery.group',
+     u'celery.map',
+     u'celery.starmap',
+     'djcelery_email_send_multiple',
+     u'prvni.celery.debuk_task']
+
+2017-07-24 10:09:42,732 DEBG 'flower' stdout output:
+[I 170724 10:09:42 mixins:224] Connected to redis://localhost:6379//
+
+2017-07-24 10:09:43,734 INFO success: flower entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 10:09:44,806 DEBG 'flower' stdout output:
+[W 170724 10:09:44 control:44] 'reserved' inspect method failed
+
+2017-07-24 10:09:44,806 DEBG 'flower' stdout output:
+[W 170724 10:09:44 control:44] 'revoked' inspect method failed
+[W 170724 10:09:44 control:44] 'conf' inspect method failed
+
+2017-07-24 10:09:47,706 DEBG 'celeryd' stdout output:
+[2017-07-24 10:09:47,706: INFO/MainProcess] Events of group {task} enabled by remote.
+
+2017-07-24 10:10:13,654 DEBG killing autoreload (pid 6467) with signal SIGTERM
+2017-07-24 10:10:13,654 INFO waiting for autoreload to stop
+2017-07-24 10:10:13,656 DEBG fd 8 closed, stopped monitoring <POutputDispatcher at 139699389327336 for <Subprocess at 139699390274952 with name autoreload in state STOPPING> (stdout)>
+2017-07-24 10:10:13,656 INFO stopped: autoreload (terminated by SIGTERM)
+2017-07-24 10:10:13,656 DEBG received SIGCLD indicating a child quit
+2017-07-24 10:10:13,658 DEBG killing webserver (pid 6479) with signal SIGTERM
+2017-07-24 10:10:13,658 INFO waiting for webserver to stop
+2017-07-24 10:10:13,662 DEBG fd 12 closed, stopped monitoring <POutputDispatcher at 139699389327696 for <Subprocess at 139699393074456 with name webserver in state STOPPING> (stdout)>
+2017-07-24 10:10:13,662 INFO stopped: webserver (terminated by SIGTERM)
+2017-07-24 10:10:13,662 DEBG received SIGCLD indicating a child quit
+2017-07-24 10:10:13,664 DEBG killing celeryd (pid 6484) with signal SIGTERM
+2017-07-24 10:10:13,664 INFO waiting for celeryd to stop
+2017-07-24 10:10:13,664 DEBG 'celeryd' stdout output:
+
+worker: Warm shutdown (MainProcess)
+
+2017-07-24 10:10:14,673 DEBG 'celeryd' stdout output:
+ 
+ -------------- celery@dan-HP-ProBook-450-G3 v4.0.2 (latentcall)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-53-generic-x86_64-with-LinuxMint-18.1-serena 2017-07-24 10:09:41
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         prvni:0x7f35cde99e90
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . beercounter.task.send_validation_email
+  . djcelery_email_send_multiple
+  . prvni.celery.debuk_task
+
+
+2017-07-24 10:10:15,213 DEBG fd 15 closed, stopped monitoring <POutputDispatcher at 139699389944752 for <Subprocess at 139699393553400 with name celeryd in state STOPPING> (stdout)>
+2017-07-24 10:10:15,213 INFO stopped: celeryd (exit status 0)
+2017-07-24 10:10:15,213 DEBG received SIGCLD indicating a child quit
+2017-07-24 10:10:15,214 DEBG killing flower (pid 6493) with signal SIGTERM
+2017-07-24 10:10:15,214 INFO waiting for flower to stop
+2017-07-24 10:10:15,214 DEBG 'flower' stdout output:
+[I 170724 10:10:15 command:47] SIGTERM detected, shutting down
+
+2017-07-24 10:10:15,256 DEBG fd 18 closed, stopped monitoring <POutputDispatcher at 139699389351768 for <Subprocess at 139699393075464 with name flower in state STOPPING> (stdout)>
+2017-07-24 10:10:15,256 INFO stopped: flower (exit status 0)
+2017-07-24 10:10:15,256 DEBG received SIGCLD indicating a child quit
+2017-07-24 10:10:15,259 INFO spawned: 'autoreload' with pid 6537
+2017-07-24 10:10:16,261 INFO success: autoreload entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 10:10:16,270 INFO spawned: 'webserver' with pid 6549
+2017-07-24 10:10:17,274 INFO success: webserver entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 10:10:17,284 INFO spawned: 'celeryd' with pid 6554
+2017-07-24 10:10:17,923 DEBG 'celeryd' stdout output:
+[2017-07-24 10:10:17,922: INFO/MainProcess] Connected to redis://localhost:6379//
+
+2017-07-24 10:10:17,929 DEBG 'celeryd' stdout output:
+[2017-07-24 10:10:17,929: INFO/MainProcess] mingle: searching for neighbors
+
+2017-07-24 10:10:18,931 INFO success: celeryd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 10:10:18,945 INFO spawned: 'flower' with pid 6564
+2017-07-24 10:10:18,948 DEBG 'celeryd' stdout output:
+[2017-07-24 10:10:18,944: INFO/MainProcess] mingle: all alone
+
+2017-07-24 10:10:18,970 DEBG 'celeryd' stdout output:
+[2017-07-24 10:10:18,969: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+2017-07-24 10:10:18,971 DEBG 'celeryd' stdout output:
+[2017-07-24 10:10:18,970: INFO/MainProcess] celery@dan-HP-ProBook-450-G3 ready.
+
+2017-07-24 10:10:19,434 DEBG 'flower' stdout output:
+[I 170724 10:10:19 command:139] Visit me at http://localhost:5555
+
+2017-07-24 10:10:19,444 DEBG 'flower' stdout output:
+[I 170724 10:10:19 command:144] Broker: redis://localhost:6379//
+
+2017-07-24 10:10:19,448 DEBG 'flower' stdout output:
+[I 170724 10:10:19 command:147] Registered tasks: 
+    [u'beercounter.task.send_validation_email',
+     u'celery.accumulate',
+     u'celery.backend_cleanup',
+     u'celery.chain',
+     u'celery.chord',
+     u'celery.chord_unlock',
+     u'celery.chunks',
+     u'celery.group',
+     u'celery.map',
+     u'celery.starmap',
+     'djcelery_email_send_multiple',
+     u'prvni.celery.debuk_task']
+
+2017-07-24 10:10:19,467 DEBG 'flower' stdout output:
+[I 170724 10:10:19 mixins:224] Connected to redis://localhost:6379//
+
+2017-07-24 10:10:20,469 INFO success: flower entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 10:10:21,582 DEBG 'flower' stdout output:
+[W 170724 10:10:21 control:44] 'revoked' inspect method failed
+
+2017-07-24 10:10:24,458 DEBG 'celeryd' stdout output:
+[2017-07-24 10:10:24,457: INFO/MainProcess] Events of group {task} enabled by remote.
+
+2017-07-24 10:14:31,131 DEBG killing autoreload (pid 6537) with signal SIGTERM
+2017-07-24 10:14:31,131 INFO waiting for autoreload to stop
+2017-07-24 10:14:31,134 DEBG fd 8 closed, stopped monitoring <POutputDispatcher at 139699389424560 for <Subprocess at 139699390274952 with name autoreload in state STOPPING> (stdout)>
+2017-07-24 10:14:31,134 INFO stopped: autoreload (terminated by SIGTERM)
+2017-07-24 10:14:31,134 DEBG received SIGCLD indicating a child quit
+2017-07-24 10:14:31,136 DEBG killing webserver (pid 6549) with signal SIGTERM
+2017-07-24 10:14:31,136 INFO waiting for webserver to stop
+2017-07-24 10:14:31,139 DEBG fd 12 closed, stopped monitoring <POutputDispatcher at 139699389475008 for <Subprocess at 139699393074456 with name webserver in state STOPPING> (stdout)>
+2017-07-24 10:14:31,139 INFO stopped: webserver (terminated by SIGTERM)
+2017-07-24 10:14:31,139 DEBG received SIGCLD indicating a child quit
+2017-07-24 10:14:31,140 DEBG killing celeryd (pid 6554) with signal SIGTERM
+2017-07-24 10:14:31,140 INFO waiting for celeryd to stop
+2017-07-24 10:14:31,141 DEBG 'celeryd' stdout output:
+
+worker: Warm shutdown (MainProcess)
+
+2017-07-24 10:14:32,149 DEBG 'celeryd' stdout output:
+ 
+ -------------- celery@dan-HP-ProBook-450-G3 v4.0.2 (latentcall)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-53-generic-x86_64-with-LinuxMint-18.1-serena 2017-07-24 10:10:17
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         prvni:0x7f1f4a629e90
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . beercounter.task.send_validation_email
+  . djcelery_email_send_multiple
+  . prvni.celery.debuk_task
+
+
+2017-07-24 10:14:32,689 DEBG fd 15 closed, stopped monitoring <POutputDispatcher at 139699389392512 for <Subprocess at 139699393553400 with name celeryd in state STOPPING> (stdout)>
+2017-07-24 10:14:32,689 INFO stopped: celeryd (exit status 0)
+2017-07-24 10:14:32,689 DEBG received SIGCLD indicating a child quit
+2017-07-24 10:14:32,690 DEBG killing flower (pid 6564) with signal SIGTERM
+2017-07-24 10:14:32,690 INFO waiting for flower to stop
+2017-07-24 10:14:32,690 DEBG 'flower' stdout output:
+[I 170724 10:14:32 command:47] SIGTERM detected, shutting down
+
+2017-07-24 10:14:32,723 DEBG fd 18 closed, stopped monitoring <POutputDispatcher at 139699389391144 for <Subprocess at 139699393075464 with name flower in state STOPPING> (stdout)>
+2017-07-24 10:14:32,723 INFO stopped: flower (exit status 0)
+2017-07-24 10:14:32,723 DEBG received SIGCLD indicating a child quit
+2017-07-24 10:14:32,728 INFO spawned: 'autoreload' with pid 6673
+2017-07-24 10:14:33,730 INFO success: autoreload entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 10:14:33,741 INFO spawned: 'webserver' with pid 6685
+2017-07-24 10:14:34,746 INFO success: webserver entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 10:14:34,753 INFO spawned: 'celeryd' with pid 6690
+2017-07-24 10:14:35,432 DEBG 'celeryd' stdout output:
+[2017-07-24 10:14:35,432: INFO/MainProcess] Connected to redis://localhost:6379//
+
+2017-07-24 10:14:35,438 DEBG 'celeryd' stdout output:
+[2017-07-24 10:14:35,437: INFO/MainProcess] mingle: searching for neighbors
+
+2017-07-24 10:14:36,439 INFO success: celeryd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 10:14:36,447 INFO spawned: 'flower' with pid 6699
+2017-07-24 10:14:36,450 DEBG 'celeryd' stdout output:
+[2017-07-24 10:14:36,450: INFO/MainProcess] mingle: all alone
+
+2017-07-24 10:14:36,461 DEBG 'celeryd' stdout output:
+[2017-07-24 10:14:36,461: WARNING/MainProcess] /home/dan/Documents/django-tutorial/prvni/venv/local/lib/python2.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+2017-07-24 10:14:36,461 DEBG 'celeryd' stdout output:
+[2017-07-24 10:14:36,461: INFO/MainProcess] celery@dan-HP-ProBook-450-G3 ready.
+
+2017-07-24 10:14:36,903 DEBG 'flower' stdout output:
+[I 170724 10:14:36 command:139] Visit me at http://localhost:5555
+
+2017-07-24 10:14:36,913 DEBG 'flower' stdout output:
+[I 170724 10:14:36 command:144] Broker: redis://localhost:6379//
+
+2017-07-24 10:14:36,916 DEBG 'flower' stdout output:
+[I 170724 10:14:36 command:147] Registered tasks: 
+    [u'beercounter.task.send_validation_email',
+     u'celery.accumulate',
+     u'celery.backend_cleanup',
+     u'celery.chain',
+     u'celery.chord',
+     u'celery.chord_unlock',
+     u'celery.chunks',
+     u'celery.group',
+     u'celery.map',
+     u'celery.starmap',
+     'djcelery_email_send_multiple',
+     u'prvni.celery.debuk_task']
+
+2017-07-24 10:14:36,941 DEBG 'flower' stdout output:
+[I 170724 10:14:36 mixins:224] Connected to redis://localhost:6379//
+
+2017-07-24 10:14:37,943 INFO success: flower entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2017-07-24 10:14:39,026 DEBG 'flower' stdout output:
+[W 170724 10:14:39 control:44] 'reserved' inspect method failed
+
+2017-07-24 10:14:41,926 DEBG 'celeryd' stdout output:
+[2017-07-24 10:14:41,925: INFO/MainProcess] Events of group {task} enabled by remote.
+
+2017-07-24 10:33:45,475 DEBG 'webserver' stdout output:
+[24/Jul/2017 10:33:45] "GET / HTTP/1.1" 200 1588
+
+2017-07-24 10:33:46,395 DEBG 'webserver' stdout output:
+[24/Jul/2017 10:33:46] "GET /pub/24/ HTTP/1.1" 200 1316
+
+2017-07-24 10:33:47,791 DEBG 'webserver' stdout output:
+[24/Jul/2017 10:33:47] "GET / HTTP/1.1" 200 1588
+
+2017-07-24 10:33:48,710 DEBG 'webserver' stdout output:
+[24/Jul/2017 10:33:48] "GET /pub/23/ HTTP/1.1" 200 1316
+
+2017-07-24 10:33:49,706 DEBG 'webserver' stdout output:
+[24/Jul/2017 10:33:49] "GET / HTTP/1.1" 200 1588
+
+2017-07-24 10:33:50,591 DEBG 'webserver' stdout output:
+[24/Jul/2017 10:33:50] "GET /pub/22/ HTTP/1.1" 200 1619
+
+2017-07-24 10:33:51,644 DEBG 'webserver' stdout output:
+[24/Jul/2017 10:33:51] "GET / HTTP/1.1" 200 1588
+
+2017-07-24 11:14:36,136 DEBG 'webserver' stdout output:
+[24/Jul/2017 11:14:36] "GET / HTTP/1.1" 200 1588
+
